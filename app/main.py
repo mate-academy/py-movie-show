@@ -1,7 +1,7 @@
-from cinema.hall import CinemaHall
-from people.cinema_staff import Cleaner
-from people.customer import Customer
-from cinema.bar import CinemaBar
+from app.cinema.hall import CinemaHall
+from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
+from app.cinema.bar import CinemaBar
 
 
 def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
@@ -12,19 +12,13 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
     customers_obj = []
 
     for raw_customer in customers:
-        customers_obj.append(Customer(raw_customer['name'], raw_customer['food']))
+        new_customer = Customer(
+            raw_customer['name'],
+            raw_customer['food'],
+        )
+        customers_obj.append(new_customer)
+
     for customer in customers_obj:
-        bar.sell_product(customer.food, customer)
+        bar.sell_product(customer, customer.food)
 
-    hall.movie_cinema(movie, customers_obj, current_cleaner)
-
-
-if __name__ == '__main__':
-    customers = [
-        {"name": "Bob", "food": "Coca-cola"},
-        {"name": "Alex", "food": "popcorn"}
-    ]
-    hall_number = 5
-    cleaner_name = "Anna"
-    movie = "Madagascar"
-    cinema_visit(customers=customers, hall_number=5, cleaner="Anna", movie="Madagascar")
+    hall.movie_session(movie, customers_obj, current_cleaner)
