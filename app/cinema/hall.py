@@ -5,7 +5,7 @@ class CinemaHall:
 
     def movie_session(self, movie_name, customers, cleaning_staff):
         print(f'"{movie_name}" started in hall number {self.number}.')
-        for i in customers:
-            i.watch_movie(movie_name)
+        for watcher in customers:
+            watcher.watch_movie(movie_name)
         print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
