@@ -8,8 +8,8 @@ class CinemaHall:
         self.number = number
 
     def movie_session(self, movie_name, customers, cleaning_staff):
-        print(f"\"{movie_name}\" started in hall number {self.number}.")
+        print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
             Customer.watch_movie(customer, movie_name)
-        print(f"\"{movie_name}\" ended.")
+        print(f'"{movie_name}\" ended.')
         Cleaner.clean_hall(cleaning_staff, self.number)
