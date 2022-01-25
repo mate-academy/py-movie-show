@@ -14,4 +14,3 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
     ch = CinemaHall(hall_number)
     cleaner = Cleaner(cleaner)
     ch.movie_session(movie, customers, cleaner)
-
