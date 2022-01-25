@@ -5,7 +5,10 @@ from app.people.customer import Customer
 
 
 def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
-    customers = [Customer(prsn["name"], prsn["food"]) for prsn in customers]
+    customers = [
+        Customer(person["name"], person["food"])
+        for person in customers
+    ]
     cinema_hall = CinemaHall(hall_number)
     cinema_bar = CinemaBar()
     cleaner = Cleaner(cleaner)
