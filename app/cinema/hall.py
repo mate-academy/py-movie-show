@@ -9,3 +9,4 @@ class CinemaHall:
             customer.watch_movie(movie_name)
         print(f"\"{movie_name}\" ended.")
         cleaning_staff.clean_hall(self.number)
+a = 5
