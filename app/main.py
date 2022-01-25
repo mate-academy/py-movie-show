@@ -7,10 +7,8 @@ from app.cinema.hall import CinemaHall
 def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
     listOfInstances = []
     for customer in customers:
-        listOfInstances.append(Customer(customer["name"], customer["food"]))
-        CinemaBar.sell_product(Customer(customer["name"],
-                                        customer["food"]),
-                               Customer(customer["name"],
-                                        customer["food"]).food)
+        customer = Customer(customer["name"], customer["food"])
+        listOfInstances.append(customer)
+        CinemaBar.sell_product(customer, customer.food)
     cleaner_guy = Cleaner(cleaner)
     CinemaHall(hall_number).movie_session(movie, listOfInstances, cleaner_guy)
