@@ -7,8 +7,8 @@ from app.people.customer import Customer
 def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
     list_of_customers = []
     cinema_bar = CinemaBar()
-    for dic in customers:
-        person = Customer(name=dic["name"], food=dic["food"])
+    for customer in customers:
+        person = Customer(name=customer["name"], food=customer["food"])
         list_of_customers.append(person)
         cinema_bar.sell_product(customer=person, product=person.food)
     cinema_hall = CinemaHall(number=hall_number)
