@@ -1,5 +1,5 @@
 class CinemaBar:
 
     @staticmethod
-    def sell_product(customer, product):
-        print(f"Cinema bar sold {product} to {customer}.")
+    def sell_product(customer: str, product: str):
+        print(f"Cinema bar sold {product} to {customer.name}.")
