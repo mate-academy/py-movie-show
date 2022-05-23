@@ -5,13 +5,13 @@ from app.people.customer import Customer
 
 
 def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
-    ls_of_customers = []
+    customers_list = []
     for customer in customers:
-        ls_of_customers.append(Customer(customer['name'],
-                                        customer['food']))
+        customers_list.append(Customer(customer['name'],
+                                       customer['food']))
     hall = CinemaHall(hall_number)
     bar = CinemaBar()
     cleaner = Cleaner(cleaner)
-    for peop in ls_of_customers:
-        bar.sell_product(peop, peop.food)
-    hall.movie_session(movie, ls_of_customers, cleaner)
+    for customer in customers_list:
+        bar.sell_product(customer, customer.food)
+    hall.movie_session(movie, customers_list, cleaner)
