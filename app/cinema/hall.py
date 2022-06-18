@@ -1,3 +1,6 @@
+from app.people.cinema_staff import Cleaner
+
+
 class CinemaHall:
     def __init__(self, number):
         self.number = number
@@ -7,5 +10,4 @@ class CinemaHall:
         for i in customers:
             print(f'{i.name} is watching "{movie_name}".')
         print(f'"{movie_name}" ended.')
-        print(f'Cleaner {cleaning_staff.name} '
-              f'is cleaning hall number {self.number}.')
+        Cleaner.clean_hall(self=cleaning_staff, hall_number=self.number)
