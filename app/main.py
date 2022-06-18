@@ -11,4 +11,15 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
         customers_ls.append(customer)
         CinemaBar.sell_product(customer.food, customer)
     hall = CinemaHall(hall_number)
-    CinemaHall.movie_session(hall, movie, customers_ls, Cleaner(cleaner))
+    cleaner = Cleaner(cleaner)
+    hall.movie_session(movie, customers_ls, cleaner)
+
+
+customers = [
+    {"name": "Bob", "food": "Coca-cola"},
+    {"name": "Alex", "food": "popcorn"}
+]
+hall_number = 5
+cleaner_name = "Anna"
+movie = "Madagascar"
+cinema_visit(customers=customers, hall_number=5, cleaner="Anna", movie="Madagascar")
