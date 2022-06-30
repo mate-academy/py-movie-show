@@ -9,7 +9,7 @@ class CinemaHall:
 
     def movie_session(self, movie_name, customers: list, cleaner):
         print(f'"{movie_name}" started in hall number {self.number}.')
-        for obj in customers:
-            Customer.watch_movie(obj, movie_name)
+        for customer in customers:
+            Customer.watch_movie(customer, movie_name)
         print(f'"{movie_name}" ended.')
         Cleaner.clean_hall(cleaner, self.number)
