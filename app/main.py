@@ -5,9 +5,9 @@ from app.people.customer import Customer
 
 
 def cinema_visit(customers, hall_number, cleaner, movie):
-    ls_of_cls_obj = [Customer(cus["name"], cus["food"]) for cus in customers]
+    ls_of_cls_obj = [Customer(obj["name"], obj["food"]) for obj in customers]
     cleaner = Cleaner(cleaner)
     hall_number = CinemaHall(hall_number)
-    for i in ls_of_cls_obj:
-        CinemaBar.sell_product(i, i.food)
+    for customer in ls_of_cls_obj:
+        CinemaBar.sell_product(customer, customer.food)
     CinemaHall.movie_session(hall_number, movie, ls_of_cls_obj, cleaner)
