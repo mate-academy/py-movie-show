@@ -16,8 +16,9 @@ def cinema_visit(customers: list, hall_number: int,
     ]
 
     # sell the product to customers
+    bar = CinemaBar()
     for customer in list_of_customers:
-        CinemaBar.sell_product(customer.name, customer.food)
+        bar.sell_product(customer.name, customer.food)
 
     # create CinemaHall instance and complete movie session acts
     film_session = CinemaHall(hall_number)
