@@ -14,4 +14,4 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
         CinemaBar.sell_product(customer_food, customer_name)
         number += 1
     session = CinemaHall(hall_number)
-    session.movie_session(movie_name=movie, customers=customers, cleaning_staff=cleaner)
+    session.movie_session(movie, customers, cleaner)
