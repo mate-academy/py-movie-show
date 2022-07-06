@@ -1,7 +1,5 @@
-class Cinemabar:
-    def __init__(self, customer, product):
-        self.customer = customer
-        self.product = product
+class CinemaBar:
 
-    def sell_product(self):
-        print(f"Cinema bar sold {self.product} to {self.customer}.")
+    @staticmethod
+    def sell_product(customer, product):
+        print(f"Cinema bar sold {product} to {customer.name}.")
