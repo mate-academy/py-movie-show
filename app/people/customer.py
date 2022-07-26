@@ -1,4 +1,4 @@
-class Customer():
+class Customer:
     def __init__(self, name, food):
         self.name = name
         self.food = food
