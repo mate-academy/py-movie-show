@@ -1,4 +1,3 @@
-
 class CinemaBar:
     @staticmethod
     def sell_product(product, customer):

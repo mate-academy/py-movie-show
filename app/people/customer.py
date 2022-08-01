@@ -1,4 +1,3 @@
-
 class Customer:
     def __init__(self, name, food):
         self.name = name
