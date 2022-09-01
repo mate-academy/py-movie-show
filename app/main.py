@@ -5,7 +5,6 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
-
     list_of_customers = [Customer(customer["name"],
                                   customer["food"]) for customer in customers]
     person_cleaner = Cleaner(cleaner)
