@@ -7,18 +7,14 @@ from app.people.cinema_staff import Cleaner
 def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
     bar = CinemaBar()
     cleaning_staff = Cleaner(cleaner)
+    new = list()
     for cust in customers:
         
         customer = Customer(cust['name'], cust['food'])
-        bar.sell_product(cust['name'], customer)
-        
-        cd = customer.watch_movie(movie)
-        n_hall = CinemaHall(hall_number)
-        n_hall.movie_session(movie, cd, cleaning_staff)
-    cleaning_staff.clean_hall(hall_number)
-
-
-
+        new.append(customer)
+        bar.sell_product(customer, customer)
+    n_hall = CinemaHall(hall_number)
+    n_hall.movie_session(movie, new, cleaning_staff)
 
 
 
