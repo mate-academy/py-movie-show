@@ -6,4 +6,3 @@ class Customer:
 
     def watch_movie(self, movie):
         print(f'{self.name} is watching "{movie}".')
-
