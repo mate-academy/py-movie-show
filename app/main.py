@@ -28,20 +28,3 @@ def cinema_visit(customers: list, hall_number: int,
         customers=customers_list,
         cleaning_staff=cleaner
     )
-
-
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-
-hall_number = 5
-cleaner_name = "Anna"
-movie = "Madagascar"
-
-cinema_visit(
-    customers=customers,
-    hall_number=hall_number,
-    movie_name=movie,
-    cleaning_staff=cleaner_name
-)
