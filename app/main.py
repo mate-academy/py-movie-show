@@ -10,8 +10,10 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
         for person in customers
     ]
 
-    [CinemaBar.sell_product(customer, customer.food)
-     for customer in obj_customers]
+    for customer in obj_customers:
+        CinemaBar.sell_product(customer, customer.food)
+    # [CinemaBar.sell_product(customer, customer.food)
+    #  for customer in obj_customers]
 
     CinemaHall(hall_number).movie_session(
         movie, obj_customers , Cleaner(cleaner)
