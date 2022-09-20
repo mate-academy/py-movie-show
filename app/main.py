@@ -8,9 +8,8 @@ def cinema_visit(customers: list,
                  hall_number: int,
                  cleaner: str,
                  movie: str) -> None:
-    for index in range(len(customers)):
-        customers[index] = Customer(customers[index]["name"]
-                                    , customers[index]["food"])
+    for i, customer in enumerate(customers):
+        customers[i] = Customer(customer["name"], customer["food"])
     for person in customers:
         CinemaBar.sell_product(person.food, person)
     hall = CinemaHall(hall_number)
