@@ -9,11 +9,10 @@ def cinema_visit(customers: list,
                  cleaning_staff: str,
                  movie_name: str) -> None:
     customer_instances = []
-
+    bar_object = CinemaBar()
     for person in customers:
         pers = Customer(person["name"], person["food"])
         customer_instances.append(pers)
-        bar_object = CinemaBar()
         bar_object.sell_product(pers.food, pers)
 
     hall_object = CinemaHall(hall_number)
