@@ -1,6 +1,3 @@
-from __future__ import annotations
-
-
 class Customer:
 
     def __init__(self, name: str, food: str) -> None:
@@ -9,8 +6,3 @@ class Customer:
 
     def watch_movie(self, movie: str) -> None:
         print(f'{self.name} is watching "{movie}".')
-
-
-if __name__ == '__main__':
-    bob = Customer("Bob", "popcorn")
-    bob.watch_movie("Madagascar")
