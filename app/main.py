@@ -11,16 +11,16 @@ def cinema_visit(
         movie: str
 ) -> None:
 
-    for customer in customers:
-        CinemaBar.sell_product(
-            customer["food"],
-            Customer(customer["name"], customer["food"])
-        )
-
     customers_objects = [
         Customer(customer["name"], customer["food"])
         for customer in customers
     ]
+
+    for customer in customers_objects:
+        CinemaBar.sell_product(
+            customer.food,
+            customer
+        )
 
     CinemaHall(hall_number).movie_session(
         movie,
