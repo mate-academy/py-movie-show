@@ -7,5 +7,5 @@ class Cleaner:
 
 
 if __name__ == '__main__':
-    clean = Cleaner("Anna")
-    clean.clean_hall(5)
+    cleaner = Cleaner("Anna")
+    cleaner.clean_hall(5)
