@@ -18,4 +18,3 @@ def cinema_visit(
         people.append(customer)
         CinemaBar.sell_product(customer, customer.food)
     hall.movie_session(movie, people, cleaning_staff)
-
