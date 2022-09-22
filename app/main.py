@@ -10,15 +10,14 @@ def cinema_visit(customers: list,
                  cleaner: str,
                  movie: str) -> None:
     # write you code here
-    customers_arr = []
-    for custom in customers:
-        customers_arr.append(Customer(custom["name"], custom["food"]))
+    customers_arr = [Customer(customer["name"], customer["food"])
+                     for customer in customers]
+
     cinema_hall = CinemaHall(hall_number)
-    cinema_bar = CinemaBar()
-    cleaner_name = Cleaner(cleaner)
+
     for custom in customers_arr:
-        cinema_bar.sell_product(custom, custom.food)
-    cinema_hall.movie_session(movie, customers_arr, cleaner_name)
+        CinemaBar.sell_product(custom, custom.food)
+    cinema_hall.movie_session(movie, customers_arr, Cleaner(cleaner))
 
 
 if __name__ == '__main__':
