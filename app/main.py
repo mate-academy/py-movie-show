@@ -9,9 +9,8 @@ def cinema_visit(customers: list,
                  cleaner: str,
                  movie: str) -> None:
 
-    visitors = [Customer(visitor["name"]
-                         , visitor["food"])
-                for visitor in customers]
+    visitors = [Customer(visitor["name"],
+                         visitor["food"]) for visitor in customers]
 
     for visitor in visitors:
         CinemaBar.sell_product(visitor.food, visitor)
