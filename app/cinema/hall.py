@@ -10,7 +10,7 @@ class CinemaHall:
                       movie_name: str,
                       customers: list,
                       cleaner: Cleaner
-                      ):
+                      ) -> None:
 
         print(f'"{movie_name}" started in hall number {self.number}.')
 
