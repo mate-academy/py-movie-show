@@ -16,4 +16,3 @@ def cinema_visit(customers: list,
 
     cln = Cleaner(cleaner)
     CinemaHall(hall_number).movie_session(movie, cust, cln)
-    pass
