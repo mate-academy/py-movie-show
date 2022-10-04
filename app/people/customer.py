@@ -5,5 +5,5 @@ class Customer:
         self.food = food
 
     def watch_movie(self, movie):
-        print(f"{self.name}" watch {movie}")
+        print(f"{self.name} is watching {movie}")
     
