@@ -8,8 +8,8 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
     for client in customers:
         CinemaBar.sell_product(Customer(client['name'], client['food']),
                                client['food'])
-    CinemaHall.movie_session(
-        CinemaHall(hall_number), movie, [Customer(a['name'], a['food'])
-                                         for a in customers],
-        Cleaner(cleaner)
-    )
+    CinemaHall(hall_number).movie_session(movie,
+                                          [Customer(a['name'], a['food'])
+                                           for a in customers],
+                                          Cleaner(cleaner)
+                                          )
