@@ -1,7 +1,10 @@
+from typing import NoReturn
+
+
 class Customer:
-    def __init__(self, name: str, food: str):
+    def __init__(self, name: str, food: str) -> NoReturn:
         self.name = name
         self.food = food
 
-    def watch_movie(self, movie: str):
-        print(f"{self.name} is watching \"{movie}\".")
+    def watch_movie(self, movie: str) -> NoReturn:
+        print(f'{self.name} is watching "{movie}".')
