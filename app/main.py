@@ -12,4 +12,5 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
         customers_list.append(customer)    
     today_hall = CinemaHall(hall_number)
     today_cleaner = Cleaner(cleaner)
+    cinema_bar = CinemaBar()
     today_hall.movie_session(movie, customers_list, cleaner)
