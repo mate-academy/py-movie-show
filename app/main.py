@@ -1,4 +1,4 @@
-from app.cinema.bar import CinemaBar as seller
+from app.cinema.bar import CinemaBar as Seller
 from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
@@ -17,7 +17,7 @@ def cinema_visit(customers: list,
         )
 
     for bar_work in list_of_customers:
-        seller.sell_product(bar_work, bar_work.food)
+        Seller.sell_product(bar_work, bar_work.food)
 
     clean_stuf = Cleaner(name=cleaner)
 
