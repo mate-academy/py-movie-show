@@ -1,6 +1,3 @@
-from app.people.cinema_staff import Cleaner
-from app.people.customer import Customer
-
 class CinemaHall:
 
     def __init__(self, number):
