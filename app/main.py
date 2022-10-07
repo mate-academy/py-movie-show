@@ -16,8 +16,9 @@ def cinema_visit(customers: list,
                      food=customer_checker["food"])
         )
 
+    sell_bar = Seller.sell_product
     for bar_work in list_of_customers:
-        Seller.sell_product(bar_work, bar_work.food)
+        sell_bar(bar_work, bar_work.food)
 
     clean_stuf = Cleaner(name=cleaner)
 
