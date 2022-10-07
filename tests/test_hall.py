@@ -1,4 +1,5 @@
 import io
+
 from contextlib import redirect_stdout
 
 from app.cinema.hall import CinemaHall
