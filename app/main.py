@@ -22,4 +22,3 @@ def cinema_visit(customers: list,
         people,
         staff,
     )
-    pass
