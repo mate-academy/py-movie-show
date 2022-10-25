@@ -14,13 +14,3 @@ def cinema_visit(customers: list, hall_number: int,
         customers_list.append(customer)
         our_bar.sell_product(customer, visitor["food"])
     CinemaHall(hall_number).movie_session(movie, customers_list, our_cleaner)
-
-
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-hall_number = 5
-cleaner_name = "Anna"
-movie = "Madagascar"
-cinema_visit(customers=customers, hall_number=5, cleaner="Anna", movie="Madagascar")
