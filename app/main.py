@@ -11,10 +11,10 @@ def cinema_visit(customers: list,
     hall = CinemaHall(hall_number)
     people = []
     staff = Cleaner(cleaner)
-
+    bar_sale = CinemaBar
     for customer in customers:
         unit = Customer(customer["name"], customer["food"])
-        CinemaBar.sell_product(unit, customer["food"])
+        bar_sale.sell_product(unit, unit.food)
         people.append(unit)
 
     hall.movie_session(
