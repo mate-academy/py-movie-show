@@ -1,5 +1,4 @@
 from __future__ import annotations
-from app.cinema.hall import CinemaHall
 
 
 class Cleaner:
