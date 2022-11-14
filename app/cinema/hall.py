@@ -10,10 +10,7 @@ class CinemaHall:
                       customers: list,
                       cleaning_staff: str) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
-        for customer_dict in customers:
-            customer = Customer(name=customer_dict["name"],
-                                food=customer_dict["food"])
+        for customer in customers:
             Customer.watch_movie(customer, movie_name)
         print(f'"{movie_name}" ended.')
-        cleaning_staff = Cleaner(name=cleaning_staff)
         Cleaner.clean_hall(cleaning_staff, self.number)
