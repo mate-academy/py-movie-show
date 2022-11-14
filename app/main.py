@@ -17,4 +17,4 @@ def cinema_visit(customers: list,
                             food=customer_dict["food"])
         customer_list.append(customer)
         cb.sell_product(customer.food, customer)
-    CinemaHall.movie_session(hall_number, movie, customer_list, cleaner)
+    hall_number.movie_session(movie, customer_list, cleaner)
