@@ -10,7 +10,7 @@ def cinema_visit(customers: list,
                  cleaner: str,
                  movie: str) -> None:
 
-    customer_instance = [
+    customer_instance_list = [
         Customer(customer["name"],
                  customer["food"])
         for customer in customers]
@@ -20,7 +20,7 @@ def cinema_visit(customers: list,
     cinema_hall = CinemaHall(hall_number)
     cleaning_staff = Cleaner(cleaner)
 
-    for each_customer in customer_instance:
+    for each_customer in customer_instance_list:
         cinema_bar.sell_product(each_customer.food, each_customer)
 
     # 1) Do I need return cinema_hall.movie_session() or just do what I did?
@@ -28,5 +28,5 @@ def cinema_visit(customers: list,
     # what I need return in annotation?
     cinema_hall.movie_session(
         movie_name=movie,
-        customers=customer_instance,
+        customers=customer_instance_list,
         cleaning_staff=cleaning_staff)
