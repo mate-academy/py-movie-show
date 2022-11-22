@@ -13,8 +13,10 @@ def cinema_visit(customers: list,
         for customer_dict in customers
     ]
 
+    cinema_bar = CinemaBar()
+
     for customer in customers_list:
-        CinemaBar().sell_product(customer, customer.food)
+        cinema_bar.sell_product(customer, customer.food)
 
     hall_number_instance = CinemaHall(hall_number)
 
