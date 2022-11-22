@@ -23,9 +23,6 @@ def cinema_visit(customers: list,
     for each_customer in customer_instance_list:
         cinema_bar.sell_product(each_customer.food, each_customer)
 
-    # 1) Do I need return cinema_hall.movie_session() or just do what I did?
-    # 2) And if I wanted to return cinema_hall.movie_session(),
-    # what I need return in annotation?
     cinema_hall.movie_session(
         movie_name=movie,
         customers=customer_instance_list,
