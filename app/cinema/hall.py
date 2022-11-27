@@ -14,15 +14,9 @@ class CinemaHall:
         print(f'\"{movie_name}\" started in hall number {self.number}.')
 
         lst_instances = []
-        if isinstance(customers, list):
-            for visitor in customers:
-                if isinstance(visitor, str):
-                    visitor_instance = Customer(visitor)
-                else:
-                    visitor_instance = Customer(visitor.name)
-                lst_instances.append(visitor_instance)
-        else:
-            visitor_instance = Customer(customers)
+
+        for visitor in customers:
+            visitor_instance = Customer(visitor.name)
             lst_instances.append(visitor_instance)
 
         for inst in lst_instances:
@@ -30,8 +24,5 @@ class CinemaHall:
 
         print(f'\"{movie_name}\" ended.')
 
-        if isinstance(cleaning_staff, str):
-            staff = Cleaner(cleaning_staff)
-        else:
-            staff = Cleaner(cleaning_staff.name)
+        staff = Cleaner(cleaning_staff.name)
         staff.clean_hall(self.number)
