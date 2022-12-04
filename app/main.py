@@ -10,4 +10,3 @@ def cinema_visit(customers: list, hall_number: int,
     for customer in people:
         CinemaBar.sell_product(customer, customer.food)
     CinemaHall(hall_number).movie_session(movie, people, Cleaner(cleaner))
-
