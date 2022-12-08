@@ -25,3 +25,4 @@ def cinema_visit(customers: list,
                               customers=list_of_customers,
                               clearing_staff=cinema_staff
                               )
+
