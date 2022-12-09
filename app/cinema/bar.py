@@ -1,6 +1,6 @@
-class CinemaBar:
-    def __int__(self):
+from app.people.customer import Customer
 
+class CinemaBar:
     @staticmethod
-    def sell_product(customer: str, product: str):
-        print(f"Cinema bar sold {product} to {customer}.")
+    def sell_product(customer: Customer, product: str):
+        print(f"Cinema bar sold {product} to {customer.name}.")
