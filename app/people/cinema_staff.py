@@ -7,9 +7,3 @@ class Cleaner:
 
     def __str__(self) -> str:
         return self.name
-
-
-if __name__ == "__main__":
-    anna = Cleaner(name="Anna")
-    anna.clean_hall(hall_number=5)
-    # Cleaner Anna is cleaning hall number 5.
