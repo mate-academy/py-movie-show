@@ -12,6 +12,8 @@ def cinema_visit(
         movie: str
 ) -> None:
     customers_list = []
+    cleaner_instance = Cleaner(cleaner)
+    hall = CinemaHall(hall_number)
 
     for customer in customers:
         # making Customers instances
@@ -21,33 +23,8 @@ def cinema_visit(
         # selling food
         CinemaBar.sell_product(customer=customer.name, product=customer.food)
 
-    cleaner_instance = Cleaner(cleaner)
-
-    hall = CinemaHall(hall_number)
     hall.movie_session(
         movie_name=movie,
         customers=customers_list,
         cleaning_staff=cleaner_instance
     )
-
-
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-hall_number = 5
-cleaner_name = "Anna"
-movie = "Madagascar"
-cinema_visit(
-    customers=customers,
-    hall_number=5,
-    cleaner="Anna",
-    movie="Madagascar"
-)
-# Cinema bar sold Coca-cola to Bob.
-# Cinema bar sold popcorn to Alex.
-# "Madagascar" started in hall number 5.
-# Bob is watching "Madagascar".
-# Alex is watching "Madagascar".
-# "Madagascar" ended.
-# Cleaner Anna is cleaning hall number 5.
