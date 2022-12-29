@@ -8,7 +8,7 @@ class CinemaBar:
 
 
 if __name__ == "__main__":
-    cb = CinemaBar()
+    cinema_bar = CinemaBar()
     customer = Customer("Bob", "popcorn")
-    cb.sell_product(customer=customer, product=customer.food)
+    cinema_bar.sell_product(customer=customer, product=customer.food)
     # Cinema bar sold popcorn to Bob.
