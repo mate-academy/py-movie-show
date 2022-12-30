@@ -16,4 +16,3 @@ def cinema_visit(customers: list,
         CinemaBar.sell_product(customer, customer.food)
     hall = CinemaHall(hall_number)
     hall.movie_session(movie, customer_class_obj_list, Cleaner(cleaner))
-
