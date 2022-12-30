@@ -5,4 +5,3 @@ class Customer:
 
     def watch_movie(self, movie: str) -> None:
         print('{} is watching "{}".'.format(self.name, movie))
-        
