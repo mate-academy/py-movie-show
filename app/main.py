@@ -12,13 +12,14 @@ def cinema_visit(
 ) -> None:
     list_of_customers = []
     new_bar = CinemaBar()
-    for i in range(len(customers)):
+    for customer in customers:
         list_of_customers.append(Customer(
-            name=customers[i]["name"],
-            food=customers[i]["food"])
+            name=customer["name"],
+            food=customer["food"])
         )
-        new_bar.sell_product(product=customers[i]["food"],
-                             customer=list_of_customers[i])
+    for instances in list_of_customers:
+        new_bar.sell_product(product=instances.food,
+                             customer=instances)
     hall = CinemaHall(number=hall_number)
     clean = Cleaner(name=cleaner)
     hall.movie_session(
