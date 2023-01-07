@@ -6,5 +6,5 @@ class Customer:
     def __repr__(self) -> str:
         return self.name
 
-    def watch_movie(self, movie: str) -> callable:
-        print(f'{self.name} is watching "{movie}".')
+    def watch_movie(self, movie: str) -> None:
+        print(f'{self} is watching "{movie}".')
