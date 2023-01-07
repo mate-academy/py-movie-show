@@ -1,24 +1,27 @@
+from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
+
+
 class CinemaHall:
-    def __init__(self, number_of_hall: int) -> None:
-        self.number = number_of_hall
+    """Class describes actions during the movie session"""
+
+    def __init__(self, number: int) -> None:
+        self.number = number
 
     def movie_session(
             self,
             movie_name: str,
-            customers: list,
-            cleaning_stuff: object
+            customers: list | Customer,
+            cleaning_stuff: Cleaner
     ) -> None:
-        print(f'"{movie_name}" started in hall number {self.number}')
+        """
+        Method prints about movie start,
+        calls customers method "watch_movie",
+        prints about movie end,
+        calls cleaner method "clean_hall"
+        """
+        print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
             customer.watch_movie(movie_name)
-        print(f'"{movie_name}" ended')
+        print(f'"{movie_name}" ended.')
         cleaning_stuff.clean_hall(self.number)
-
-
-
-
-# "Madagascar" started in hall number 5.
-# Bob is watching "Madagascar".
-# Alex is watching "Madagascar".
-# "Madagascar" ended.
-# Cleaner Anna is cleaning hall number 5.
