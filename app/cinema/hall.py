@@ -1,3 +1,5 @@
+from typing import List
+
 from app.people.cinema_staff import Cleaner
 
 
@@ -10,7 +12,7 @@ class CinemaHall:
             movie_name: str,
             customers: list,
             cleaning_staff: Cleaner
-    ) -> None:
+    ) -> List:
         print(
             '"{}" started in hall number {}.'.format(
                 movie_name,

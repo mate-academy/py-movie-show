@@ -1,3 +1,5 @@
+from typing import List
+
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
@@ -8,7 +10,7 @@ def cinema_visit(
         customers: list,
         hall_number: int,
         cleaner: str,
-        movie: str) -> None:
+        movie: str) -> List:
 
     customer_class_obj_list = []
     for customer in customers:
