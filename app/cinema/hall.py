@@ -11,7 +11,7 @@ class CinemaHall:
     def movie_session(
             self,
             movie_name: str,
-            customers: list | Customer,
+            customers: list[Customer],
             cleaning_stuff: Cleaner
     ) -> None:
         """
