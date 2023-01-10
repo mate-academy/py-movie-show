@@ -1,6 +1,5 @@
-from typing import List
-
 from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
 
 
 class CinemaHall:
@@ -10,9 +9,9 @@ class CinemaHall:
     def movie_session(
             self,
             movie_name: str,
-            customers: list,
+            customers: list[Customer],
             cleaning_staff: Cleaner
-    ) -> List:
+    ) -> None:
         print(
             '"{}" started in hall number {}.'.format(
                 movie_name,
