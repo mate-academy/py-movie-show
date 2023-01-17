@@ -11,19 +11,19 @@ def cinema_visit(
         movie: str
 ) -> None:
     customers_list = []
-    for people in customers:
+    for person in customers:
         customers_list.append(Customer(
-            name=people["name"],
-            food=people["food"]
+            name=person["name"],
+            food=person["food"]
         ))
 
-    for cust in customers_list:
-        CinemaBar.sell_product(product=cust.food, customer=cust)
+    bar_of_cinema = CinemaBar()
+    for customer in customers_list:
+        bar_of_cinema.sell_product(product=customer.food, customer=customer)
 
     clean_staff = Cleaner(name=cleaner)
     new_hall = CinemaHall(number=hall_number)
-    CinemaHall.movie_session(
-        self=new_hall,
+    new_hall.movie_session(
         movie_name=movie,
         customers=customers_list,
         cleaning_staff=clean_staff
