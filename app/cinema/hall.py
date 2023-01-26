@@ -1,5 +1,3 @@
-from typing import Union
-
 from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
@@ -13,7 +11,7 @@ class CinemaHall:
         movie_name: str,
         customers: list[Customer],
         cleaning_staff: Cleaner
-    ) -> Union:
+    ) -> None:
 
         print(f'"{movie_name}" started in hall number {self.number}.')
 
