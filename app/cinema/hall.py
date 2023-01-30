@@ -9,6 +9,6 @@ class CinemaHall:
         cleaning_staff: str
     ) -> str:
         print(f'"{movie_name}" started in hall number {self.number}.')
-        [customer.watch_movie(movie_name) for customer in customers]
+        list(map(lambda customer: customer.watch_movie(movie_name), customers))
         print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
