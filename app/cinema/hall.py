@@ -3,7 +3,6 @@ from app.people.customer import Customer
 
 
 class CinemaHall:
-
     def __init__(self, number: int) -> None:
         self.number = number
 
@@ -13,7 +12,6 @@ class CinemaHall:
             customers: list[Customer],
             cleaning_staff: Cleaner
     ) -> None:
-
         print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
             customer.watch_movie(movie_name)
