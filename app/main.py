@@ -18,8 +18,8 @@ def cinema_visit(
                 food=customer.get("food")
             )
         )
-    hall = CinemaHall(hall_number)
-    bar = CinemaBar()
+    hall: CinemaHall = CinemaHall(hall_number)
+    bar: CinemaBar = CinemaBar()
 
     for customer_instance in customers_ob:
         bar.sell_product(customer_instance, customer_instance.food)
