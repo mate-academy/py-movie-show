@@ -19,10 +19,10 @@ def cinema_visit(
             )
         )
     hall: CinemaHall = CinemaHall(hall_number)
-    bar: CinemaBar = CinemaBar()
+    bar_instance: CinemaBar = CinemaBar()
 
     for customer_instance in customers_ob:
-        bar.sell_product(customer_instance, customer_instance.food)
+        bar_instance.sell_product(customer_instance, customer_instance.food)
 
     cleaner_instance = Cleaner(cleaner)
 
