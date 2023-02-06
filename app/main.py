@@ -13,7 +13,6 @@ def cinema_visit(customers: list,
                       for customer_info in customers]
 
     bar_sell = CinemaBar()
-
     [bar_sell.sell_product(customer_info, customer_info.food)
      for customer_info in customers_list]
 
