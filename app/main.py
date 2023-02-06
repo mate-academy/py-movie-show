@@ -12,7 +12,9 @@ def cinema_visit(customers: list,
     customers_list = [Customer(customer_info["name"], customer_info["food"])
                       for customer_info in customers]
 
-    [CinemaBar.sell_product(customer_info, customer_info.food)
+    bar_sell = CinemaBar()
+
+    [bar_sell.sell_product(customer_info, customer_info.food)
      for customer_info in customers_list]
 
     cinema_hall = CinemaHall(hall_number)
