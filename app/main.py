@@ -18,12 +18,12 @@ def cinema_visit(
     cinema_bar = CinemaBar()
 
     for customer in customers:
-        customers_instances.append(
-            Customer(customer.get("name"), customer.get("food"))
+        customer_inst = Customer(customer.get("name"), customer.get("food"))
+        customers_instances.append(customer_inst)
+        cinema_bar.sell_product(
+            customer=customer_inst,
+            product=customer["food"]
         )
-
-    for customer in customers_instances:
-        cinema_bar.sell_product(customer=customer, product=customer.food)
 
     hall.movie_session(
         movie_name=movie,
