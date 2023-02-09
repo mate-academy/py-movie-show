@@ -10,7 +10,6 @@ def cinema_visit(
     clean_worker = Cleaner(cleaner)
     cinema_hall = CinemaHall(hall_number)
     cinema_bar = CinemaBar()
-    customers_list = []
     customers_list = [
         Customer(name=customer.get("name"), food=customer.get("food"))
         for customer in customers
