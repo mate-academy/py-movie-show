@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
 
 
 class CinemaHall:
@@ -6,11 +9,11 @@ class CinemaHall:
         self.number = number
 
     def movie_session(self, movie: str,
-                      customers: list,
+                      customers: list[Customer],
                       cleaning_staff: Cleaner
                       ) -> None:
         print(f'"{movie}" started in hall number {self.number}.')
         for person in customers:
             person.watch_movie(movie)
         print(f'"{movie}" ended.')
-        Cleaner(cleaning_staff.name).clean_hall(self.number)
+        cleaning_staff.clean_hall(self.number)

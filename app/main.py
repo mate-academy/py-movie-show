@@ -12,8 +12,7 @@ def cinema_visit(customers: list,
     clients = []
     for person in customers:
         clients.append(Customer(person["name"], person["food"]))
-    for client in clients:
-        CinemaBar.sell_product(client.food, client)
+        CinemaBar.sell_product(person["food"], clients[-1])
 
     cleaner_staff = Cleaner(cleaner)
     CinemaHall(hall_number).movie_session(movie=movie,
