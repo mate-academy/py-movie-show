@@ -7,7 +7,7 @@ from app.people.customer import Customer
 def cinema_visit(
     customers: list[dict], hall_number: int, cleaner: str, movie: str
 ) -> None:
-    customers_l = [
+    customer_list = [
         Customer(customer["name"], customer["food"]) for customer in customers
     ]
 
@@ -15,7 +15,7 @@ def cinema_visit(
     cinema_bar = CinemaBar()
     cleaner = Cleaner(cleaner)
 
-    for customer in customers_l:
+    for customer in customer_list:
         cinema_bar.sell_product(customer=customer, product=customer.food)
 
-    cinema_hall.movie_session(movie, customers_l, cleaner)
+    cinema_hall.movie_session(movie, customer_list, cleaner)
