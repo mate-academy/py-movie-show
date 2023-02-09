@@ -1,4 +1,4 @@
-from typing import Any
+from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
@@ -10,7 +10,7 @@ class CinemaHall:
             self,
             movie_name: str,
             customers: list,
-            cleaning_staff: Any
+            cleaning_staff: Cleaner
     ) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
         for watcher in customers:
