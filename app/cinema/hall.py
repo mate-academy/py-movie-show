@@ -14,8 +14,8 @@ class CinemaHall:
 
         print(f'"{movie_name}" started in hall number {self.number}.')
 
-        for single_customer in range(len(customer)):
-            customer[single_customer].watch_movie(movie_name)
+        for single_customer in customer:
+            single_customer.watch_movie(movie_name)
 
         print(f'"{movie_name}" ended.')
 
