@@ -19,8 +19,7 @@ def cinema_visit(
     inst_cleaner = Cleaner(cleaner)
     inst_cinema_bar = CinemaBar()
 
-    for person in customers:
-        inst_customer = Customer(person["name"], person["food"])
-        inst_cinema_bar.sell_product(person["food"], inst_customer)
+    for person in ls_inst_customers:
+        inst_cinema_bar.sell_product(person.food, person)
 
     inst_cinema.movie_session(movie, ls_inst_customers, inst_cleaner)
