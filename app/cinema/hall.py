@@ -10,8 +10,7 @@ class CinemaHall:
 
     def movie_session(self, movie: str,
                       customers: list[Customer],
-                      cleaning_staff: Cleaner
-                      ) -> None:
+                      cleaning_staff: Cleaner) -> None:
         print(f'"{movie}" started in hall number {self.number}.')
         for person in customers:
             person.watch_movie(movie)
