@@ -4,12 +4,10 @@ from app.cinema.hall import CinemaHall
 from app.cinema.bar import CinemaBar
 
 
-def cinema_visit(
-        customers: list,
-        hall_number: int,
-        cleaner: str,
-        movie: str) -> None:
-
+def cinema_visit(customers: list,
+                 hall_number: int,
+                 cleaner: str,
+                 movie: str) -> None:
     list_visitor = []
     cinema_bar = CinemaBar()
     cimena_hall = CinemaHall(hall_number)
