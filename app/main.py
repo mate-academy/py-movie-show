@@ -21,8 +21,10 @@ def cinema_visit(
         customer_inst.append(person_obj)
 
     cleaner_inst = Cleaner(cleaner)
+    cinema_bar = CinemaBar()
+    cinema_hall = CinemaHall(hall_number)
 
     for customer in customer_inst:
-        CinemaBar.sell_product(customer, customer.food)
+        cinema_bar.sell_product(customer, customer.food)
 
-    CinemaHall(hall_number).movie_session(movie, customer_inst, cleaner_inst)
+    cinema_hall.movie_session(movie, customer_inst, cleaner_inst)
