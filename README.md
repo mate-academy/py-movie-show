@@ -25,7 +25,7 @@ package create modules:
 
    - `hall.py` - inside this module create `CinemaHall`
    class that describes actions during the movie session. Its
-   constructor takes and stores `number` - number of the hall
+   `__init__` method takes and stores `number` - number of the hall
    in cinema.
    This class should have only one method `movie_session`, that
    takes `movie_name`, `customers` - list of a customers
@@ -36,7 +36,7 @@ package create modules:
 2. In directory `app` create package `people`. In this package
    create modules:
    - `customer.py` - inside this module create `Customer` class,
-   its constructor takes and stores `name`, `food` - food that 
+   its `__init__` method takes and stores `name`, `food` - food that 
    customer wants to buy in cinema bar. 
    This class should have only one method `watch_movie`, this 
    method takes `movie` and prints what movie customer is watching.
@@ -48,7 +48,7 @@ package create modules:
    ```
    
    - `cinema_staff` - inside this module create `Cleaner` class,
-   its constructor takes and stores `name`. 
+   its `__init__` method takes and stores `name`. 
    This class should have only one method `clean_hall`, this method
    takes `hall_number` - number of hall that cleaner have to clean and
    prints that cleaner is cleaning that hall.
