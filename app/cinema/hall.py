@@ -5,20 +5,18 @@ from app.people.customer import Customer
 
 
 class CinemaHall:
-    # halls = []
 
     def __init__(self, number: int) -> None:
         self.number = number
-        # CinemaHall.halls.append(number)
-        # self.__class__.append(self.number)
-        # self.__class__.halls.append(number)
 
     def movie_session(self,
                       movie_name: str,
                       customers: List[Customer],
                       cleaning_staff: Cleaner) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
+
         for customer in customers:
             customer.watch_movie(movie_name)
+
         print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
