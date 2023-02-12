@@ -1,6 +1,6 @@
+from app.cinema.bar import CinemaBar
 from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
-from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 
 
@@ -17,4 +17,3 @@ def cinema_visit(customers: list,
     for customer in customer_list:
         cinema_bar.sell_product(customer.food, customer)
     cinema_hall.movie_session(movie, customer_list, cleaner)
-    pass
