@@ -7,7 +7,8 @@ from app.cinema.hall import CinemaHall
 def cinema_visit(customers: list,
                  hall_number: int,
                  cleaner: str,
-                 movie: str) -> None:
+                 movie: str
+                 ) -> None:
     res_customers = []
     for customer in customers:
         res_customers.append(Customer(name=customer["name"],
