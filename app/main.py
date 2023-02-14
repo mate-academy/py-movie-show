@@ -5,14 +5,15 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
-        customers: list,
+        customers: list[Customer],
         hall_number: int,
         cleaner: str,
         movie: str
 ) -> None:
-    customers_list = \
-        [Customer(name=customer["name"], food=customer["food"])
-         for customer in customers]
+    customers_list = [
+        Customer(name=customer["name"], food=customer["food"])
+        for customer in customers
+    ]
     cinema_bar = CinemaBar()
     for customer in customers_list:
         cinema_bar.sell_product(customer.food, customer)
