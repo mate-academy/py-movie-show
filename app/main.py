@@ -16,11 +16,13 @@ def cinema_visit(
     for customer in customers:
         all_customers.append(Customer(
             name=customer["name"],
-            food=customer["food"]))
+            food=customer["food"]
+        ))
     for person in all_customers:
         CinemaBar.sell_product(
             customer=person,
-            product=person.food)
+            product=person.food
+        )
     CinemaHall.movie_session(self=hall,
                              movie_name=movie,
                              customers=all_customers,

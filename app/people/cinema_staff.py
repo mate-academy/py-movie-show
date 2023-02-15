@@ -1,5 +1,4 @@
 class Cleaner:
-    staff = []
 
     def __init__(self, name: str) -> None:
         self.name = name
