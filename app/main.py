@@ -20,8 +20,6 @@ def cinema_visit(
             customer=person,
             product=person.food
         )
-    CinemaHall.movie_session(self=hall,
-                             movie_name=movie,
-                             customers=all_customers,
-                             cleaning_staff=staff)
-    pass
+    hall.movie_session(movie_name=movie,
+                       customers=all_customers,
+                       cleaning_staff=staff)
