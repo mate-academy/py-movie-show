@@ -9,7 +9,7 @@ def cinema_visit(customers: list[dict],
                  cleaner: str,
                  movie: str
                  ) -> None:
-    customer_list = [Customer(customer["name"], customer["food"])
+    customer_list = [Customer(customer.get("name"), customer.get("food"))
                      for customer in customers]
     cinema_bar = CinemaBar()
     cinema_hall = CinemaHall(hall_number)
