@@ -5,13 +5,13 @@ from app.cinema.bar import CinemaBar
 
 
 def cinema_visit(
-        customers: list[Customer],
+        customers: list,
         hall_number: int,
         cleaning_staff: str,
         movie_name: str) -> None:
 
     list_customers = [
-        Customer(customer.get("name"), customer.get("food"))
+        Customer(customer["name"], customer["food"])
         for customer in customers
     ]
 
