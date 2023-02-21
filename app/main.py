@@ -5,7 +5,7 @@ from app.cinema.bar import CinemaBar
 
 
 def cinema_visit(
-        customers: list,
+        customers: list[Customer],
         hall_number: int,
         cleaning_staff: str,
         movie_name: str) -> None:
