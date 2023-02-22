@@ -1,8 +1,9 @@
 from __future__ import annotations
-from app.people.customer import Customer
-from app.people.cinema_staff import Cleaner
+
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
+from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
 
 
 def cinema_visit(
@@ -16,6 +17,6 @@ def cinema_visit(
     bar_service = CinemaBar()
     current_hall = CinemaHall(hall_number)
     clean_serve = Cleaner(cleaner)
-    for one in viewers:
-        bar_service.sell_product(one, one.food)
+    for viewer in viewers:
+        bar_service.sell_product(viewer, viewer.food)
     current_hall.movie_session(movie, viewers, clean_serve)
