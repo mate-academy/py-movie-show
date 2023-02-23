@@ -7,9 +7,10 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
-        customers: list,
+        customers: list[Customer],
         hall_number: int,
-        cleaner: str, movie: str
+        cleaner: str,
+        movie: str
 ) -> None:
     viewers = []
     for customer in customers:
