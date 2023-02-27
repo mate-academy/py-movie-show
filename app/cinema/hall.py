@@ -12,10 +12,11 @@ class CinemaHall:
                       customers: list[Customer],
                       cleaning_staff: str) -> None:
         print(f""""{movie_name}" started in hall number {self.number}.""")
-        for customer in customers:
-            if isinstance(customer, Customer):
-                Customer(customer.name, customer.food).watch_movie(movie_name)
+        for person in customers:
+            if isinstance(person, Customer):
+                Customer(person.name, person.food).watch_movie(movie_name)
             else:
-                Customer(customer["name"], customer["food"]).watch_movie(movie_name)
+                Customer(person["name"],
+                         person["food"]).watch_movie(movie_name)
         print(f""""{movie_name}" ended.""")
         Cleaner.clean_hall(cleaning_staff, self.number)
