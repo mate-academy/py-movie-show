@@ -6,7 +6,7 @@ from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str,
+def cinema_visit(customers: list[dict], hall_number: int, cleaner: str,
                  movie: str) -> None:
     temp_list = []
     for one_customer in customers:
