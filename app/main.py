@@ -24,4 +24,4 @@ customers = [
 hall_number = 5
 cleaner_name = "Anna"
 movie = "Madagascar"
-cinema_visit(customers=customers, hall_number=5, cleaner="Anna", movie="Mada")
+cinema_visit(customers=customers, hall_number=5, cleaner="Anna", movie="Madagascar")
