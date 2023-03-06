@@ -4,12 +4,12 @@ from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
 
-def cinema_visit(customers: list,
+def cinema_visit(customers: list[Customer],
                  hall_number: int,
                  cleaner: str,
                  movie: str) -> None:
     customer_list = [
-        Customer(customer["name"], customer["food"])
+        Customer(customer.get("name"), customer.get("food"))
         for customer in customers
     ]
     cinema_hall = CinemaHall(hall_number)

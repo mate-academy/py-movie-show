@@ -5,3 +5,6 @@ class Customer:
 
     def watch_movie(self, movie: str) -> None:
         print(f'{self.name} is watching \"{movie}\".')
+
+    def get(self, key: str) -> getattr:
+        return getattr(self, key)
