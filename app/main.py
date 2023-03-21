@@ -4,17 +4,19 @@ from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
 
-def cinema_visit(customers: list,
-                 hall_number: int,
-                 cleaner: str,
-                 movie: str
-                 ) -> None:
-
-    list_of_the_customers = [Customer(
-        name=customer_dict["name"],
-        food=customer_dict["food"]
-    )
-        for customer_dict in customers]
+def cinema_visit(
+        customers: list[dict],
+        hall_number: int,
+        cleaner: str,
+        movie: str
+) -> None:
+    list_of_the_customers = [
+        Customer(
+            name=customer_dict["name"],
+            food=customer_dict["food"]
+        )
+        for customer_dict in customers
+    ]
     current_bar = CinemaBar()
     for customer_instance in list_of_the_customers:
         current_bar.sell_product(
@@ -28,14 +30,3 @@ def cinema_visit(customers: list,
         customers=list_of_the_customers,
         cleaning_staff=current_cleaner
     )
-
-
-customers = [
-    {"name": "Susan", "food": "Pepsi"},
-    {"name": "Michael", "food": "Coca-cola"},
-    {"name": "Monica", "food": "popcorn"}
-]
-hall_number = 3
-cleaner_name = "Vasiliy"
-movie = "Interstellar"
-cinema_visit(customers, hall_number, cleaner_name, movie)
