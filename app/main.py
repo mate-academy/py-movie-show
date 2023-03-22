@@ -1,30 +1,21 @@
-from cinema import bar, hall
-from people import customer, cinema_staff
+from app.cinema.bar import CinemaBar
+from app.cinema.hall import CinemaHall
+from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
 
 
-def cinema_visit(customers: list, hall_number: int,
-                 cleaner: str, movie: str):
-    new_customer = None
-    for dict in customers:
-        new_customer = customer.Customer(dict["name"], dict["food"])
-        bar.CinemaBar.sell_product(new_customer.name, new_customer.food)
-    hall.CinemaHall.movie_session(hall_number)
-    cinema_staff.Cleaner(cleaner)
+def cinema_visit(customers: list[dict], hall_number: int,
+                 cleaner: str, movie: str) -> None:
+    visitors = []
+    for customer_and_food in customers:
+        new_customer = Customer(
+            customer_and_food["name"],
+            customer_and_food["food"]
+        )
 
+        visitors.append(new_customer)
+        CinemaBar.sell_product(new_customer.food, new_customer)
 
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-hall_number = 5
-cleaner_name = "Anna"
-movie = "Madagascar"
-cinema_visit(customers=customers,
-             hall_number=5, cleaner="Anna", movie="Madagascar")
-# Cinema bar sold Coca-cola to Bob.
-# Cinema bar sold popcorn to Alex.
-# "Madagascar" started in hall number 5.
-# Bob is watching "Madagascar".
-# Alex is watching "Madagascar".
-# "Madagascar" ended.
-# Cleaner Anna is cleaning hall number 5.
+    current_session = CinemaHall(hall_number)
+    cleaner_master = Cleaner(cleaner)
+    current_session.movie_session(movie, visitors, cleaner_master)
