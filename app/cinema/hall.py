@@ -9,8 +9,8 @@ class CinemaHall:
                       cleaning_staff: str) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
-            print(f'{Customer(customer.name, customer.food)} '
-                  f'is watching "{movie_name}".')
+            print(f'{Customer(customer.name, customer.food)} is watching '
+                  f'"{movie_name}".')
         print(f'"{movie_name}" ended.')
         print(f"Cleaner {cleaning_staff} is cleaning hall number "
               f"{self.number}.")
