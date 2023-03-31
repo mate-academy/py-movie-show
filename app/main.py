@@ -1,3 +1,4 @@
+import subprocess
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
@@ -10,16 +11,15 @@ def cinema_visit(
         cleaner: str,
         movie: str
 ) -> None:
-    list_of_customers = []
+    customers_objs = [Customer(c["name"], c["food"]) for c in customers]
 
-    for customer in customers:
-        list_of_customers.append(Customer(customer["name"], customer["food"]))
-
-    bar = CinemaBar()
+    cinema_bar = CinemaBar()
     hall = CinemaHall(hall_number)
     cleaner = Cleaner(cleaner)
 
-    for person in list_of_customers:
-        bar.sell_product(person.food, person)
+    for person in customers_objs:
+        cinema_bar.sell_product(person.food, person)
 
-    hall.movie_session(movie, list_of_customers, cleaner)
+    hall.movie_session(movie, customers_objs, cleaner)
+
+    subprocess.run(["git", "log"])
