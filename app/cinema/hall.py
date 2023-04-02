@@ -1,24 +1,24 @@
-from app.people.customer import Customer
+from typing import Any
+
 from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
-    def __init__(self, number):
+    def __init__(self, number: int) -> None:
         self.number = number
 
-    def movie_session(self, movie_name: str, customers,
-                      cleaning_staff):
-        print(f'"{movie_name}" started in hall {self.number}.')
-        Customer.watch_movie(customers, movie_name)
-        print(f'"{movie_name}" ended')
-        Cleaner.clean_hall(cleaning_staff, self.number)
+    def movie_session(self, movie_name: str, customers: Any,
+                      cleaning_staff: Cleaner | str) -> None:
 
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
+        for customer in customers:
+            customer.watch_movie(movie_name)
+        print(f'"{movie_name}" ended.')
 
-# Cinema bar sold Coca-cola to Bob.
-# Cinema bar sold popcorn to Alex.
-# "Madagascar" started in hall number 5.
-# Bob is watching "Madagascar".
-# Alex is watching "Madagascar".
-# "Madagascar" ended.
-# Cleaner Anna is cleaning hall number 5.
+        if not isinstance(cleaning_staff, Cleaner):
+            clean = Cleaner(cleaning_staff)
+            clean.clean_hall(self.number)
+        else:
+            clean = Cleaner(cleaning_staff.name)
+            clean.clean_hall(self.number)
