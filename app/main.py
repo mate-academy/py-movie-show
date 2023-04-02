@@ -6,8 +6,9 @@ from app.people.cinema_staff import Cleaner
 
 def cinema_visit(customers: list, hall_number: int,
                  cleaner: str, movie: str) -> None:
+    cinema_bar = CinemaBar()
     for man in customers:
-        CinemaBar.sell_product(Customer(man["name"], man["food"]),
+        cinema_bar.sell_product(Customer(man["name"], man["food"]),
                                man["food"])
     hall = CinemaHall(hall_number)
     clean = Cleaner(cleaner)
