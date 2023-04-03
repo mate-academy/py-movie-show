@@ -11,10 +11,7 @@ class CinemaHall:
             customer: list,
             cleaning_staff: Cleaner
     ) -> None:
-        print(
-            "\"" + movie_name + "\" started in hall number "
-            + str(self.number) + "."
-        )
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
         for customer_name in customer:
             customer_name.watch_movie(movie_name)
