@@ -10,7 +10,7 @@ def cinema_visit(customers: list[dict], hall_number: int, cleaner: str,
     for customer in customers:
         customer_instance = (Customer(customer["name"], customer["food"]))
         customer_objs.append(customer_instance)
-        CinemaBar.sell_product(customer_objs[-1].food, customer_objs[-1])
+        CinemaBar.sell_product(customer_objs[-1].food, customer_instance)
 
     cleaner = Cleaner(cleaner)
     movie_start = CinemaHall(hall_number)
