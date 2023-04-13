@@ -26,5 +26,3 @@ def cinema_visit(
         cleaning_staff=Cleaner(cleaner),
         customers=customer_instances
     )
-
-    Cleaner(cleaner)
