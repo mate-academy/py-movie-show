@@ -3,7 +3,7 @@ import io
 
 from contextlib import redirect_stdout
 
-from app.cinema.Bar import CinemaBar
+from app.cinema.bar import CinemaBar
 from app.people.customer import Customer
 
 
@@ -15,7 +15,7 @@ def test_cinema_bar_sell_product():
     f = io.StringIO()
 
     with redirect_stdout(f):
-        sell_product(customer=customer, product=customer.food)
+        cb.sell_product(customer=customer, product=customer.food)
 
     out = f.getvalue()
     output = "Cinema bar sold Sprite to Alice.\n"

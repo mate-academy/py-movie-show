@@ -20,7 +20,6 @@ from app.main import cinema_visit
             'Bob is watching "Tenet".\n'
             '"Tenet" ended.\n'
             'Cleaner Anna is cleaning hall number 1.\n'
-
         ),
         (
             [
