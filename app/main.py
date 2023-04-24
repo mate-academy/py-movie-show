@@ -13,6 +13,6 @@ def cinema_visit(
     for person in customers:
         person = Customer(person["name"], person["food"])
         people.append(person)
-        print(CinemaBar.sell_product(person.food, person))
+        CinemaBar.sell_product(person.food, person)
 
     number.movie_session(movie, people, staff)
