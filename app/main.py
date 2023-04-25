@@ -14,12 +14,12 @@ def cinema_visit(customers: list,
         name = customer["name"]
         food = customer["food"]
 
-        tempr_instance = Customer(
+        customer_instance = Customer(
             name=name,
             food=food
         )
-        CinemaBar.sell_product(product=food, customer=tempr_instance)
-        customer_instances.append(tempr_instance)
+        CinemaBar.sell_product(product=food, customer=customer_instance)
+        customer_instances.append(customer_instance)
 
     the_cleaner = Cleaner(name=cleaner)
     hall = CinemaHall(number=hall_number)
