@@ -14,6 +14,6 @@ class CinemaHall:
 
         print(f'"{movie_name}" started in hall number {self.number}.')
         for person in customers:
-            Customer.watch_movie(person, movie_name)
+            person.watch_movie(movie_name)
         print(f'"{movie_name}" ended.')
-        Cleaner.clean_hall(cleaning_staff, self.number)
+        cleaning_staff.clean_hall(self.number)
