@@ -16,8 +16,8 @@ def cinema_visit(
         customers_objs.append(customer_obj)
 
         CinemaBar.sell_product(
-        customer=customer_obj,
-        product=customer_obj.food
+            customer=customer_obj,
+            product=customer_obj.food
         )
 
     cleaner = Cleaner(cleaner)
