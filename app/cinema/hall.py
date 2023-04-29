@@ -8,17 +8,14 @@ class CinemaHall:
 
     def movie_session(
             self,
-            movie_name: str,
-            customers: list[Customer],
-            cleaning_staff: str) -> None:
-        print(f'\"{movie_name}\" started in hall number {self.number}.')
+            customers: list[dict],
+            cleaner: str,
+            movie_name: str) -> None:
+        print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
-            if isinstance(customer, Customer):
-                customer.watch_movie(movie_name)
-            else:
-                Customer(
-                    customer["name"],
-                    customer["food"]
-                ).watch_movie(movie_name)
-        print(f'\"{movie_name}\" ended.')
-        Cleaner(cleaning_staff).clean_hall(self.number)
+            Customer(
+                customer["name"],
+                customer["food"]
+            ).watch_movie(movie_name)
+        print(f'"{movie_name}" ended.')
+        Cleaner(cleaner).clean_hall(self.number)
