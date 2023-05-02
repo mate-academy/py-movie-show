@@ -29,28 +29,3 @@ def cinema_visit(
 
     # Start movie session
     hall.movie_session(movie_name, customers_instances, cleaner)
-
-    # Clean cinema hall
-    # cleaner.clean_hall(hall_number)
-
-
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-hall_number = 5
-cleaner_name = "Anna"
-movie = "Madagascar"
-print(cinema_visit(
-    customers=customers,
-    hall_number=hall_number,
-    cleaning_staff=cleaner_name,
-    movie_name=movie)
-)
-# Cinema bar sold Coca-cola to Bob.
-# Cinema bar sold popcorn to Alex.
-# "Madagascar" started in hall number 5.
-# Bob is watching "Madagascar".
-# Alex is watching "Madagascar".
-# "Madagascar" ended.
-# Cleaner Anna is cleaning hall number 5.
