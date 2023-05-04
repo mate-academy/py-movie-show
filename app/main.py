@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from app.cinema.hall import CinemaHall
 from app.cinema.bar import CinemaBar
 from app.people.customer import Customer
