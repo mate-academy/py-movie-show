@@ -1,7 +1,4 @@
-import sys
-sys.path.append("D:/python_work/Mate Academy/py-cinema-visit/app/people")
-
-from customer import Customer
+from app.people.customer import Customer
 
 
 class CinemaBar:
