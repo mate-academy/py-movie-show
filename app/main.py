@@ -1,7 +1,3 @@
-import sys
-sys.path.append("D:/python_work/Mate Academy/py-cinema-visit/")
-
-
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
