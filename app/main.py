@@ -11,7 +11,6 @@ def cinema_visit(
         movie: str
 ) -> None:
     people = []
-
     cinema_hall = CinemaHall(hall_number)
     cinema_bar = CinemaBar()
     cinema_cleaner = Cleaner(cleaner)
