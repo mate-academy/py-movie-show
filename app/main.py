@@ -4,8 +4,12 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: str, hall_number: int,
-                 cleaning_staff: str, movie_name: str) -> None:
+def cinema_visit(
+        customers: str,
+        hall_number: int,
+        cleaning_staff: str,
+        movie_name: str
+) -> None:
     all_customers = []
 
     cinema_bar = CinemaBar()
