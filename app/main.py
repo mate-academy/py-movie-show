@@ -1,3 +1,6 @@
+from __future__ import annotations
+from typing import List
+
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
@@ -5,7 +8,7 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
-        customers: list,
+        customers: List[Customer],
         hall_number: int,
         cleaner: str,
         movie: str) -> None:
@@ -13,12 +16,9 @@ def cinema_visit(
     cinema_hall = CinemaHall(number=hall_number)
     cleaner = Cleaner(name=cleaner)
 
-    initialized_customers = []
+    initialized_customers = [Customer(name=customer["name"], food=customer["food"]) for customer in customers]
 
-    for customer in customers:
-        customer = Customer(name=customer["name"], food=customer["food"])
-        initialized_customers.append(customer)
-
+    
     for customer in initialized_customers:
         cinema_bar.sell_product(customer=customer, product=customer.food)
 
