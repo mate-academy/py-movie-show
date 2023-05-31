@@ -17,17 +17,11 @@ def cinema_visit(
         food = person_data["food"]
         person = Customer(name=name, food=food)
         list_of_customers.append(person)
-
-    for person in list_of_customers:
-        CinemaBar.sell_product(
-            product=person.food,
-            customer=person
-        )
+        CinemaBar.sell_product(product=person.food, customer=person)
 
     cinema_hall = CinemaHall(number=hall_number)
     current_cleaner = Cleaner(name=cleaner)
-    CinemaHall.movie_session(
-        self=cinema_hall,
+    cinema_hall.movie_session(
         movie_name=movie,
         customers=list_of_customers,
         cleaning_staff=current_cleaner
