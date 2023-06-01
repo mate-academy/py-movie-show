@@ -7,12 +7,11 @@ from app.people.cinema_staff import Cleaner
 def cinema_visit(customers: list[dict],
                  hall_number: int,
                  cleaner: str,
-                 movie: str
-                 ) -> None:
+                 movie: str) -> None:
     cinema_bar = CinemaBar()
     cinema_hall = CinemaHall(number=hall_number)
     customer_instance = [Customer(name=customer_data["name"],
-                         food=customer_data["food"])
+                                  food=customer_data["food"])
                          for customer_data in customers]
     cleaner_instance = Cleaner(name=cleaner)
 
