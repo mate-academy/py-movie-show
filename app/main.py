@@ -8,7 +8,9 @@ def cinema_visit(
         customers: list,
         hall_number: int,
         cleaning_stuff: str,
-        movie_name: str) -> Customer:
+        movie_name: str
+) -> None:
+
     customers = [
         Customer(customer["name"], customer["food"])
         for customer in customers
