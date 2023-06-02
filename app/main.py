@@ -12,8 +12,8 @@ def cinema_visit(
 ) -> None:
 
     customers_list = []
-    for cust in customers:
-        customer = Customer(cust.get("name"), cust["food"])
+    for customer in customers:
+        customer = Customer(customer.get("name"), customer["food"])
         customers_list.append(customer)
         CinemaBar.sell_product(customer.food, customer)
 
