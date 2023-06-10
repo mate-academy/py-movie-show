@@ -25,16 +25,3 @@ def cinema_visit(customers: list[dict],
     cinema_hall.movie_session(movie_name=movie_name,
                               customers=customer_instances,
                               cleaning_staff=cleaner_instance)
-
-
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-hall_number = 5
-cleaner_name = "Anna"
-movie = "Madagascar"
-cinema_visit(customers=customers,
-             hall_number=5,
-             cleaner="Anna",
-             movie_name="Madagascar")
