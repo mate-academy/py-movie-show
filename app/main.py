@@ -7,16 +7,13 @@ from app.people.cinema_staff import Cleaner
 def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str)\
         -> None:
 
-    customers_mod = []
-    for elem in customers:
-        temp = Customer(elem["name"], elem["food"])
-        customers_mod.append(temp)
-
     cinema_hall = CinemaHall(hall_number)
     cinema_bar = CinemaBar()
     cleaner = Cleaner(cleaner)
 
-    for client in customers_mod:
-        cinema_bar.sell_product(client.food, client)
+    customers_obj = []
+    for customer in customers:
+        customers_obj.append(Customer(customer["name"], customer["food"]))
+        cinema_bar.sell_product(customers_obj[-1].food, customers_obj[-1])
 
-    cinema_hall.movie_session(movie, customers_mod, cleaner)
+    cinema_hall.movie_session(movie, customers_obj, cleaner)
