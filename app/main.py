@@ -19,9 +19,9 @@ def cinema_visit(
         for customer in customer_instance_list
     ]
 
-    cinemahall_instance = CinemaHall(hall_number)
+    cinema_hall = CinemaHall(hall_number)
     cleaner_instance = Cleaner(cleaner)
 
-    cinemahall_instance.movie_session(
+    cinema_hall.movie_session(
         movie, customer_instance_list, cleaner_instance
     )
