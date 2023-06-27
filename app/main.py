@@ -1,4 +1,4 @@
-from typing import List
+from __future__ import annotations
 
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
@@ -7,7 +7,7 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
-        customers: List[dict],
+        customers: list[dict],
         hall_number: int,
         cleaner: str,
         movie: str
