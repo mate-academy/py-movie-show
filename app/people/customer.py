@@ -1,10 +1,13 @@
+#from app.cinema.hall import CinemaHall
+
+
 class Customer:
-    def __init__(self, name: str, food: str) -> None:
+    def __init__(self, name, food):
         self.name = name
         self.food = food
 
-    def watch_movie(self, movie: str) -> None:
-        print(f'{self.name} is watching \"{movie}\".')
+    def watch_movie(self, movie):
+        print(f"{self.name} is watching \"{movie}\".")
 
 
 if __name__ == "__main__":
