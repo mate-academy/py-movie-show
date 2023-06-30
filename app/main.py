@@ -9,21 +9,16 @@ def cinema_visit(customers: list,
                  cleaner: str,
                  movie: str
                  ) -> None:
+
     list_of_customer = []
+
     for cust in customers:
         customer = Customer(cust["name"], cust["food"])
         list_of_customer.append(customer)
         CinemaBar.sell_product(product=cust["food"], customer=customer)
 
-    if type(cleaner) is Cleaner:
-        CinemaHall(hall_number).movie_session(
-            movie,
-            list_of_customer,
-            cleaner.name
-        )
-    else:
-        CinemaHall(hall_number).movie_session(
-            movie,
-            list_of_customer,
-            cleaner
-        )
+    CinemaHall(hall_number).movie_session(
+        movie,
+        list_of_customer,
+        Cleaner(cleaner)
+    )
