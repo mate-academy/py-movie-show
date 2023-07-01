@@ -15,16 +15,15 @@ def cinema_visit(
     cinema_hall = CinemaHall(number=hall_number)
     cleaning_staff = Cleaner(name=cleaner_name)
 
-    for customer_data in customers:
-        customer = Customer(
-            name=customer_data["name"],
-            food=customer_data["food"]
-        )
+    customer_objects = [Customer(
+        name=customer_data["name"],
+        food=customer_data["food"]) for customer_data in customers]
+
+    for customer in customer_objects:
         cinema_bar.sell_product(customer=customer, product=customer.food)
 
-    cinema_hall.movie_session(movie_name=movie_name,
-                              customers=[
-                                  Customer(**customer)
-                                  for customer in customers
-                              ],
-                              cleaning_staff=cleaning_staff)
+    cinema_hall.movie_session(
+        movie_name=movie_name,
+        customers=customer_objects,
+        cleaning_staff=cleaning_staff
+    )
