@@ -7,7 +7,7 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
-        customers: list,
+        customers: list[Customer],
         hall_number: int,
         cleaner: str,
         movie: str
@@ -19,4 +19,5 @@ def cinema_visit(
     current_cleaner = Cleaner(cleaner)
     hall = CinemaHall(hall_number)
     hall.movie_session(
-        movie, viewers, current_cleaner)
+        movie, viewers, current_cleaner
+    )
