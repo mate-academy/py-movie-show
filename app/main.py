@@ -1,6 +1,3 @@
-from typing import Any
-
-
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
@@ -11,7 +8,7 @@ def cinema_visit(
         customers: list[dict],
         hall_number: int,
         cleaning_staff: str,
-        movie_name: str) -> Any:
+        movie_name: str) -> None:
 
     customers = [Customer(name=customer["name"], food=customer["food"])
                  for customer in customers]
