@@ -11,12 +11,9 @@ class CinemaHall:
                       customers: list[Customer],
                       cleaning_staff: Cleaner
                       ) -> None:
-        print(f'\"{movie_name}\" started in hall number {self.number}.')
-        if type(customers[0]) is dict:
-            for customer in customers:
-                one_customer = Customer(customer.get("name"), customer.get("food"))
-                one_customer.watch_movie(movie_name)
-        else:
-            for customer in customers:
-                customer.watch_movie(movie_name)
+        print(f'"{movie_name}" started in hall number {self.number}.')
+        for customer in customers:
+            customer.watch_movie(movie_name)
         print(f'"{movie_name}" ended.')
+        cleaner = Cleaner(cleaning_staff.name)
+        cleaner.clean_hall(self.number)

@@ -8,21 +8,22 @@ def cinema_visit(customers: list,
                  hall_number: int,
                  cleaner: str,
                  movie: str) -> None:
-    try:
-        for customer in customers:
-            CinemaBar.sell_product(customer=Customer(customer.get("name"),
-                                                     customer.get("food")),
-                                   product=customer.get("food"))
-    except:
-        CinemaBar.sell_product(customer=Customer(customer.name,
-                                                 customer.food),
-                               product=customer.food)
-    cinema_hall_instance = CinemaHall(hall_number)
-    cinema_hall_instance.movie_session(cleaning_staff=cleaner,
-                                       customers=customers,
-                                       movie_name=movie)
+
+    for customer in customers:
+        CinemaBar.sell_product(customer=Customer(customer.get("name"),
+                                                 customer.get("food")),
+                               product=customer.get("food"))
+
     cleaner = Cleaner(cleaner)
-    cleaner.clean_hall(hall_number)
+
+    cinema_hall_instance = CinemaHall(hall_number)
+    customers_new = []
+    for human in customers:
+        customers_new.append(Customer(human.get("name"), human.get("food")))
+    cinema_hall_instance.movie_session(cleaning_staff=cleaner,
+                                       customers=customers_new,
+                                       movie_name=movie)
+
 
 customers = [
     {"name": "Bob", "food": "Coca-cola"},
@@ -31,6 +32,7 @@ customers = [
 hall_number = 5
 cleaner_name = "Anna"
 movie = "Madagascar"
-cinema_visit(customers=customers, hall_number=5, cleaner="Anna", movie="Madagascar")
-
-#t[customers1-5-Anna-Madagascar-Cinema bar sold Coca-cola to Bob.\nCinema bar sold popcorn to Alex.\n"Madagascar" started in hall number 5.\nBob is watching "Madagascar".\nAlex is watching "Madagascar".\n"Madagascar" ended.\nCleaner Anna is cleaning hall number 5.\n]
+cinema_visit(customers=customers,
+             hall_number=5,
+             cleaner="Anna",
+             movie="Madagascar")
