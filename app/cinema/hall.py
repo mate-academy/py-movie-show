@@ -1,16 +1,22 @@
-from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
+
 
 class CinemaHall:
     def __init__(self, number: int) -> None:
         self.number = number
 
-    def movie_session(self, movie_name: str, customers: list, cleaning_stuff=Cleaner) -> None:
-        print(f"'{movie_name}' start")
-        if customers != []:
-            for one_customer in customers:
-                client = Customer(name=one_customer.get("name"), food=one_customer.get("food"))
-                client.watch_movie(movie_name)
-        print(f"'{movie_name}' end")
-        cleaner = Cleaner(cleaning_stuff)
-        cleaner.clean_hall(self.number)
+    def movie_session(self,
+                      movie_name: str,
+                      customers: list[Customer],
+                      cleaning_staff: Cleaner
+                      ) -> None:
+        print(f'\"{movie_name}\" started in hall number {self.number}.')
+        if type(customers[0]) is dict:
+            for customer in customers:
+                one_customer = Customer(customer.get("name"), customer.get("food"))
+                one_customer.watch_movie(movie_name)
+        else:
+            for customer in customers:
+                customer.watch_movie(movie_name)
+        print(f'"{movie_name}" ended.')
