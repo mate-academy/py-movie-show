@@ -10,4 +10,3 @@ class Customer:
                     movie: str
                     ) -> None:
         print(f'{self.name} is watching "{movie}".')
-        
