@@ -5,7 +5,7 @@ class Customer:
                  ) -> None:
         self.name = name
         self.food = food
-                     
+
     def watch_movie(self,
                     movie: str
                     ) -> None:
