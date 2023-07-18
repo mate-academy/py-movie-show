@@ -8,7 +8,9 @@ from app.people.customer import Customer
 def cinema_visit(customers: List[Dict[str, str]],
                  hall_number: int, cleaner: str, movie: str
                  ) -> None:
-    customers_instances = [Customer(**customer_data) for customer_data in customers]
+    customers_instances = [
+        Customer(**customer_data) for customer_data in customers
+    ]
     cinema_bar = CinemaBar()
     for customer in customers_instances:
         cinema_bar.sell_product(customer, customer.food)
