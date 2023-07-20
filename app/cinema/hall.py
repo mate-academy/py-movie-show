@@ -16,11 +16,3 @@ class CinemaHall:
             customer.watch_movie(movie_name)
         print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
-
-# ch = CinemaHall(5)
-# ch.movie_session(movie_name="Madagascar",
-#                  customers=[
-#     Customer(name="Bob", food="popcorn"),
-#     Customer(name="Alex", food="popcorn")],
-#                  cleaning_staff=Cleaner(name="Anna")
-#                  )
