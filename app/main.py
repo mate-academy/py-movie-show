@@ -13,6 +13,6 @@ def cinema_visit(
     cinema_hall = CinemaHall(hall_number)
     cinema_bar = CinemaBar()
     cleaner_staff = Cleaner(cleaner)
-    for object_ in customers_instances:
-        cinema_bar.sell_product(object_.food, object_)
+    for customer in customers_instances:
+        cinema_bar.sell_product(customer.food, customer)
     cinema_hall.movie_session(movie, customers_instances, cleaner_staff)
