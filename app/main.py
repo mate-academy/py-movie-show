@@ -11,7 +11,7 @@ def cinema_visit(
         movie: str
 ) -> None:
     customers_lst = [
-        Customer(customer["name"], customer["food"])
+        Customer(**customer)
         for customer in customers
     ]
 
