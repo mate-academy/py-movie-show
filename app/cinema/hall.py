@@ -1,8 +1,8 @@
-from app.cinema.cinema_staff import Cleaner
+from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
-    def __init__(self, number: int) -> int:
+    def __init__(self, number: int) -> None:
         self.number = number
 
     def movie_session(self, movie_name: str,

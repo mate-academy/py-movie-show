@@ -1,13 +1,18 @@
-from bar import CinemaBar
-from app.cinema.cinema_staff import Cleaner
-from app.cinema.customer import Customer
+from typing import List
+
+
+from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
+from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
 
 
-def cinema_visit(customers: list[dict],
-                 hall_number: int,
-                 cleaner: str,
-                 movie: str) -> None:
+def cinema_visit(
+        customers: list[dict],
+        hall_number: int,
+        cleaner: str,
+        movie: str
+) -> None:
     cinema_bar = CinemaBar()
     cinema_hall = CinemaHall(hall_number)
     cleaner_instance = Cleaner(cleaner)
