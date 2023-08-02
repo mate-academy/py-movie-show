@@ -6,7 +6,7 @@ from app.cinema.hall import CinemaHall
 
 
 def cinema_visit(
-        customers: list,
+        customers: list[dict],
         hall_number: int,
         cleaning_staff: str,
         movie_name: str
@@ -18,6 +18,8 @@ def cinema_visit(
         instances_of_customers.append(instance_of_customer)
     instance_of_session = CinemaHall(hall_number)
     instance_of_cleaner = Cleaner(cleaning_staff)
-    instance_of_session.movie_session(movie_name,
-                                      instances_of_customers,
-                                      instance_of_cleaner)
+    instance_of_session.movie_session(
+        movie_name,
+        instances_of_customers,
+        instance_of_cleaner
+    )
