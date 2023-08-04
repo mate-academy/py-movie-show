@@ -3,29 +3,17 @@ class CinemaHall:
         self.number = number
 
     def movie_session(
-            self, movie_name: str,
+            self,
+            movie_name: str,
             customers: list,
-            cleaning_staff: "Cleaner") -> None:
-        print(f"Movie session in Hall {self.number} is starting "
-              f"with movie '{movie_name}'.")
+            cleaning_staff
+    ) -> None:
+        print(f"\"{movie_name}\" started in"
+              f" hall number {self.number}.")
 
         for customer in customers:
             customer.watch_movie(movie_name)
 
-        print("Movie session has ended.")
+        print(f"\"{movie_name}\" ended.")
 
-        cleaning_staff.clean_hall()
-
-
-class Customer:
-    def __init__(self, name: str) -> None:
-        self.name = name
-
-    def watch_movie(self, movie_name: str) -> None:
-        print(f"{self.name} is watching {movie_name}.")
-
-
-class Cleaner:
-    @staticmethod
-    def clean_hall() -> None:
-        print("Cleaner is cleaning the hall.")
+        cleaning_staff.clean_hall(self.number)

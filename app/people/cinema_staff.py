@@ -1,7 +1,7 @@
 class Cleaner:
-    def __init__(self, name: str) -> None:
+    def __init__(self, name) -> None:
         self.name = name
 
-    def clean_hall(self, hall_number: int) -> None:
-        print(f"Cleaner {self.name} is cleaning hall number "
-              f"{hall_number}.")
+    def clean_hall(self, hall_number) -> None:
+        print(f"Cleaner {self.name} is cleaning "
+              f"hall number {hall_number}.")
