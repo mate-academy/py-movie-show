@@ -5,7 +5,7 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
-    hall_number: int, customers: list[dict], cleaning_staff: str, movie: str
+    customers: list[dict], hall_number: int, cleaning_staff: str, movie: str
 ) -> None:
     customers_class_instances = [
         Customer(person["name"], person["food"]) for person in customers
