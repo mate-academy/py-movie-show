@@ -8,12 +8,12 @@ def cinema_visit(customers: list,
                  hall_number: int,
                  cleaner: str,
                  movie: str) -> None:
-    customers_instance = []
-    for element in customers:
-        customers_instance.append(Customer(
+    customers_instance = [
+        Customer(
             name=element.get("name"),
             food=element.get("food")
-        ))
+        ) for element in customers
+    ]
     hall_instance = CinemaHall(
         number=hall_number
     )
