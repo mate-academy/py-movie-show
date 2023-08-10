@@ -12,12 +12,10 @@ def cinema_visit(
         movie: str
 ) -> None:
 
-    customers_objs = []
-
-    for customer in customers:
-        customers_objs.append(Customer(
-            name=customer["name"],
-            food=customer["food"]))
+    customers_objs = [Customer(
+        name=customer["name"],
+        food=customer["food"])
+        for customer in customers]
 
     cleaner_obj = Cleaner(cleaner)
 
