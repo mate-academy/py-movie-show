@@ -15,6 +15,5 @@ def cinema_visit(
         product = visitor["food"]
         CinemaBar.sell_product(product, person)
 
-    # hall_num = CinemaHall(hall_number)
     cleaner = Cleaner(cleaning_staff)
     CinemaHall(hall_number).movie_session(movie_name, customers, cleaner)

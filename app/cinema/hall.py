@@ -16,10 +16,7 @@ class CinemaHall:
 
         for person in customers_list:
             if isinstance(person, Customer):
-                person_name = person.name
-                person_food = person.food
-
-                Customer(person_name, person_food).watch_movie(movie_name)
+                person.watch_movie(movie_name)
 
             else:
                 person_name = person["name"]
