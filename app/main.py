@@ -8,7 +8,7 @@ def cinema_visit(customers: list,
                  hall_number: int,
                  cleaner: str,
                  movie: str) -> None:
-    cleaner_obj = Cleaner(cleaner)
+    cleaner_object = Cleaner(cleaner)
     customers_list = []
 
     for cinema_customer in customers:
@@ -18,4 +18,4 @@ def cinema_visit(customers: list,
 
     CinemaHall(hall_number).movie_session(movie,
                                           customers_list,
-                                          cleaner_obj)
+                                          cleaner_object)
