@@ -9,7 +9,7 @@ def cinema_visit(customers: list, hall_number: int,
     cleaner = Cleaner(cleaner_name)
 
     customer_list = []
-    for customer data in customers:
+    for customer_data in customers:
         customer = Customer(customer_data["name"], customer_data.get("food"))
         customer_list.append(customer)
         if customer.food is not None:
