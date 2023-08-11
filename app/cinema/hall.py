@@ -16,11 +16,5 @@ class CinemaHall:
         for person in customers_list:
             person.watch_movie(movie_name)
 
-            # else:
-            #     person_name = person["name"]
-            #     person_food = person["food"]
-            #
-            #     Customer(person_name, person_food).watch_movie(movie_name)
-
         print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
