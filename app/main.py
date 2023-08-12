@@ -5,6 +5,7 @@ from app.cinema.hall import CinemaHall
 
 
 def cinema_visit(
+
         customers: list[dict],
         hall_number: int,
         cleaner_name: str,
