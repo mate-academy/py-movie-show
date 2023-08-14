@@ -11,7 +11,7 @@ def cinema_visit(customers: List[dict],
                  movie: str) -> None:
     cinema_bar = CinemaBar()
 
-    customer_instances = [Customer(**c) for c in customers]
+    customer_instances = [Customer(**customer) for customer in customers]
     cinema_hall = CinemaHall(number=hall_number)
 
     cleaner = Cleaner(name=cleaner_name)
