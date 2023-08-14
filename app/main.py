@@ -23,7 +23,10 @@ def cinema_visit(
     ]
 
     for cust_instance in customer_instances:
-        cinema_bar.sell_product(cust_instance, cust_instance.food)
+        cinema_bar.sell_product(
+            cust_instance,
+            cust_instance.food
+        )
 
     cinema_hall.movie_session(
         movie_name,

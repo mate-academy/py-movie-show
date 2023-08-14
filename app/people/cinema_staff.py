@@ -3,5 +3,5 @@ class Cleaner:
         self.name = name
 
     def clean_hall(self, hall_number: int or str) -> None:
-        print(f"Cleaner {self.name} is cleaning "
-              f"hall number {hall_number}.")
+        print(f"Cleaner {self.name} is "
+              f"cleaning hall number {hall_number}.")
