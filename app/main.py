@@ -10,6 +10,6 @@ def cinema_visit(customers: list, hall_number: int,
                               element["food"]) for element in customers]
     for element in customers_obj:
         CinemaBar.sell_product(element, element.food)
-    red_hall = CinemaHall(hall_number)
-    alisa = Cleaner(cleaner)
-    red_hall.movie_session(movie, customers_obj, alisa)
+    cinema_hall = CinemaHall(hall_number)
+    cleaner_obj = Cleaner(cleaner)
+    cinema_hall.movie_session(movie, customers_obj, cleaner_obj)
