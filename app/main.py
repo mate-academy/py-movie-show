@@ -17,12 +17,12 @@ def cinema_visit(
     cleaner = Cleaner(cleaner)
 
     for customer in customers:
-    name = customer["name"]
-    food = customer["food"]
+        name = customer["name"]
+        food = customer["food"]
 
-    customer_model = Customer(name, food)
-    cinema_bar.sell_product(customer_model, food)
-    customers_instances.append(customer_model)
+        customer_model = Customer(name, food)
+        cinema_bar.sell_product(customer_model, food)
+        customers_instances.append(customer_model)
 
     cinema_hall.movie_session(
         movie_name=movie,
