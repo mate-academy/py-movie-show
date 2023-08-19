@@ -18,7 +18,9 @@ def cinema_visit(
 
     for i in range(len(customers)):
         name = customers[i]["name"]
-        food = customers[i]["food"]
+        for customer in customers:
+            name = customer["name"]
+            food = customer["food"]
         customer = Customer(name, food)
         cinema_bar.sell_product(customer, food)
         customers_instances.append(customer)
