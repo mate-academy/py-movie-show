@@ -5,7 +5,7 @@ from app.people.customer import Customer
 
 
 def cinema_visit(customers: list, hall_number: int,
-                cleaner: str, movie: str) -> None:
+                 cleaner: str, movie: str) -> None:
     cinema_hall = CinemaHall(hall_number)
     cleaner_name = Cleaner(cleaner)
     people = []
