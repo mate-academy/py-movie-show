@@ -9,5 +9,5 @@ class CinemaBar:
     def sell_product(
             customer: "Customer",
             product: str) -> None:
-        print(f"Cinema bar sold {product}"
-              f" to {customer.name}.")
+        print(f"Cinema bar sold {product} to "
+              f"{customer.name}.")
