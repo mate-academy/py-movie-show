@@ -18,11 +18,11 @@ def cinema_visit(
         custom_list_inst.append(custom_pers_inst)
 
     c_hall_inst = CinemaHall(hall_number)
-    bar = CinemaBar()
+    bar_cinema = CinemaBar()
 
     cleaner_instance = Cleaner(cleaner)
 
     for pers in custom_list_inst:
-        bar.sell_product(pers, pers.food)
+        bar_cinema.sell_product(pers, pers.food)
 
     c_hall_inst.movie_session(movie, custom_list_inst, cleaner_instance)
