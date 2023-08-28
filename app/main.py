@@ -11,8 +11,11 @@ def cinema_visit(
         movie: str
 ) -> None:
     customer_instances = []
-    for i in customers:
-        customer_instance = Customer(name=i["name"], food=i["food"])
+
+    for customer in customers:
+        customer_instance = Customer(
+            name=customer["name"], food=customer["food"]
+        )
         CinemaBar.sell_product(
             customer=customer_instance, product=customer_instance.food
         )
