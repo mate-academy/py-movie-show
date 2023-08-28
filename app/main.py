@@ -5,7 +5,7 @@ from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> str:
+def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> None:
     customers_list_instance = []
     for person in customers:
         customers_person_instance = Customer(person.get("name"), person.get("food"))
