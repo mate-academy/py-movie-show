@@ -12,7 +12,9 @@ def cinema_visit(
         movie: str
 ) -> None:
 
-    custom_list_inst = [Customer(pers.get("name"), pers.get("food")) for pers in customers]
+    custom_list_inst = [
+        Customer(pers.get("name"), pers.get("food")) for pers in customers
+    ]
 
     c_hall_inst = CinemaHall(hall_number)
     bar_cinema = CinemaBar()
