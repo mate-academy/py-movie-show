@@ -6,16 +6,13 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
-        customers: list,
+        customers: list[Customer],
         hall_number: int,
         cleaner: str,
         movie: str
 ) -> None:
 
-    custom_list_inst = []
-    for pers in customers:
-        custom_pers_inst = Customer(pers.get("name"), pers.get("food"))
-        custom_list_inst.append(custom_pers_inst)
+    custom_list_inst = [Customer(pers.get("name"), pers.get("food")) for pers in customers]
 
     c_hall_inst = CinemaHall(hall_number)
     bar_cinema = CinemaBar()
