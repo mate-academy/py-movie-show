@@ -4,7 +4,7 @@ from app.cinema.hall import CinemaHall
 from app.cinema.bar import CinemaBar
 
 
-def cinema_visit(customers: list,
+def cinema_visit(customers: list[Customer],
                  hall_number: int,
                  cleaner: str,
                  movie: str) -> None:
