@@ -1,4 +1,3 @@
-
 from app.people.cinema_staff import Cleaner
 
 
