@@ -13,7 +13,6 @@ def cinema_visit(
 
     cinema_bar = CinemaBar()
     cinema_hall = CinemaHall(hall_number)
-    # cleaning_staff = Cleaner(cleaner)
 
     for customer_data in customers:
         customer = Customer(
@@ -24,6 +23,6 @@ def cinema_visit(
 
     cinema_hall.movie_session(
         movie_name=movie,
-        customers=[Customer(**i) for i in customers],
+        customers=[Customer(**customer) for customer in customers],
         cleaning_staff=Cleaner(name=cleaner)
     )
