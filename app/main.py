@@ -19,7 +19,7 @@ def cinema_visit(
         CinemaBar.sell_product(
             customer=customers_inst,
             product=customers_inst.food
-                               )
+        )
         inst_of_customers.append(customers_inst)
 
     cinema_hall_instance = CinemaHall(number=hall_number)
@@ -27,4 +27,4 @@ def cinema_visit(
         movie_name=movie,
         customers=inst_of_customers,
         cleaning_staff=cleaner_instance
-                                       )
+        )
