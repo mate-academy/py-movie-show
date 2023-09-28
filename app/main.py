@@ -11,22 +11,11 @@ def cinema_visit(
     movie: str
 ) -> None:
     cinema_bar = CinemaBar()
-    curr_cleaner = Cleaner(cleaner)
-    curr_hall = CinemaHall(hall_number)
-    curr_customers = []
+    cinema_cleaner = Cleaner(cleaner)
+    cinema_hall = CinemaHall(hall_number)
+    cinema_customers = []
     for customer in customers:
-        curr_customer = Customer(customer.get("name"), customer.get("food"))
-        cinema_bar.sell_product(curr_customer, curr_customer.food)
-        curr_customers.append(curr_customer)
-    curr_hall.movie_session(movie, curr_customers, curr_cleaner)
-
-
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-hall_number = 5
-cleaner_name = "Anna"
-movie = "Madagascar"
-cinema_visit(customers=customers, hall_number=5,
-             cleaner="Anna", movie="Madagascar")
+        cinema_customer = Customer(customer.get("name"), customer.get("food"))
+        cinema_bar.sell_product(cinema_customer, cinema_customer.food)
+        cinema_customers.append(cinema_customer)
+    cinema_hall.movie_session(movie, cinema_customers, cinema_cleaner)
