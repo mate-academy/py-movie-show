@@ -1,4 +1,3 @@
-from __future__ import annotations
 from app.people.cinema_staff import Cleaner
 
 
@@ -12,10 +11,10 @@ class CinemaHall:
             customers: list,
             cleaning_staff: Cleaner
     ) -> None:
-        print(f'\"{movie_name}\" started in hall number {self.number}.')
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
         for customer in customers:
             customer.watch_movie(movie_name)
 
-        print(f'\"{movie_name}\" ended.')
+        print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
