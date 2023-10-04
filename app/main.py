@@ -20,6 +20,9 @@ def cinema_visit(
 
     cinema_hall.movie_session(
         movie,
-        [Customer(name=i["name"], food=i["food"])
-         for i in customers],
-        cleaning_staff)
+        [
+            Customer(name=customer_info["name"], food=customer_info["food"])
+            for customer_info in customers
+        ],
+        cleaning_staff
+    )
