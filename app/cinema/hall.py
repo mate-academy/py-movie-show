@@ -6,16 +6,18 @@ class CinemaHall:
     def __init__(self, number: int) -> None:
         self.number = number
 
-    def movie_session(self, movie_name: str,
-                      customers: list,
+    def movie_session(self,
+                      movie_name: str,
+                      customers: list[Customer | dict],
                       cleaning_staff: Cleaner) -> None:
 
         print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
-            if isinstance(customer, dict):
+            if isinstance(customer, Customer):
+                customer.watch_movie(movie_name)
+            else:
                 create_customer = Customer(customer)
                 create_customer.watch_movie(movie_name)
-            else:
-                customer.watch_movie(movie_name)
+
         print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
