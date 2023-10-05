@@ -15,8 +15,8 @@ def cinema_visit(
     for customer in customers:
         normalized_customers.append(
             Customer(
-                customer["name"],
-                customer["food"]
+                customer.get("name"),
+                customer.get("food")
             )
         )
 
