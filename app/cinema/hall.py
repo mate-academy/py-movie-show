@@ -1,4 +1,3 @@
-from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
 
@@ -10,7 +9,7 @@ class CinemaHall:
             self,
             movie_name: str,
             customers: list[Customer],
-            cleaning_staff: Cleaner
+            cleaning_staff: str
     ) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
 
