@@ -8,7 +8,8 @@ from app.people.customer import Customer
 def cinema_visit(customers: list,
                  hall_number: int,
                  cleaner: str,
-                 movie: str) -> None:
+                 movie: str
+                 ) -> None:
     clients = [Customer(customer.get("name"),
                         customer.get("food"))
                for customer in customers]
