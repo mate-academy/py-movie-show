@@ -1,6 +1,3 @@
-# from app.people import cinema_staff, customer
-# from app.cinema import bar, hall
-
 from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
