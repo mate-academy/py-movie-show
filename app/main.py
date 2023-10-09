@@ -6,21 +6,20 @@ from app.cinema.hall import CinemaHall
 
 
 def cinema_visit(
-        customers: list[dict],
-        hall_number: int,
-        cleaner: str,
-        movie_name: str
+    customers: list[dict],
+    hall_number: int,
+    cleaner: str,
+    movie_name: str
 ) -> None:
-    # write you code here
     hall = CinemaHall(hall_number)
-    cinema_bar = CinemaBar()
     cleaner = Cleaner(cleaner)
 
-    visitors = []
-    for customer in customers:
-        visitor = Customer(customer["name"], customer["food"])
-        cinema_bar.sell_product(visitor.food, visitor)
-        visitors.append(visitor)
+    visitors = [
+        Customer(customer["name"], customer["food"])
+        for customer in customers
+    ]
+
+    for visitor in visitors:
+        CinemaBar.sell_product(visitor.food, visitor)
 
     hall.movie_session(movie_name, visitors, cleaner)
-    # cleaner.clean_hall(hall_number)
