@@ -13,11 +13,12 @@ def cinema_visit(
         Customer(attributes.get("name"), attributes.get("food"))
         for attributes in customers
     ]
-    cinema_hall = CinemaHall(hall_number)
-    cinema_cleaner = Cleaner(cleaner)
-    cinema_bar = CinemaBar()
 
     for customer in customers_instances:
-        cinema_bar.sell_product(customer, customer.food)
+        CinemaBar().sell_product(customer, customer.food)
 
-    cinema_hall.movie_session(movie, customers_instances, cinema_cleaner)
+    CinemaHall(hall_number).movie_session(
+        movie,
+        customers_instances,
+        Cleaner(cleaner)
+    )
