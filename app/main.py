@@ -24,10 +24,3 @@ def cinema_visit(
 
     hall.movie_session(movie_name, visitors, cleaner)
     # cleaner.clean_hall(hall_number)
-
-
-watchers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-cinema_visit(watchers, 5, "Anna", "Madagascar")
