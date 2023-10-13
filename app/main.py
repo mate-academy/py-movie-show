@@ -5,8 +5,8 @@ from app.people.customer import Customer
 
 
 def cinema_visit(customers: list, hall_number: int, cleaning_staff: str, movie_name: str) -> None:
-    customer_instances = []
     cb = CinemaBar()
+    customer_instances = []
     for customer in customers:
         new_customer = Customer(customer["name"], customer["food"])
         customer_instances.append(new_customer)
