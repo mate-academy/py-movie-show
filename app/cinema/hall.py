@@ -15,9 +15,6 @@ class CinemaHall:
         for customer in customers:
             if isinstance(customer, Customer):
                 customer.watch_movie(movie_name)
-            else:
-                create_customer = Customer(customer)
-                create_customer.watch_movie(movie_name)
 
         print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
