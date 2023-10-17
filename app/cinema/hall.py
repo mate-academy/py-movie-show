@@ -8,7 +8,7 @@ class CinemaHall:
     def movie_session(
             self, movie_name: str,
             customers: list,
-            cleaning_staff: "Cleaner"
+            cleaning_staff: Cleaner
     ) -> str:
         print(f'"{movie_name}" started in hall number {self.number}.')
 
