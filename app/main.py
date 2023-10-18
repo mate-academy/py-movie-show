@@ -9,7 +9,7 @@ def cinema_visit(
         hall_number: int,
         cleaning_staff: str,
         movie: str
-) -> str:
+) -> None:
     customer_instances = [
         Customer(customer["name"],
                  customer["food"]
