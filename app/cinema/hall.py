@@ -17,7 +17,7 @@ class CinemaHall:
 
         for person in customers:
             if isinstance(person, dict):
-                name, food = person['name'], person['food']
+                name, food = person["name"], person["food"]
             if isinstance(person, customer.Customer):
                 name, food = person.name, person.food
 
