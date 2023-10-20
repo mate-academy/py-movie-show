@@ -13,7 +13,7 @@ def cinema_visit(
 
     for person in customers:
         if isinstance(person, dict):
-            food, name = person['food'], person['name']
+            food, name = person["food"], person["name"]
         if isinstance(person, Customer):
             food, name = person.food, person.name
         CinemaBar.sell_product(food, name)

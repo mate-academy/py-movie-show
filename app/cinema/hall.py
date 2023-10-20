@@ -24,5 +24,5 @@ class CinemaHall:
             new_customer = customer.Customer(name, food)
             new_customer.watch_movie(movie_name)
 
-        print(f'"{movie_name}\" ended.')
+        print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
