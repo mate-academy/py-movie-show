@@ -7,9 +7,9 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
-        customers: list,
+        customers: list[Customer],
         hall_number: int,
-        cleaner: str,
+        cleaner: str[Cleaner.__name__],
         movie: str
 ) -> None:
     customers_object = []
