@@ -13,7 +13,8 @@ def cinema_visit(customers: list, hall_number: int,
     cleaning_staff = Cleaner(cleaner)
 
     customers_class_instances_list = [Customer(customer.get("name"),
-                                      customer.get("food")) for customer in customers]
+                                      customer.get("food"))
+                                      for customer in customers]
 
     for customer in customers_class_instances_list:
         CinemaBar.sell_product(customer.food, customer)
