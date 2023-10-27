@@ -9,4 +9,4 @@ class CinemaBar:
             customer: Customer,
             product: str
     ) -> None:
-        print(f"cinema bar sold {product} to {customer.name}.")
+        print(f"Cinema bar sold {product} to {customer.name}.")
