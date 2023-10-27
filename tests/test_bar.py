@@ -22,4 +22,6 @@ def test_cinema_bar_sell_product():
     assert out == output, (
         f"'sell_product' output should equal to {output}, "
         f"when customer's name equals to {name} and customer's food equals to {food}"
+
+
     )
