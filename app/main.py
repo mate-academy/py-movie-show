@@ -16,9 +16,8 @@ def cinema_visit(
     ]
     cinema_hall = CinemaHall(hall_number)
     cleaner_ = Cleaner(cleaner)
-    cinema_bar = CinemaBar()
 
     for customer in customers_:
-        cinema_bar.sell_product(customer, customer.food)
+        CinemaBar.sell_product(customer, customer.food)
 
     cinema_hall.movie_session(movie, customers_, cleaner_)
