@@ -10,13 +10,8 @@ def cinema_visit(
         cleaner: str,
         movie: str,
 ) -> None:
-    customer_list = []
-    if customers:
-        for person in customers:
-            customer_list.append(Customer(
-                person["name"],
-                person["food"],
-            ))
+    customer_list = [Customer(person["name"], person["food"])
+                     for person in customers]
     hall = CinemaHall(hall_number)
     cleaner = Cleaner(cleaner)
 
