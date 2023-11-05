@@ -20,17 +20,3 @@ def cinema_visit(customers: list,
     cinema.movie_session(movie_name=movie,
                          customers=customers_list,
                          cleaning_staff=Cleaner(cleaner))
-
-
-# customers = [
-#     {"name": "Bob", "food": "Coca-cola"},
-#     {"name": "Alex", "food": "popcorn"}
-# ]
-#
-# hall_number = 5
-# cleaner_name = "Anna"
-# movie = "Madagascar"
-#
-# cinema_visit(
-#     customers=customers, hall_number=5, cleaner="Anna", movie="Madagascar"
-# )
