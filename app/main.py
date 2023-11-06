@@ -12,5 +12,5 @@ def cinema_visit(
 ) -> None:
     people = [Customer(person["name"], person["food"]) for person in customers]
 
-    [CinemaBar().sell_product(person.food, person) for person in people]
+    [CinemaBar.sell_product(person.food, person) for person in people]
     CinemaHall(hall_number).movie_session(movie, people, Cleaner(cleaner))

@@ -13,6 +13,9 @@ class CinemaHall:
             cleaning_staff: Cleaner
     ) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
-        [Customer.watch_movie(customer, movie_name) for customer in customers]
+
+        for customer in customers:
+            Customer.watch_movie(customer, movie_name)
+
         print(f'"{movie_name}" ended.')
         Cleaner.clean_hall(cleaning_staff, self.number)
