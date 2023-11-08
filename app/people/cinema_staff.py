@@ -9,5 +9,5 @@ class Cleaner:
 
 
 if __name__ == "__main__":
-    c = Cleaner("coco")
+    c = Cleaner("Coco")
     c.clean_hall(5)
