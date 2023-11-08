@@ -12,7 +12,7 @@ def cinema_visit(customers: list[dict],
                  movie: str) -> None:
 
     customers_instance = [
-        Customer(customer["name"], customer["food"]) 
+        Customer(customer["name"], customer["food"])
         for customer in customers
     ]
     cinema_hall = CinemaHall(hall_number)
