@@ -7,7 +7,7 @@ class CinemaHall:
         self.number = number
 
     def movie_session(self, movie_name: str,
-                      customers: list[str],
+                      customers: list[Customer],
                       cleaning_staff: Cleaner) -> None:
         print(f'\"{movie_name}\" started in hall number {self.number}.')
 
@@ -17,12 +17,3 @@ class CinemaHall:
         print(f'\"{movie_name}\" ended.')
 
         cleaning_staff.clean_hall(self.number)
-
-
-if __name__ == "__main__":
-    customer_info = [Customer("Bob", "popcorn")]
-    cleaner = Cleaner("Anna")
-    cinema_hall = CinemaHall(5)
-    movie_name = "Madagascar"
-
-    cinema_hall.movie_session(movie_name, customer_info, cleaner)
