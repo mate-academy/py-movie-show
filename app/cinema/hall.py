@@ -22,7 +22,6 @@ class CinemaHall:
 if __name__ == "__main__":
     customer_info = [Customer("Bob", "popcorn")]
     cleaner = Cleaner("Anna")
-
     cinema_hall = CinemaHall(5)
     movie_name = "Madagascar"
 
