@@ -3,10 +3,12 @@ from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
-    def __init__(self, number):
+    def __init__(self, number: int) -> None:
         self.number = number
 
-    def movie_session(self, movie_name, customers, cleaning_staff):
+    def movie_session(self, movie_name: str,
+                      customers: Customer,
+                      cleaning_staff: Cleaner) -> None:
         print(f"\"{movie_name}\" started in hall number {self.number}.")
 
         for customer in customers:
@@ -17,7 +19,7 @@ class CinemaHall:
         cleaning_staff.clean_hall(self.number)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     customer_info = [Customer("Bob", "popcorn")]
     cleaner = Cleaner("Anna")
 
@@ -25,4 +27,3 @@ if __name__ == '__main__':
     movie_name = "Madagascar"
 
     cinema_hall.movie_session(movie_name, customer_info, cleaner)
-
