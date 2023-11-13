@@ -52,8 +52,8 @@ def cinema_visit(
     visitors = [
         Customer(visitor["name"], visitor["food"]) for visitor in customers
     ]
-    for i in range(len(visitors)):
-        CinemaBar.sell_product(visitors[i], visitors[i].food)
+    for visitor in visitors:
+        CinemaBar.sell_product(visitor, visitor.food)
     cinema_hall = CinemaHall(hall_number)
     hall_cleaner = Cleaner(cleaner)
     cinema_hall.movie_session(movie, visitors, hall_cleaner)
