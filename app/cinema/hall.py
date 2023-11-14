@@ -12,8 +12,6 @@ class CinemaHall:
             customers: list[Customer],
             cleaning_staff: Cleaner
     ) -> None:
-        # Flake8 asks to change the outer quotes to single
-        # ones to avoid escaping (\") inside the f-string.
         print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
             customer.watch_movie(movie_name)

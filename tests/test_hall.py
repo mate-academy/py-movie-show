@@ -3,7 +3,7 @@ import io
 from contextlib import redirect_stdout
 
 from app.cinema.hall import CinemaHall
-from app.people.cinema_staff import Cleaner
+from app.people.customer import Cleaner
 from app.people.customer import Customer
 
 
