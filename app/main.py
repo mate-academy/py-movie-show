@@ -10,7 +10,13 @@ def cinema_visit(
         cleaner: str,
         movie: str
 ) -> None:
-    customer_list = Customer.customer_extractor(customers)
+    customer_list = [
+        Customer(
+            name=customer["name"],
+            food=customer["food"]
+        )
+        for customer in customers
+    ]
     for customer in customer_list:
         CinemaBar.sell_product(
             customer=customer,
