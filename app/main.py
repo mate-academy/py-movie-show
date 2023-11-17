@@ -13,7 +13,7 @@ def cinema_visit(
         movie: str
 ) -> Any:
     cinema_bar = CinemaBar()
-    customers_list = []
+    customers_instances = []
     cleaner = Cleaner(name=cleaner)
     hall = CinemaHall(number=hall_number)
 
@@ -23,10 +23,10 @@ def cinema_visit(
             food=customer_info["food"]
         )
         cinema_bar.sell_product(customer=customer, product=customer.food)
-        customers_list.append(customer_info)
+        customers_instances.append(customer)
 
     hall.movie_session(
         movie_name=movie,
-        customers=customers_list,
+        customers=customers_instances,
         cleaning_staff=cleaner
     )
