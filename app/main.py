@@ -7,7 +7,7 @@ from app.cinema.bar import CinemaBar
 
 
 def cinema_visit(
-        customers: list,
+        customers: list[dict],
         hall_number: int,
         cleaner: str,
         movie: str
