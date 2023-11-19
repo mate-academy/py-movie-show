@@ -7,7 +7,8 @@ class CinemaHall:
         self.number = number
 
     def movie_session(
-            self, movie_name: str,
+            self,
+            movie_name: str,
             customers: list,
             cleaning_staff: Cleaner
     ) -> None:

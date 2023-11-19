@@ -3,15 +3,25 @@ from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
+customers = [
+    {"name": "Bob", "food": "Coca-cola"},
+    {"name": "Alex", "food": "popcorn"}
+]
+hall_number = 5
+cleaner_name = "Anna"
+movie = "Madagascar"
+
 
 def cinema_visit(
         customers: list,
         hall_number: int,
         cleaner: str,
         movie: str) -> None:
+
     cinema_bar = CinemaBar()
     cinema_hall = CinemaHall(number=hall_number)
     cinema_cleaner = Cleaner(name=cleaner)
+    customers_list = [Customer(c["name"], c["food"]) for c in customers]
 
     for customer_info in customers:
         customer = Customer(
@@ -21,5 +31,5 @@ def cinema_visit(
 
     cinema_hall.movie_session(
         movie_name=movie,
-        customers=[Customer(**c) for c in customers],
+        customers=customers_list,
         cleaning_staff=cinema_cleaner)
