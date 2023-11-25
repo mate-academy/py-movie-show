@@ -5,7 +5,7 @@ from app.cinema.hall import CinemaHall
 
 
 def cinema_visit(customers: list, hall_number: int, cleaner: str,
-                 movie: str):
+                 movie: str) -> None:
     cb = CinemaBar()
     ch = CinemaHall(hall_number)
     for i in customers:
