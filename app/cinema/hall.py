@@ -1,5 +1,5 @@
-from app.peaple.customer import Customer
-from app.peaple.cinema_staff import Cleaner
+from __future__ import annotations
+from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
@@ -8,11 +8,9 @@ class CinemaHall:
     # number of the hall in cinema
 
     def movie_session(self, movie: str, customers: list,
-                      cleaning_staff: str) -> str:
-        print(f"{movie} started in hall number {self.number}")
-        for i in customers:
-            cs = Customer(i["name"], i["food"])
+                      cleaning_staff: Cleaner) -> None:
+        print(f'"{movie}" started in hall number {self.number}.')
+        for cs in customers:
             cs.watch_movie(movie)
-        print(f"{movie} ended")
-        cl = Cleaner(cleaning_staff)
-        cl.clean_hall(self.number)
+        print(f'"{movie}" ended.')
+        cleaning_staff.clean_hall(hall_number=self.number)
