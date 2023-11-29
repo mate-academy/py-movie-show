@@ -13,7 +13,7 @@ def cinema_visit(
 
     cinema_customers = [
         Customer(customer["name"],
-                customer["food"])
+                 customer["food"])
         for customer in customers
     ]
 
