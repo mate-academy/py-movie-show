@@ -1,3 +1,4 @@
+from typing import List
 from app.cinema.customer import Customer
 from app.cinema.cinema_stuff import Cleaner
 
@@ -8,7 +9,9 @@ class CinemaHall:
         self.number = number
 
     def movie_session(
-            self, movie_name: str, customer: list, cleaning_stuff: Cleaner
+            self, movie_name: str,
+            customer: List[Customer],
+            cleaning_stuff: Cleaner
     ) -> None:
         print(f'\"{movie_name}\" started in hall number {self.number}.')
         for pearson in customer:
