@@ -17,5 +17,4 @@ class CinemaHall:
         for pearson in customer:
             pearson.watch_movie(movie_name)
         print(f'\"{movie_name}\" ended.')
-        cleaner = Cleaner(cleaning_stuff)
-        cleaner.clean_hall(self.number)
+        cleaning_stuff.clean_hall(self.number)

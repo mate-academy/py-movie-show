@@ -1,5 +1,6 @@
 from app.cinema.bar import CinemaBar
 from app.cinema.customer import Customer
+from app.cinema.cinema_stuff import Cleaner
 from app.cinema.hall import CinemaHall
 
 
@@ -12,4 +13,5 @@ def cinema_visit(
         customer_list.append(customer)
         CinemaBar.sell_product(value["food"], customer)
     hall = CinemaHall(hall_number)
-    hall.movie_session(movie, customer_list, cleaner)
+    stuff = Cleaner(cleaner)
+    hall.movie_session(movie, customer_list, stuff)
