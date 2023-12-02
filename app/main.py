@@ -6,7 +6,10 @@ from app.cinema.hall import CinemaHall
 
 
 def cinema_visit(
-        customers: List[Customer], hall_number: int, cleaner: str, movie: str
+        customers: List[Customer], 
+        hall_number: int, 
+        cleaner: str, 
+        movie: str
 ) -> None:
     customer_list = []
     for index, value in enumerate(customers):
