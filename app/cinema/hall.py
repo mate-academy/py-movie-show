@@ -1,3 +1,4 @@
+from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
@@ -9,7 +10,7 @@ class CinemaHall:
     def movie_session(
             self,
             movie_name: str,
-            customers: list[dict],
+            customers: list[Customer],
             cleaning_stuff: Cleaner
     ) -> None:
         print(f'\"{movie_name}\" started in hall number {self.number}.')
