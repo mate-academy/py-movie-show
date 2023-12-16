@@ -3,7 +3,10 @@ from app.people.customer import Customer
 
 
 class CinemaHall:
-    def __init__(self, number: int) -> int:
+    def __init__(
+            self,
+            number: int
+    ) -> int:
         self.number = number
 
     def movie_session(
