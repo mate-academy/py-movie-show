@@ -16,6 +16,7 @@ def cinema_visit(
         Customer(name=customer["name"], food=customer["food"])
         for customer in customers
     ]
+
     cinema_hall = CinemaHall(number=hall_number)
     cleaner_instance = Cleaner(name=cleaner)
 

@@ -1,4 +1,3 @@
-
 class Customer:
     def __init__(
             self,
@@ -12,4 +11,4 @@ class Customer:
             self,
             movie: str
     ) -> str:
-        print(f'{self.name} is watching \"{movie}\".')
+        print(f'{self.name} is watching "{movie}".')
