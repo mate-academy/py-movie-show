@@ -4,7 +4,12 @@ from app.people.cinema_staff import Cleaner
 from app.cinema.hall import CinemaHall
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> None:
+def cinema_visit(
+        customers: list,
+        hall_number: int,
+        cleaner: str,
+        movie: str
+        ) -> None:
 
     cust_list = []
     for cust in customers:
