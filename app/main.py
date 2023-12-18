@@ -9,7 +9,7 @@ def cinema_visit(
         hall_number: int,
         cleaner: str,
         movie: str
-        ) -> None:
+) -> None:
 
     cust_list = []
     for cust in customers:
