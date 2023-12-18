@@ -1,6 +1,4 @@
-class Customer:
-    def __init__(self, name: str) -> None:
-        self.name = name
+from app.people.customer import Customer
 
 
 class CinemaBar:
