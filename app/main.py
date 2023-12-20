@@ -12,12 +12,11 @@ def cinema_visit(customers: list,
     cinema_bar = CinemaBar()
     cinema_hall = CinemaHall(number=hall_number)
     cleaner_instance = Cleaner(name=cleaner)
+    customer_instances = [Customer(**customer) for customer in customers]
 
-    for customer_data in customers:
-        customer = Customer(name=customer_data["name"],
-                            food=customer_data["food"])
-        cinema_bar.sell_product(customer=customer, product=customer.food)
+    for customer in customer_instances:
+        cinema_bar.sell_product(customer, customer.food)
 
     cinema_hall.movie_session(movie_name=movie,
-                              customers=[Customer(**c) for c in customers],
+                              customers=customer_instances,
                               cleaning_staff=cleaner_instance)
