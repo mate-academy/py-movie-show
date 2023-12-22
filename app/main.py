@@ -22,6 +22,6 @@ def cinema_visit(
 
     cinema_hall.movie_session(
         movie_name=movie,
-        customers=[Customer(**_) for _ in customers],
+        customers=[Customer(**customer) for customer in customers],
         cleaning_staff=cleaner
     )
