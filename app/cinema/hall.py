@@ -11,7 +11,7 @@ class CinemaHall:
                       cleaning_staff: str
                       ) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
-        for i in customers:
-            Customer.watch_movie(i, movie_name)
+        for row in customers:
+            Customer.watch_movie(row, movie_name)
         print(f'"{movie_name}" ended.')
         Cleaner.clean_hall(cleaning_staff, self.number)
