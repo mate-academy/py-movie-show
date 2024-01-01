@@ -3,20 +3,17 @@ from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
-    number = 0
-
     def __init__(self, number: int) -> None:
         self.number = number
-        CinemaHall.number = self.number
 
-    @classmethod
-    def movie_session(cls, movie_name: str,
-                      customers: list = Customer.customers,
-                      cleaning_staff: str | object = Cleaner) -> None:
-        print(f'"{movie_name}" started in hall number {cls.number}.')
+    def movie_session(self, movie_name: str,
+                      customers: list,
+                      cleaning_staff: str) -> None:
+        print(f'"{movie_name}" started in hall number {self.number}.')
         for person in customers:
-            Customer.watch_movie(person, movie_name)
+            name = person["name"]
+            print(f'{name} is watching "{movie_name}".')
 
         print(f'"{movie_name}" ended.')
-        cleaning_staff = Cleaner(cleaning_staff).name
-        cleaning_staff.clean_hall(cls.number)
+        cleaning_staff = Cleaner(cleaning_staff)
+        cleaning_staff.clean_hall(self.number)
