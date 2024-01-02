@@ -6,9 +6,9 @@ from app.people.customer import Customer
 
 
 def cinema_visit(customers: list,
-                 hall_number: int = CinemaHall,
-                 cleaner: str = Cleaner,
-                 movie: str = "movie") -> None:
+                 hall_number: int,
+                 cleaning_staff: str,
+                 movie_name: str) -> None:
     for person_params in customers:
         person = Customer(person_params["name"],
                           person_params["food"])
@@ -16,6 +16,6 @@ def cinema_visit(customers: list,
         CinemaBar.sell_product(person, person.food)
 
     cinema = CinemaHall(hall_number)
-    cinema.movie_session(movie_name=movie,
-                         customers=customers,
-                         cleaning_staff=cleaner)
+    cinema.movie_session(movie_name,
+                         customers,
+                         cleaning_staff)

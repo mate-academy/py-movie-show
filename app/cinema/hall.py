@@ -14,5 +14,7 @@ class CinemaHall:
             print(f'{name} is watching "{movie_name}".')
 
         print(f'"{movie_name}" ended.')
-        cleaning_staff = Cleaner(cleaning_staff)
-        cleaning_staff.clean_hall(self.number)
+        name = cleaning_staff
+        cleaning_staff_person = Cleaner(name)
+        cleaning_staff_person.name = cleaning_staff
+        cleaning_staff_person.clean_hall(self.number)
