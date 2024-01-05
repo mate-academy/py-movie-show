@@ -58,11 +58,11 @@ def test_customer_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.people.customer':
+            if isinstance(child, ImportFrom) and child.module == 'app.people.visitor':
                 random_import = child
     assert (
             random_import is not None
     ), "Class 'Customer' should be imported using 'from'"
     assert (
             random_import.names[0].name == "Customer"
-    ), "Class 'Customer' should be imported from 'customer' module"
+    ), "Class 'Customer' should be imported from 'visitor' module"
