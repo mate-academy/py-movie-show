@@ -16,8 +16,7 @@ def cinema_visit(
     cleaning_staff = Cleaner(cleaner)
 
     for i, customer in enumerate(customers):
-        ekz_customer = Customer(customer["name"], customer["food"])
-        customers_link.append(ekz_customer)
+        customers_link.append(Customer(customer["name"], customer["food"]))
         cinema_bar.sell_product(
             product=customer["food"],
             customer=customers_link[i]
