@@ -58,7 +58,7 @@ def test_customer_import():
         random_import = None
 
         for child in parsed_module.body:
-            if isinstance(child, ImportFrom) and child.module == 'app.people.people':
+            if isinstance(child, ImportFrom) and child.module == 'app.people.customer':
                 random_import = child
     assert (
             random_import is not None
