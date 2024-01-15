@@ -11,6 +11,7 @@ def cinema_visit(customers: list,
     cinema_hall = CinemaHall(hall_number)
     cleaner = Cleaner(cleaner)
     clients = []
+
     for customer in customers:
         person = Customer(name=customer["name"])
         clients.append(person)
