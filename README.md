@@ -20,7 +20,7 @@ package create modules:
    cb = CinemaBar()
    customer = Customer("Bob", "popcorn")
    cb.sell_product(customer=customer, product=customer.food)
-   # cinema bar sold popcorn to Bob.
+   # Cinema bar sold popcorn to Bob.
    ```
 
    - `hall.py` - inside this module create `CinemaHall`
@@ -40,7 +40,7 @@ package create modules:
    customer wants to buy in cinema bar. 
    This class should have only one method `watch_movie`, this 
    method takes `movie` and prints what movie customer is watching.
-
+   
    ```python
    bob = Customer(name="Bob", food="popcorn")
    bob.watch_movie(movie="Madagascar")
@@ -55,7 +55,7 @@ package create modules:
 
    ```python
    anna = Cleaner(name="Anna")
-clean_hall(hall_number=5)
+   anna.clean_hall(hall_number=5)
    # Cleaner Anna is cleaning hall number 5.
    ```
 
