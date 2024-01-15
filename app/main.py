@@ -14,7 +14,8 @@ def cinema_visit(
     cinema_bar = CinemaBar()
 
     customer_instances = [
-        Customer(name=c["name"], food=c["food"]) for c in customers
+        Customer(name=customer["name"], food=customer["food"])
+        for customer in customers
     ]
 
     cinema_hall = CinemaHall(number=hall_number)
