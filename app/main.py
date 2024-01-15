@@ -20,8 +20,8 @@ def cinema_visit(customers: list[dict],
     cleaner = Cleaner(cleaner)
     cinema_bar = CinemaBar()
 
-    for guest in customers_list:
-        cinema_bar.sell_product(product=guest.food, customer=guest)
+    for customer in customers_list:
+        cinema_bar.sell_product(product=customer.food, customer=customer)
 
     hall.movie_session(movie_name=movie,
                        customers=customers_list,
