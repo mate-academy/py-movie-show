@@ -20,8 +20,8 @@ def cinema_visit(
         for customer in customers
     ]
 
-    for cust in customers_list:
-        cinema_bar.sell_product(product=cust.food, customer=cust)
+    for customer in customers_list:
+        cinema_bar.sell_product(product=customer.food, customer=customer)
 
     cinema_hall.movie_session(
         movie_name=movie,
