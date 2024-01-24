@@ -13,10 +13,10 @@ def cinema_visit(
 
     bar_class = CinemaBar()
     hall = CinemaHall(hall_number)
-    for customer in customers:
-        customer["name"] = Customer(customer["name"], customer["food"])
 
-    objects_list = [class_object["name"] for class_object in customers]
+    objects_list = [
+        Customer(c_object["name"], c_object["food"]) for c_object in customers
+    ]
 
     for customer_object in objects_list:
         bar_class.sell_product(customer_object.food, customer_object)
