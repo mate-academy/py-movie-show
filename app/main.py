@@ -19,15 +19,3 @@ def cinema_visit(customers: List[dict],
     for customer in visitors:
         cinema_bar.sell_product(customer, customer.food)
     cinema_hall.movie_session(movie, visitors, cleaning_staff)
-
-
-if __name__ == "__main__":
-    customers = [
-        {"name": "Bob", "food": "Coca-cola"},
-        {"name": "Alex", "food": "popcorn"}
-    ]
-    hall_number = 5
-    cleaner_name = "Anna"
-    movie = "Madagascar"
-    cinema_visit(customers=customers, hall_number=5, cleaner="Anna",
-                 movie="Madagascar")
