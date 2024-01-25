@@ -21,5 +21,6 @@ class CinemaHall:
 
         print(f'"{movie_name}" ended.')
         print(
-            f"Cleaner {cleaning_staff.name} is cleaning hall number {self.number}."
+            f"Cleaner {cleaning_staff.name} is cleaning hall number "
+            f"{self.number}."
         )
