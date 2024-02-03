@@ -18,11 +18,3 @@ def cinema_visit(customers: list,
         CinemaBar.sell_product(customer, customer.food)
 
     hall_cinema.movie_session(movie_name, list_customers, current_cleaner)
-
-
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alice", "food": "Spite"}
-]
-
-cinema_visit(customers, 5, "Alice", "I'm Robot")
