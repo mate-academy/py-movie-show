@@ -12,6 +12,6 @@ class CinemaHall:
         print(f'"{movie_name}" started in hall number {self.number}.')
         for customer in customers:
             customer.watch_movie(movie_name)
-        print(f'"{movie_name}" ended.')
-        print(f"Cleaner {cleaning_staff.name}"
+        print(f'"{movie_name}" ended.\n'
+              f"Cleaner {cleaning_staff.name}"
               f" is cleaning hall number {self.number}.")
