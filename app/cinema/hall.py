@@ -9,11 +9,7 @@ class CinemaHall:
                       cleaning_staff: "Cleaner") -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
 
-        # Use customers directly as they are instances of Customer
-        customer_instances = customers
-
-        # Call watch_movie method for each customer
-        for customer in customer_instances:
+        for customer in customers:
             customer.watch_movie(movie_name)
 
         print(f'"{movie_name}" ended.')
