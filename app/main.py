@@ -5,7 +5,7 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(movie: str,
-                 customers: Customer,
+                 customers: list,
                  hall_number: int, cleaner: str) -> None:
 
     if not isinstance(customers, list):
