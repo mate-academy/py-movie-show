@@ -23,4 +23,6 @@ def cinema_visit(
             customer=customer, product=customer.food
         )
 
-    cinema_hall.movie_session(movie_name=movie, customers=customers, cleaning_staff=cleaner)
+    cinema_hall.movie_session(
+        movie_name=movie, customers=customers, cleaning_staff=cleaner
+    )
