@@ -4,13 +4,10 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(movie: str,
-                 customers: list,
-                 hall_number: int, cleaner: str) -> None:
-
-    if not isinstance(customers, list):
-        movie, customers, hall_number, cleaner =\
-            cleaner, movie, customers, hall_number
+def cinema_visit(customers: list,
+                 hall_number: int,
+                 cleaner: str,
+                 movie: str) -> None:
 
     cinema_bar = CinemaBar()
     customers_list = []
