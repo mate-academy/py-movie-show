@@ -1,3 +1,6 @@
+from app.people.customer import Customer
+
+
 class CinemaBar:
 
     @staticmethod
