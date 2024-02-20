@@ -5,9 +5,6 @@ from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
-    # write you code here
-    pass
 def cinema_visit(
         customers: list[dict], hall_number: int, cleaner: str, movie: str
 ) -> None:
@@ -16,8 +13,10 @@ def cinema_visit(
     cleaner = Cleaner(name=cleaner)
 
     for customer_inf in customers:
-        customer = Customer(name=customer_inf["name"], food=customer_inf["food"])
-        cinema_bar.sell_product(customer=customer, product=customer.food)
+        customer = Customer(name=customer_inf["name"],
+                            food=customer_inf["food"])
+        cinema_bar.sell_product(customer=customer,
+                                product=customer.food)
 
     cinema_hall.movie_session(
         movie_name=movie,
