@@ -1,4 +1,3 @@
-from typing import Any
 from app.cinema.hall import CinemaHall
 from app.cinema.bar import CinemaBar
 from app.people.customer import Customer
