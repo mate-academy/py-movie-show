@@ -10,7 +10,7 @@ def cinema_visit(
         hall_number: int,
         cleaner: str,
         movie: str
-) -> Any:
+) -> None:
     customers = [Customer(info["name"], info["food"]) for info in customers]
     cinema_bar = CinemaBar()
     hall = CinemaHall(hall_number)
