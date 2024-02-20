@@ -1,8 +1,7 @@
 class Customer:
-    people = []
-    def __init__(self, name, food):
+    def __init__(self, name: str, food: str) -> None:
         self.name = name
         self.food = food
-        Customer.people.append(self)
-    def watch_movie(self, movie):
+
+    def watch_movie(self, movie: str) -> None:
         print(f'{self.name} is watching "{movie}".')
