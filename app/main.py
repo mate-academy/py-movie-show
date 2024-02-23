@@ -12,12 +12,12 @@ def cinema_visit(
     cinema_hall = CinemaHall(hall_number)
     cleaner = Cleaner(cleaner)
 
-    client = [
+    clients = [
         Customer(name=customer_inf["name"], food=customer_inf["food"])
         for customer_inf in customers
     ]
 
-    for customer in client:
+    for customer in clients:
         cinema_bar.sell_product(customer, customer.food)
 
-    cinema_hall.movie_session(movie, client, cleaner)
+    cinema_hall.movie_session(movie, clients, cleaner)
