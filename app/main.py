@@ -21,4 +21,3 @@ def cinema_visit(
     for person in list_of_customers:
         cinema_bar.sell_product(person.food, person)
     cinema_hall.movie_session(movie, list_of_customers, cinema_cleaner)
-git
