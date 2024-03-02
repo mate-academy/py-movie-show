@@ -24,9 +24,7 @@ def cinema_visit(customers: list, hall_number: int,
 
     cleaner = Cleaner(name=cleaner)
 
-    cinema_hall.movie_session(movie_name=movie
-                              , customers=customer_instances
-                              , cleaning_staff=cleaner
+    cinema_hall.movie_session(movie_name=movie,
+                              customers=customer_instances,
+                              cleaning_staff=cleaner
                               )
-
-    pass
