@@ -6,13 +6,16 @@ from app.people.cinema_staff import Cleaner
 
 def cinema_visit(customers: Customer, hall_number: int,
                  cleaner: Cleaner, movie: str) -> None:
-    cb = CinemaBar()
-    ch = CinemaHall(hall_number)
+    cinema_bar = CinemaBar()
+    cinema_hall = CinemaHall(hall_number)
     cleaner_instance = Cleaner(cleaner)
 
     for customer_data in customers:
         customer = Customer(customer_data["name"], customer_data["food"])
-        cb.sell_product(customer, customer.food)
+        cinema_bar.sell_product(customer, customer.food)
 
-    ch.movie_session(movie, [Customer(c["name"], c["food"])
-                             for c in customers], cleaner_instance)
+    cinema_hall.movie_session(
+        movie,
+        [Customer(client["name"], client["food"]) for client in customers],
+        cleaner_instance
+    )
