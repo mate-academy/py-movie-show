@@ -1,3 +1,8 @@
+from __future__ import annotations
+from app.people.customer import Customer
+
+
 class CinemaBar:
-    def sell_product(self, product: str, customer: str) -> str:
+    @staticmethod
+    def sell_product(product: str, customer: Customer) -> None:
         print(f"Cinema bar sold {product} to {customer.name}.")
