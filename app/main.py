@@ -3,26 +3,34 @@ from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
-def cinema_visit(movie_name, customers, hall_number, cleaning_staff):
-    # Create instances of CinemaBar, CinemaHall, and Cleaner
-    cinema_bar = CinemaBar()
-    cinema_hall = CinemaHall(number=hall_number)
-    cleaner = Cleaner(name=cleaning_staff)
-    
-    # Sell food to customers at the cinema bar
-    for customer_info in customers:
-        customer = Customer(name=customer_info['name'], food=customer_info['food'])
-        cinema_bar.sell_product(product=customer_info['food'], customer=customer)
-    
-    # Start movie session in the cinema hall
-    cinema_hall.movie_session(movie_name=movie_name, customers=[Customer(name=customer_info['name'], food=customer_info['food']) for customer_info in customers], cleaning_staff=cleaner)
 
-# Example usage:
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-hall_number = 5
-cleaner_name = "Anna"
-movie = "Madagascar"
-cinema_visit(movie_name=movie, customers=customers, hall_number=hall_number, cleaning_staff=cleaner_name)
+def cinema_visit(
+    customers: list, hall_number: int, cleaner_name: str, movie: str
+) -> None:
+    # Input validation
+    if not isinstance(customers, list):
+        raise TypeError("customers must be a list of dictionaries")
+    if not all(isinstance(customer, dict) for customer in customers):
+        raise TypeError("each customer must be a dictionary")
+    if not isinstance(hall_number, int):
+        raise TypeError("hall_number must be an integer")
+    if not isinstance(cleaner_name, str):
+        raise TypeError("cleaner_name must be a string")
+    if not isinstance(movie, str):
+        raise TypeError("movie must be a string")
+
+    # Proceed with the logic only if inputs are valid
+    cinema_bar = CinemaBar()
+    cinema_hall = CinemaHall(hall_number)
+    cleaner = Cleaner(cleaner_name)
+
+    customer_instances = [
+        Customer(info["name"], info["food"])
+        for info in customers
+        if "name" in info and "food" in info
+    ]
+
+    for customer in customer_instances:
+        cinema_bar.sell_product(customer, customer.food)
+
+    cinema_hall.movie_session(movie, customer_instances, cleaner)

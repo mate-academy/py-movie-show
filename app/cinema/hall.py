@@ -1,7 +1,5 @@
-import sys
-sys.path.append('/app.people.cinema_staff')  # Adjust the path accordingly
-
 from app.people.cinema_staff import Cleaner
+
 
 class CinemaHall:
     def __init__(self, number: int) -> None:
