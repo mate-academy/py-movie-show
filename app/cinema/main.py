@@ -22,23 +22,3 @@ def cinema_visit(customers: list, hall_number: int,
     cinema_hall.movie_session(
         movie_name=movie, customers=customer_instances, cleaning_staff=cleaner
     )
-
-# Example usage:
-
-
-customers_data = [
-    {"name": "John", "food": "Popcorn"},
-    {"name": "Alice", "food": "Soda"},
-    # Add more customer data as needed
-]
-
-hall_number = 1
-cleaner_name = "Bob"
-movie_name = "Movie Title"
-
-cinema_visit(
-    customers=customers_data,
-    hall_number=hall_number,
-    cleaner=cleaner_name,
-    movie=movie_name
-)
