@@ -19,7 +19,7 @@ def cinema_visit(customers: list,
     cleaner_person = Cleaner(cleaning_staff)
 
     for customer in customer_list:
-        cinema_bar.sell_product(customer.food, customer)
+        cinema_bar.sell_product(product=customer.food, customer=customer)
 
     cinema_hall.movie_session(
         movie_name=movie_name,
