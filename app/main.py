@@ -8,8 +8,10 @@ def cinema_visit(
     customers: list, hall_number: int, cleaner_name: str, movie: str
 ) -> None:
     # Input validation
-    assert isinstance(customers, list), "customers must be a list of dictionaries"
-    assert all(isinstance(customer, dict) for customer in customers), "each customer must be a dictionary"
+    assert isinstance(customers, list), "customers must be a list of dict"
+    assert all(
+        isinstance(customer, dict) for customer in customers
+    ), "each customer must be a dictionary"
     assert isinstance(hall_number, int), "hall_number must be an integer"
     assert isinstance(cleaner_name, str), "cleaner_name must be a string"
     assert isinstance(movie, str), "movie must be a string"
