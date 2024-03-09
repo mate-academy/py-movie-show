@@ -8,16 +8,11 @@ def cinema_visit(
     customers: list, hall_number: int, cleaner_name: str, movie: str
 ) -> None:
     # Input validation
-    if not isinstance(customers, list):
-        raise TypeError("customers must be a list of dictionaries")
-    if not all(isinstance(customer, dict) for customer in customers):
-        raise TypeError("each customer must be a dictionary")
-    if not isinstance(hall_number, int):
-        raise TypeError("hall_number must be an integer")
-    if not isinstance(cleaner_name, str):
-        raise TypeError("cleaner_name must be a string")
-    if not isinstance(movie, str):
-        raise TypeError("movie must be a string")
+    assert isinstance(customers, list), "customers must be a list of dictionaries"
+    assert all(isinstance(customer, dict) for customer in customers), "each customer must be a dictionary"
+    assert isinstance(hall_number, int), "hall_number must be an integer"
+    assert isinstance(cleaner_name, str), "cleaner_name must be a string"
+    assert isinstance(movie, str), "movie must be a string"
 
     # Proceed with the logic only if inputs are valid
     cinema_bar = CinemaBar()
