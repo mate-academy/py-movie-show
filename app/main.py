@@ -5,8 +5,8 @@ from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) \
-        -> None:
+def cinema_visit(customers: list, hall_number: int,
+                 cleaner: str, movie: str) -> None:
     # write you code here
     humans = []
     for human in customers:     # creating Customer instance
