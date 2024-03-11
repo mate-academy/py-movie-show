@@ -8,10 +8,7 @@ from app.cinema.hall import CinemaHall
 def cinema_visit(customers: list, hall_number: int,
                  cleaner: str, movie: str) -> None:
     # write you code here
-    humans = []
-    for human in customers:     # creating Customer instance
-        human["name"] = Customer(human["name"], human["food"])
-        humans.append(human["name"])
+    humans = [Customer(human["name"], human["food"]) for human in customers]
     hall = CinemaHall(hall_number)
     cinema_bar = CinemaBar()
     cleanning_staff = Cleaner(cleaner)
