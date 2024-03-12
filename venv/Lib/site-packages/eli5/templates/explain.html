@@ -1,0 +1,39 @@
+{% if include_styles %}
+    {% include "styles.html" %}
+{% endif %}
+
+{% for key in show %}
+    {% if key == "method" and expl.method %}
+        <p>Explained as: {{ expl.method }}</p>
+    {% endif %}
+
+    {% if key == "description" and expl.description %}
+        {# TODO - have a structured prepresentation and convert it to html and text #}
+        <pre>{{ expl.description }}</pre>
+    {% endif %}
+
+    {% if key == "transition_features" and expl.transition_features %}
+        {% include "transition_features.html" with context %}
+    {% endif %}
+
+    {% if key == "targets" and expl.targets %}
+        {% include "weights.html" with context %}
+    {% endif %}
+
+    {% if key == "feature_importances" and expl.feature_importances %}
+        {% include "feature_importances.html" with context %}
+    {% endif %}
+
+    {% if key == "decision_tree" and expl.decision_tree %}
+        {# TODO - render a nice widget #}
+        <br>
+        <pre>{{ expl.decision_tree|format_decision_tree }}</pre>
+    {% endif %}
+
+{% endfor %}
+
+{% if expl.error %}
+    <div style="background-color: #fdd; padding: 0.5em;">
+        Error: {{ expl.error }}
+    </div>
+{% endif %}
