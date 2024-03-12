@@ -6,5 +6,9 @@
 venv/          # Ignore virtual environment directory
 .pytest_cache/ # Ignore pytest cache directory
 **__pycache__/ # Ignore Python cache directories and files recursively
-*.log          # Ignore log files
-*.cache        # Ignore cache files
+.cache
+*.log
+*.tmp
+# Виключення директорій кешу
+/build/
+/dist/
