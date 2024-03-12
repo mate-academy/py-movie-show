@@ -6,12 +6,11 @@ from app.people.customer import Customer
 
 def cinema_visit(customers: list, hall_number: int,
                  cleaner: str, movie: str) -> None:
-    cur_hall = CinemaHall(hall_number)
-    cur_bar = CinemaBar()
-    cur_ang_babka = Cleaner(cleaner)
-    ancles_list = []
-    for ancls_bob in customers:
-        cur_ancl = Customer(ancls_bob["name"], ancls_bob["food"])
-        cur_bar.sell_product(cur_ancl, cur_ancl.food)
-        ancles_list.append(cur_ancl)
-    cur_hall.movie_session(movie, ancles_list, cur_ang_babka)
+    current_hall = CinemaHall(hall_number)
+    current_cleaner = Cleaner(cleaner)
+    visitors_list = []
+    for visitorb in customers:
+        current_visitor = Customer(visitorb["name"], visitorb["food"])
+        CinemaBar.sell_product(current_visitor, current_visitor.food)
+        visitors_list.append(current_visitor)
+    current_hall.movie_session(movie, visitors_list, current_cleaner)
