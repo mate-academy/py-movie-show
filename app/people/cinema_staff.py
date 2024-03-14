@@ -4,12 +4,12 @@ class Cleaner:
 
     def clean_hall(self, hall_number: int) -> None:
         """
-        Метод для прибирання залу кінотеатру.
+        A method for cleaning a cinema hall.
 
-        Параметри:
-        - hall_number: int, номер залу, який потрібно прибрати.
+        Parameters:
+        - hall_number: int, the number of the hall to be cleaned.
 
-        Повертає:
+        Returns:
         None
         """
         print(f"Cleaner {self.name} is cleaning hall number {hall_number}.")

@@ -14,16 +14,17 @@ class CinemaHall:
             cleaning_staff: Cleaner
     ) -> None:
         """
-        Метод для проведення сеансу в кінозалі.
+        A method for conducting a session in a movie theater.
 
-        Параметри:
-        - movie_name: str, назва фільму.
-        - customers:
-        List[Customer], список екземплярів класу Customer,
-        клієнти, які дивляться фільм.
-        - cleaning_staff: Cleaner, екземпляр класу Cleaner, прибиральник.
+        Parameters:
+        - movie_name: str, the name of the movie.
+        - customers: List[Customer],
+        a list of instances of the Customer class,
+        customers who are watching the movie.
+        - cleaning_staff: Cleaner,
+        an instance of the Cleaner class, the cleaner.
 
-        Повертає:
+        Returns:
         None
         """
         print(f'"{movie_name}" started in hall number {self.number}.')
