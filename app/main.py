@@ -5,13 +5,11 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
-        movie_name: str, customers: list, hall_number: int, cleaning_staff: str
+        customers: list, hall_number: int, cleaning_staff: str, movie_name: str
 ) -> None:
     cinema_bar: CinemaBar = CinemaBar()
     cinema_hall: CinemaHall = CinemaHall(hall_number)
     cleaner: Cleaner = Cleaner(cleaning_staff)
-    import pdb
-    pdb.set_trace()
     for customer_info in customers:
         customer: Customer = Customer(
             customer_info["name"], customer_info["food"]
