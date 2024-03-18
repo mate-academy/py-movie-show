@@ -1,4 +1,6 @@
 from __future__ import annotations
+from people.customer import Customer
+from people.cinema_staff import Cleaner
 
 
 class CinemaHall:

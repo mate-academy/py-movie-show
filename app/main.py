@@ -16,5 +16,3 @@ def cinema_visit(customers: list, hall_number: int,
     cinema_hall = CinemaHall(hall_number)
     cleaner = Cleaner(cleaner)
     cinema_hall.movie_session(movie, customers, cleaner)
-
-print("I am in main.py")
