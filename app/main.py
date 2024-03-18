@@ -1,7 +1,7 @@
-from app.cinema.bar import CinemaBar
-from app.cinema.hall import CinemaHall
-from app.people.customer import Customer
-from app.people.cinema_staff import Cleaner
+from cinema.bar import CinemaBar
+from cinema.hall import CinemaHall
+from people.customer import Customer
+from people.cinema_staff import Cleaner
 
 
 def cinema_visit(customers: list, hall_number: int,
@@ -16,3 +16,5 @@ def cinema_visit(customers: list, hall_number: int,
     cinema_hall = CinemaHall(hall_number)
     cleaner = Cleaner(cleaner)
     cinema_hall.movie_session(movie, customers, cleaner)
+
+print("I am in main.py")
