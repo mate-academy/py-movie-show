@@ -11,4 +11,3 @@ def cinema_visit(
     customers = [Customer(**customer) for customer in customers]
     list(map(lambda x: CinemaBar().sell_product(x, x.food), customers))
     CinemaHall(hall_number).movie_session(movie, customers, Cleaner(cleaner))
-
