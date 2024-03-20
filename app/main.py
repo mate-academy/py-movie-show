@@ -6,13 +6,10 @@ from app.cinema.hall import CinemaHall
 
 def cinema_visit(customers: list, hall_number: int,
                  cleaner: str, movie: str) -> None:
-    total = []
-    for cust in customers:
-        inst = Customer(cust["name"], cust["food"])
-        total.append(inst)
-    inst_c_h = CinemaHall(hall_number)
-    inst_c_b = CinemaBar()
-    inst_cl = Cleaner(cleaner)
+    total = [Customer(cust["name"], cust["food"]) for cust in customers]
+    instance_cinema_hall = CinemaHall(hall_number)
+    instance_cinema_bar = CinemaBar()
+    instance_clear = Cleaner(cleaner)
     for cust in total:
-        inst_c_b.sell_product(cust.food, cust)
-    inst_c_h.movie_session(movie, total, inst_cl)
+        instance_cinema_bar.sell_product(cust.food, cust)
+    instance_cinema_hall.movie_session(movie, total, instance_clear)
