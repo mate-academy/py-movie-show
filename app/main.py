@@ -10,7 +10,6 @@ def cinema_visit(
         cleaner: str,
         movie: str
 ) -> str:
-    cinema_bar = CinemaBar()
     cinema_hall = CinemaHall(number=hall_number)
     cleaner = Cleaner(name=cleaner)
 
@@ -19,7 +18,7 @@ def cinema_visit(
             name=customer_info["name"],
             food=customer_info["food"]
         )
-        cinema_bar.sell_product(customer=customer, product=customer.food)
+        CinemaBar.sell_product(customer=customer, product=customer.food)
 
     cinema_hall.movie_session(
         movie_name=movie,
