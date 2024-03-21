@@ -5,31 +5,26 @@ from app.cinema.hall import CinemaHall
 
 
 def cinema_visit(
-    customers: list, hall_number: int, cleaner: str, movie: str
+    customers_list: list, hall_number: int, cleaner_name: str, movie_name: str
 ) -> None:
-    # Create CinemaBar instance
-    cb = CinemaBar()
-
-    # Sell products to customers
-    for customer_data in customers:
+    for customer_data in customers_list:
         customer = Customer(
             name=customer_data["name"],
             food=customer_data["food"]
         )
-        cb.sell_product(customer=customer, product=customer.food)
+        CinemaBar.sell_product(customer=customer, product=customer.food)
 
     # Create Cleaner instance
-    cleaning_staff = Cleaner(name=cleaner)
+    cleaning_staff = Cleaner(name=cleaner_name)
 
     # Create CinemaHall instance
-    ch = CinemaHall(number=hall_number)
+    cinema_hall = CinemaHall(number=hall_number)
 
-    # Start movie session
-    ch.movie_session(
-        movie_name=movie,
+    cinema_hall.movie_session(
+        movie_name=movie_name,
         customers=[
             Customer(name=customer_data["name"], food=customer_data["food"])
-            for customer_data in customers
+            for customer_data in customers_list
         ],
         cleaning_staff=cleaning_staff
     )
