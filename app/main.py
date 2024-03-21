@@ -24,4 +24,3 @@ def cinema_visit(customers: List[Dict[str, str]],
                                    food=customer_data["food"])
                                   for customer_data in customers],
                        cleaning_staff=cleaner)
-git
