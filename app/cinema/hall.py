@@ -12,15 +12,15 @@ class CinemaHall:
             customers: list[Customer],
             cleaning_staff: Cleaner
     ) -> None:
-        print(f'"{movie_name}" '
-              f'started in hall number {self.number}.')
+        print(f"\"{movie_name}\" "
+              f"started in hall number {self.number}.")
         for customer in customers:
-            print(f'{customer.name} '
-                  f'is watching "{movie_name}".')
-        print(f'"{movie_name}" ended.')
+            print(f"{customer.name} "
+                  f"is watching \"{movie_name}\".")
+        print(f"\"{movie_name}\" ended.")
         print(
-            f'Cleaner {cleaning_staff.name} '
-            f'is cleaning hall number {self.number}.'
+            f"Cleaner {cleaning_staff.name} "
+            f"is cleaning hall number {self.number}."
         )
 
 
