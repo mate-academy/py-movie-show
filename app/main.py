@@ -12,8 +12,8 @@ def cinema_visit(customers: list,
     cleaning_staff = Cleaner(cleaner)
 
     customers_list = []
-    for cus in customers:
-        customer = Customer(name=cus["name"], food=cus["food"])
+    for customer_data in customers:
+        customer = Customer(name=customer_data["name"], food=customer_data["food"])
         CinemaBar.sell_product(customer, customer.food)
         customers_list.append(customer)
 
