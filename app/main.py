@@ -14,11 +14,9 @@ def cinema_visit(
     linked_customers = []
     linked_cleaner = Cleaner(cleaner)
     for customer in customers:
-        linked_customers.append(
-            Customer(customer.get("name"),
-                     customer.get("food")))
-    for customer in linked_customers:
-        CinemaBar.sell_product(customer, customer.food)
+        tmp = Customer(customer.get("name"), customer.get("food"))
+        linked_customers.append(tmp)
+        CinemaBar.sell_product(tmp, tmp.food)
 
     CinemaHall.movie_session(
         linked_hall,
