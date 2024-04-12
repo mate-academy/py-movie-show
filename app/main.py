@@ -5,10 +5,12 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: Any,
-                 hall_number: Any,
-                 cleaner: Any,
-                 movie: Any) -> Any:
+def cinema_visit(
+    customers: Any,
+    hall_number: Any,
+    cleaner: Any,
+    movie: Any
+) -> Any:
     cinema_bar = CinemaBar()
     cinema_hall = CinemaHall(hall_number)
     cleaning_staff = Cleaner(cleaner)
