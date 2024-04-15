@@ -1,4 +1,5 @@
 from typing import List
+
 from app.people.customer import Customer
 
 
