@@ -11,7 +11,7 @@ def cinema_visit(
         movie: str
 ) -> None:
     cinema_clients = [
-        Customer(el["name"], el["food"]) for el in customers
+        Customer(customer["name"], customer["food"]) for customer in customers
     ]
     cinema_hall = CinemaHall(hall_number)
     cinema_bar = CinemaBar()
