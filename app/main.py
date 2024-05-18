@@ -15,4 +15,3 @@ def cinema_visit(customers: list, hall_number: int,
         CinemaBar.sell_product(customer, customer.food)
     hall_number.movie_session(movie, list_customers, cleaner)
 
-
