@@ -15,13 +15,11 @@ def cinema_visit(
     cleaner_instance = Cleaner(cleaner)
     customers_instances = []
     for customer in customers:
-        customers_instances.append(
-            Customer(name=customer["name"],
-                     food=customer["food"])
-        )
+        human = Customer(name=customer["name"], food=customer["food"])
+        customers_instances.append(human)
         bar_instance.sell_product(
-            product=customers_instances[-1].food,
-            customer=customers_instances[-1]
+            product=human.food,
+            customer=human
         )
 
     hall_instance.movie_session(
