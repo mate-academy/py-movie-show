@@ -4,4 +4,4 @@ class Customer:
         self.food = food
 
     def watch_movie(self, movie):
-        print(f"Bob is watching \"{movie}\".")
+        print(f"{self.name} is watching \"{movie}\".")
