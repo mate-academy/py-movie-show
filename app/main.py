@@ -1,20 +1,18 @@
-from __future__ import annotations
-import datetime
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
+from app.cinema.bar import CinemaBar
+from app.cinema.hall import CinemaHall
 
 
-class Person:
-    def __init__(self, name: str, age: int) -> None:
-        self.name = name
-        self.age = age
+def cinema_visit(customers: list,
+                 hall_number: int,
+                 cleaner: str,
+                 movie: str) -> None:
+    people = []
+    for customer in customers:
+        person = Customer(customer["name"], customer["food"])
+        people.append(person)
+        CinemaBar.sell_product(person, person.food)
+    hall = CinemaHall(hall_number)
+    hall.movie_session(movie, people, Cleaner(cleaner))
 
-    @staticmethod
-    def from_birth_year(name: str, birth_year: int) -> Person:
-        return Person(name, datetime.date.today().year - birth_year)
-
-    def display(self) -> None:
-        print(f"{self.name} (age: {self.age}). "
-              f"Is adult: {Person.is_adult(self.age)}")
-
-    @staticmethod
-    def is_adult(age: int) -> bool:
-        return age >= 18
