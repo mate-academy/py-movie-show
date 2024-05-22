@@ -15,11 +15,11 @@ def test_cinema_bar_sell_product():
     f = io.StringIO()
 
     with redirect_stdout(f):
-        cb.sell_product(customer=customer, product=customer.food)
+        CinemaBar.sell_product(customer=customer, product=customer.food)
 
     out = f.getvalue()
-    output = "Cinema bar sold Sprite to Alice.\n"
-    assert out == output, (
-        f"'sell_product' output should equal to {output}, "
+    expected_output = "Cinema bar sold Sprite to Alice.\n"
+    assert out == expected_output, (
+        f"'sell_product' output should equal to {expected_output}, "
         f"when customer's name equals to {name} and customer's food equals to {food}"
     )
