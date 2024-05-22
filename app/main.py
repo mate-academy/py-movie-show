@@ -1,17 +1,19 @@
-from app.people.customer import Customer
-from app.people.cinema_staff import Cleaner
-from app.cinema.bar import CinemaBar
-from app.cinema.hall import CinemaHall
+import datetime
 
 
-def cinema_visit(customers: list,
-                 hall_number: int,
-                 cleaner: str,
-                 movie: str) -> None:
-    people = []
-    for customer in customers:
-        person = Customer(customer["name"], customer["food"])
-        people.append(person)
-        CinemaBar.sell_product(person, person.food)
-    hall = CinemaHall(hall_number)
-    hall.movie_session(movie, people, Cleaner(cleaner))
+class Person:
+    def __init__(self, name: str, age: int):
+        self.name = name
+        self.age = age
+
+    @staticmethod
+    def from_birth_year(name: str, birth_year: int):
+        return Person(name, datetime.date.today().year - birth_year)
+
+    def display(self):
+        print(f"{self.name} (age: {self.age}). "
+              f"Is adult: {Person.is_adult(self.age)}")
+
+    @staticmethod
+    def is_adult(age):
+        return age >= 18
