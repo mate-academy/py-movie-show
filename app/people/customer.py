@@ -7,4 +7,4 @@ class Customer:
         return self.name
 
     def watch_movie(self, movie: str) -> None:
-        print(f'{self.name} is watching \"{movie}\".')
+        print(f'{self.name} is watching "{movie}".')
