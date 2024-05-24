@@ -8,14 +8,13 @@ def cinema_visit(customers: list,
                  hall_number: int,
                  cleaner: str,
                  movie: str) -> None:
-    # write you code here
     cinema_bar = CinemaBar()
     cinema_hall = CinemaHall(hall_number)
     clean = Cleaner(cleaner)
+    new_customers = []
 
-    customers = [Customer(customer["name"], customer["food"])
-                 for customer in customers]
-
-    for customer in customers:
+    for customer_data in customers:
+        customer = Customer(customer_data["name"], customer_data["food"])
         cinema_bar.sell_product(customer.food, customer)
-    cinema_hall.movie_session(movie, customers, clean)
+        new_customers.append(customer)
+    cinema_hall.movie_session(movie, new_customers, clean)
