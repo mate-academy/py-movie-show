@@ -7,14 +7,14 @@ from app.people.customer import Customer
 def cinema_visit(
         customers: list, hall_number: int, cleaner: str, movie_name: str
 ) -> None:
-    customer_instances = [
-        Customer(name=c["name"], food=c["food"]) for c in customers
-    ]
+    customer_instances = []
     hall = CinemaHall(number=hall_number)
     cleaner_instance = Cleaner(name=cleaner)
-
     bar_instance = CinemaBar()
-    for customer in customer_instances:
+
+    for person in customers:
+        customer = Customer(name=person["name"], food=person["food"])
+        customer_instances.append(customer)
         bar_instance.sell_product(product=customer.food, customer=customer)
 
     hall.movie_session(
