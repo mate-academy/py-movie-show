@@ -1,4 +1,5 @@
 import pytest
+
 import io
 
 from contextlib import redirect_stdout
