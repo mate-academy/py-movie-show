@@ -9,13 +9,13 @@ def cinema_visit(
         cleaner: str, movie: str
 ) -> None:
 
-    instances = [
-        Customer(name=ins["name"], food=ins["food"]) for ins in customers
-    ]
+    instances = []
 
     cinema_bar = CinemaBar()
-    for customer in instances:
-        cinema_bar.sell_product(customer, customer.food)
+    for customer in customers:
+        client = Customer(customer["name"], customer["food"])
+        cinema_bar.sell_product(client, client.food)
+        instances.append(client)
 
     cleaner_instance = Cleaner(cleaner)
     hall = CinemaHall(hall_number)
