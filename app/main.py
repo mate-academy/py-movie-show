@@ -10,7 +10,8 @@ def cinema_visit(customers: List[Dict[str, str]],
                  hall_number: int,
                  cleaning_staff: str,
                  movie_name: str,) -> None:
-    customer_object = [Customer(customer["name"], customer["food"]) for customer in customers]
+    customer_object = [Customer(customer["name"], customer["food"])
+                       for customer in customers]
     cleaner_object = Cleaner(cleaning_staff)
     hall = CinemaHall(hall_number)
     cinema_bar = CinemaBar()
