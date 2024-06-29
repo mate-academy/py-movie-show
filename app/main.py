@@ -21,5 +21,5 @@ def cinema_visit(customers: list[dict],
         cinema_bar.sell_product(customer=customer, product=customer.food)
 
     cinema_hall.movie_session(movie_name=movie,
-                     customers=customers_as_classes,
-                     cleaning_staff=cleaner_as_class)
+                              customers=customers_as_classes,
+                              cleaning_staff=cleaner_as_class)
