@@ -14,14 +14,15 @@ def cinema_visit(
     customers = [Customer(customer["name"], customer["food"])
                  for customer in customers]
 
+    cinema_bar = CinemaBar()
+
     for customer in customers:
-        CinemaBar.sell_product(customer, customer.food)
+        cinema_bar.sell_product(customer, customer.food)
 
     cleaning_staff = Cleaner(cleaner)
     cinema_hall = CinemaHall(hall_number)
 
-    CinemaHall.movie_session(
-        cinema_hall,
+    cinema_hall.movie_session(
         movie_name=movie,
         customers=customers,
         cleaning_staff=cleaning_staff
