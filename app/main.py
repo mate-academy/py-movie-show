@@ -7,21 +7,20 @@ from app.people.cinema_staff import Cleaner
 def cinema_visit(
     customers: list, hall_number: int, cleaner: str, movie: str
 ) -> None:
+    cinema_bar = CinemaBar()
+    cinema_hall = CinemaHall(hall_number)
+    cleaner_instance = Cleaner(cleaner)
 
-    customer_objs = []
-    outputs = []
-    for customer in customers:
-        outputs.append(
-            f"Cinema bar sold {customer['food']} to {customer['name']}."
+    for customer_data in customers:
+        customer = Customer(
+            name=customer_data["name"], food=customer_data["food"]
         )
-        customer_obj = Customer(customer["name"], customer["food"])
-        customer_objs.append(customer_obj)
+        cinema_bar.sell_product(customer, customer.food)
 
-    outputs.append(f'"{movie}" started in hall number {hall_number}.')
-    for customer_obj in customer_objs:
-        outputs.append(f'{customer_obj.name} is watching "{movie}".')
-    outputs.append(f'"{movie}" ended.')
-    outputs.append(f"Cleaner {cleaner} is cleaning hall number {hall_number}.")
-
-    for output in outputs:
-        print(output)
+    cinema_hall.movie_session(
+        movie_name=movie,
+        customers=[
+            Customer(name=c["name"], food=c["food"]) for c in customers
+        ],
+        cleaning_staff=cleaner_instance
+    )
