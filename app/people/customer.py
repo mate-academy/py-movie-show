@@ -3,6 +3,5 @@ class Customer:
         self.name = name
         self.food = food
 
-    @staticmethod
-    def watch_movie(movie: str) -> None:
-        print(f"{Customer} is watching {movie}")
+    def watch_movie(self, movie: str) -> None:
+        print(f'{self.name} is watching "{movie}".')
