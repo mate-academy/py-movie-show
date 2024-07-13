@@ -23,7 +23,6 @@ class CinemaHall:
 
 
 if __name__ == "__main__":
-    # pass
     hall = CinemaHall(5)
     movie = "hi"
     ls = [Customer("alise", "corn"), Customer("bob", "pop")]

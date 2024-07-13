@@ -8,9 +8,7 @@ class CinemaBar:
     @staticmethod
     def sell_product(product: str, customer: Customer) -> None:
         print(f"Cinema bar sold {product} to {customer.name}.")
-        # print(f"Cinema bar sold {product} to {customer}.")
 
 
 if __name__ == "__main__":
-    # test = CinemaBar.sell_product("cola", "john")
     CinemaBar.sell_product(Customer("Elis", "choco"))
