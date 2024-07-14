@@ -9,7 +9,9 @@ class CinemaHall:
     def movie_session(self, movie_name: str,
                       customers: list,
                       cleaning_staff: Cleaner) -> None:
+
         print(f'"{movie_name}" started in hall number {self.number}.')
+
         for cinema_customer in customers:
             if isinstance(cinema_customer, dict):
                 cinema_customer_obj = Customer(cinema_customer["name"],
