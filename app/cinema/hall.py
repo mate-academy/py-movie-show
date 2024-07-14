@@ -10,7 +10,7 @@ class CinemaHall:
                       customers: list,
                       cleaning_staff: Cleaner) -> None:
 
-        print(f'"{movie_name}" started in hall number {self.number}.')
+        print(f"{movie_name} started in hall number {self.number}.")
 
         for cinema_customer in customers:
             if isinstance(cinema_customer, dict):
@@ -20,5 +20,6 @@ class CinemaHall:
             if isinstance(cinema_customer, Customer):
                 cinema_customer.watch_movie(movie_name)
 
-        print(f'"{movie_name}" ended.')
+        print(f"{movie_name} ended.")
+
         cleaning_staff.clean_hall(self.number)
