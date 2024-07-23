@@ -12,10 +12,10 @@ class CinemaHall:
                       customers: list,
                       cleaning_staff: cinema_staff.Cleaner) -> None:
 
-        print(f"\"{movie_name}\" started in hall number {self.number}.")
+        print(f'"{movie_name}" started in hall number {self.number}.')
         for someone in customers:
             one = customer.Customer(someone.name, "")
             one.watch_movie(movie_name)
 
-        print(f"\"{movie_name}\" ended.")
+        print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
