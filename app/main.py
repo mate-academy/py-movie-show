@@ -1,6 +1,25 @@
-# write your imports here
+from app.people.customer import Customer
+from app.cinema.bar import CinemaBar
+from app.cinema.hall import CinemaHall
+from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
-    # write you code here
-    pass
+def cinema_visit(customers: list[dict],
+                 hall_number: int,
+                 cleaning_staff: str,
+                 movie_name: str
+                 ) -> None:
+    customer_objects = [Customer(name=c["name"],
+                                 food=c["food"]) for c in customers
+                        ]
+    cleaner = Cleaner(name=cleaning_staff)
+    cinema_hall = CinemaHall(number=hall_number)
+    cinema_bar = CinemaBar()
+
+    for customer in customer_objects:
+        cinema_bar.sell_product(product=customer.food, customer=customer)
+
+    cinema_hall.movie_session(movie_name=movie_name,
+                              customers=customer_objects,
+                              cleaning_staff=cleaner
+                              )
