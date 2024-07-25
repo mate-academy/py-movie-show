@@ -3,7 +3,7 @@ class Customer:
         self,
         name: str,
         food: str
-    ):
+    ) -> None:
         self.name = name
         self.food = food
 
