@@ -14,26 +14,21 @@ def cinema_visit(
 ) -> None:
     cinema_hall_instance = CinemaHall(hall_number)
 
+    customer_instances = []
+
     for customer in customers:
+        customer_instance = Customer(
+            name=customer["name"],
+            food=customer["food"]
+        )
+        customer_instances.append(customer_instance)
         CinemaBar.sell_product(
-            customer=Customer(
-                name=customer["name"],
-                food=customer["food"]
-            ),
-            product=Customer(
-                name=customer["name"],
-                food=customer["food"]
-            ).food
+            customer=customer_instance,
+            product=customer_instance.food
         )
 
     cinema_hall_instance.movie_session(
         movie,
-        [
-            Customer(
-                name=customer["name"],
-                food=customer["food"]
-            )
-            for customer in customers
-        ],
+        customer_instances,
         Cleaner(cleaner)
     )
