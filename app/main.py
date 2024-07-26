@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
@@ -20,15 +21,14 @@ def cinema_visit(
 
     cinema_hall_instance = CinemaHall(hall_number)
 
-    bar_instance = CinemaBar()
-
     for customer in customer_instances:
-        bar_instance.sell_product(
+        CinemaBar.sell_product(
             customer=customer,
             product=customer.food
         )
 
     cinema_hall_instance.movie_session(
-        movie, customer_instances,
+        movie,
+        customer_instances,
         cleaner_instance
     )
