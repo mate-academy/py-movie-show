@@ -8,7 +8,7 @@ def cinema_visit(customers: list,
                  hall_number: int,
                  cleaner: str,
                  movie: str) -> list:
-    # Створення списку клієнтів з екземплярів Customer
+
     customers_list = [
         Customer(name=cust["name"], food=cust["food"]) for cust in customers
     ]
@@ -16,13 +16,11 @@ def cinema_visit(customers: list,
     cinema_bar = CinemaBar()
     cinema_hall = CinemaHall(number=hall_number)
 
-    # Продаж продуктів клієнтам
     for customer in customers_list:
         cinema_bar.sell_product(product=customer.food, customer=customer)
 
     cleaning = Cleaner(name=cleaner)
 
-    # Проведення сеансу фільму
     cinema_hall.movie_session(movie_name=movie,
                               customers=customers_list,
                               cleaning_staff=cleaning)
