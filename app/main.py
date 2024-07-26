@@ -8,7 +8,8 @@ def cinema_visit(
         customers: list,
         hall_number: int,
         cleaner: str,
-        movie: str) -> str:
+        movie: str
+) -> str:
     list_custom = []
 
     for client in customers:
