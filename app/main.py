@@ -1,8 +1,7 @@
-# write your imports here
-from app.people.customer import Customer
-from app.people.cinema_staff import Cleaner
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
@@ -12,13 +11,23 @@ def cinema_visit(
         movie_name: str
 ) -> None:
     # write you code here
-    for person in customers:
-        customer = Customer(person["name"], person["food"])
-        CinemaBar.sell_product(customer=customer, product=customer.food)
-    cleaner = Cleaner(name=cleaner)
+    customer_objects = [
+        Customer(
+            name=customer["name"],
+            food=customer["food"]
+        )
+        for customer in customers
+    ]
+    cinema_bar = CinemaBar()
+
+    for customer in customer_objects:
+        cinema_bar.sell_product(product=customer.food, customer=customer)
+
     cinema_hall = CinemaHall(number=hall_number)
+    cleaner = Cleaner(name=cleaner)
+
     cinema_hall.movie_session(
         movie_name=movie_name,
-        customers=customers,
+        customers=customer_objects,
         cleaning_staff=cleaner
     )

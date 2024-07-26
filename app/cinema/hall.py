@@ -9,18 +9,11 @@ class CinemaHall:
     def movie_session(
             self,
             movie_name: str,
-            customers: list,
+            customers: list[Customer],
             cleaning_staff: "Cleaner"
-    ) -> str:
+    ) -> None:
         print(f'"{movie_name}" started in hall number {self.number}.')
         for person in customers:
-            if isinstance(person, dict):
-                customer = Customer(person["name"], person["food"])
-            elif isinstance(person, Customer):
-                customer = person
-            else:
-                raise TypeError("Each customer must be a dict or "
-                                "Customer instance.")
-            customer.watch_movie(movie_name)
+            person.watch_movie(movie_name)
         print(f'"{movie_name}" ended.')
-        cleaning_staff.clean_hall(hall_number=self.number)
+        cleaning_staff.clean_hall(self.number)
