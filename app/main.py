@@ -5,8 +5,7 @@ from app.cinema.hall import CinemaHall
 
 
 def cinema_visit(
-        movie_name: str,
-        customers: list,
+        customers: list[dict],
         hall_number: int,
         cleaner: str,
         movie: str
@@ -15,8 +14,8 @@ def cinema_visit(
                                    food=customer["food"])
                           for customer in customers]
     cinema_bar = CinemaBar()
-    cinema_hall = CinemaHall(hall_number)
-    cleaner_instance = Cleaner(cleaner)
+    cinema_hall = CinemaHall(number=hall_number)
+    cleaner_instance = Cleaner(name=cleaner)
 
     for customer in customer_instances:
         cinema_bar.sell_product(customer=customer, product=customer.food)
