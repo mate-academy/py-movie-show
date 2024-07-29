@@ -17,13 +17,14 @@ def cinema_visit(
             name=customer_info["name"],
             food=customer_info["food"]
         )
-        CinemaBar.sell_product(customer=customer_instance,
-                               product=customer_info["food"]
-                               )
+        CinemaBar.sell_product(
+            customer=customer_instance,
+            product=customer_info["food"]
+        )
         customer_instances.append(customer_instance)
 
-    CinemaHall(number=hall_number).movie_session(
-        movie_name=movie_name,
-        customers=customer_instances,
-        cleaning_staff=Cleaner(name=cleaner)
+    CinemaHall(hall_number).movie_session(
+        movie_name,
+        customer_instances,
+        Cleaner(name=cleaner)
     )
