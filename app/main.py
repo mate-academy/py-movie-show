@@ -4,7 +4,12 @@ from app.cinema.hall import CinemaHall
 from app.cinema.bar import CinemaBar
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
+def cinema_visit(
+        customers: list,
+        hall_number: int,
+        cleaner: str,
+        movie: str
+) -> None:
     list_customers = []
     for customer in customers:
         created_customer = Customer(customer["name"], customer["food"])
