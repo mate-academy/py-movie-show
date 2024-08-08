@@ -7,14 +7,14 @@ from app.cinema.hall import CinemaHall
 def cinema_visit(
         customers: list, hall_number: int, cleaner: str, movie: str
 ) -> None:
-    list_of_people_instances = [
+    customer_list = [
         Customer(person["name"], person["food"]) for person in customers
     ]
-    cleaner_instance = Cleaner(cleaner)
-    hall_instance = CinemaHall(hall_number)
-    bar_instance = CinemaBar()
-    for pers in list_of_people_instances:
-        bar_instance.sell_product(pers.food, pers)
-    hall_instance.movie_session(
-        movie, list_of_people_instances, cleaner_instance
+    cleaner = Cleaner(cleaner)
+    hall = CinemaHall(hall_number)
+    cinema_bar = CinemaBar()
+    for person_instance in customer_list:
+        cinema_bar.sell_product(person_instance.food, person_instance)
+    hall.movie_session(
+        movie, customer_list, cleaner
     )
