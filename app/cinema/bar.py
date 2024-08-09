@@ -1,4 +1,4 @@
-from app.people.customer import Customer
+from __future__ import annotations
 
 
 class CinemaBar:
