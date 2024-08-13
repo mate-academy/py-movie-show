@@ -1,8 +1,8 @@
-from app.people import customer as c
+from app.people import customer as client
 
 
 class CinemaBar:
 
     @staticmethod
-    def sell_product(product: str, customer: "c.Customer") -> None:
+    def sell_product(product: str, customer: client) -> None:
         print(f"Cinema bar sold {product} to {customer.name}.")
