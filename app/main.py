@@ -3,22 +3,24 @@ from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
 from app.people.customer import Customer
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
-    cinema_hall = CinemaHall(hall_number)
-    cleaner = Cleaner(cleaner)
+
+def cinema_visit(
+        customers: list,
+        hall_number: int,
+        cleaner: str,
+        movie: str
+) -> None:
+    clients = []
 
     for client in customers:
-        new_customer = Customer(name=client.get("name"), food=client.get("food"))
+        customer = Customer(client.get("name"), client.get("food"))
+        CinemaBar.sell_product(product=customer.food, customer=customer)
+        clients.append(customer)
 
+    cl = Cleaner(name=cleaner)
 
-
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-hall_number = 5
-cleaner_name = "Anna"
-movie = "Madagascar"
-
-
-cinema_visit(customers=customers, hall_number=5, cleaner="Anna", movie="Madagascar")
+    CinemaHall(hall_number).movie_session(
+        movie_name=movie,
+        customers=clients,
+        cleaning_staff=cl
+    )
