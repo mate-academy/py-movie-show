@@ -1,5 +1,5 @@
-from app.people import customer
-from app.people import cinema_staff
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
 
 
 class CinemaHall:
@@ -7,11 +7,11 @@ class CinemaHall:
         self.number = number
 
     def movie_session(self, movie_name: str,
-                      customers: list[customer.Customer], 
-                      cleaning_staff: cinema_staff.Cleaner):
+                      customers: list[Customer], 
+                      cleaning_staff: Cleaner):
         print(f"\"{movie_name}\" started in hall number {self.number}.")
-        for client in customers:
-            client.watch_movie(movie_name)
+        for customer in customers:
+            customer.watch_movie(movie_name)
         
         print(f"\"{movie_name}\" ended.")
         cleaning_staff.clean_hall(self.number)
