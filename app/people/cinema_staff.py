@@ -1,5 +1,3 @@
-# app/people/cinema_staff.py
-
 class Cleaner:
     def __init__(self, name: str) -> None:
         self.name = name

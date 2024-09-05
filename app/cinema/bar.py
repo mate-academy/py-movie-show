@@ -1,4 +1,3 @@
-# app/cinema/bar.py
 from app.people.customer import Customer
 
 

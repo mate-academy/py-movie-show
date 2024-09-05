@@ -10,26 +10,22 @@ def cinema_visit(
         cleaner: str,
         movie: str
 ) -> None:
+    """
+        Simulates a cinema visit for a group of customers,
+        where they buy food and watch a movie.
+    """
 
-    # Create instances of customers
     customer_instances = [
         Customer(name=c["name"], food=c["food"]) for c in customers
     ]
 
-    # Create instance of CinemaBar
     cinema_bar = CinemaBar()
-
-    # Sell products to customers
     for customer in customer_instances:
         cinema_bar.sell_product(product=customer.food, customer=customer)
 
-    # Create instance of CinemaHall
     cinema_hall = CinemaHall(hall_number)
-
-    # Create instance of Cleaner
     cleaner_instance = Cleaner(name=cleaner)
 
-    # Start movie session
     cinema_hall.movie_session(
         movie_name=movie,
         customers=customer_instances,
