@@ -20,9 +20,9 @@ def cinema_visit(
         cb.sell_product(product=customer.food, customer=customer)
         customer_objects.append(customer)
 
-        hall.movie_session(movie_name=movie_title,
-                           customers=customer_objects,
-                           cleaning_staff=cleaning_staff)
+    hall.movie_session(movie_name=movie_title,
+                       customers=customer_objects,
+                       cleaning_staff=cleaning_staff)
 
 
 customers = [
