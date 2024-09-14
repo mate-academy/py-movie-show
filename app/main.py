@@ -10,7 +10,7 @@ def cinema_visit(customers: list[dict],
 
     cinema_bar = CinemaBar()
     for customer_dict in customers:
-        if customer_dict.get("name") and customer_dict.get("food"):
+        if customer_dict.get("name"):
             customer_create = Customer(name=customer_dict.get("name"),
                                        food=customer_dict.get("food"))
             customers_inst_list.append(customer_create)
