@@ -6,7 +6,7 @@ from app.people.cinema_staff import Cleaner
 
 def cinema_visit(customers: list, hall_number: int,
                  cleaner_name: str, movie: str) -> None:
-    cb = CinemaBar()
+    cinema_bar = CinemaBar()
     hall = CinemaHall(hall_number)
     customer_instances = [
         Customer(customer["name"], customer["food"])
@@ -14,5 +14,5 @@ def cinema_visit(customers: list, hall_number: int,
     ]
     cleaner_instance = Cleaner(cleaner_name)
     for customer in customer_instances:
-        cb.sell_product(customer, customer.food)
+        cinema_bar.sell_product(customer, customer.food)
     hall.movie_session(movie, customer_instances, cleaner_instance)
