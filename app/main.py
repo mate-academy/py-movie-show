@@ -8,7 +8,8 @@ def cinema_visit(customers: list, hall_number: int,
                  cleaner_name: str, movie: str) -> None:
     cb = CinemaBar()
     hall = CinemaHall(hall_number)
-    customer_instances = [Customer(c["name"], c["food"]) for c in customers]
+    customer_instances = [Customer(cus["name"],
+                                   cus["food"]) for cus in customers]
     cleaner_instance = Cleaner(cleaner_name)
     for customer in customer_instances:
         cb.sell_product(customer, customer.food)
