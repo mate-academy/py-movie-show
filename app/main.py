@@ -8,13 +8,12 @@ from app.people.customer import Customer
 def cinema_visit(customers: list, hall_number: int,
                  cleaner: str, movie: str) -> None:
     # creating instances
-    customer_objects = [Customer(name=c["name"],
-                                 food=c["food"]) for c in customers]
+    customer_objects = [Customer(c["name"], c["food"]) for c in customers]
     cinema_bar = CinemaBar()
     cleaner_staff = Cleaner(cleaner)
 
     # implementation of cinema work
     for customer in customer_objects:
-        cinema_bar.sell_product(product=customer.food, customer=customer)
+        cinema_bar.sell_product(customer.food, customer)
     cinema_hall = CinemaHall(hall_number)
     cinema_hall.movie_session(movie, customer_objects, cleaner_staff)
