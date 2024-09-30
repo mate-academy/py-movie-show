@@ -18,5 +18,4 @@ def cinema_visit(customers: list,
     cleaner = Cleaner(cleaner)
     for client in clients:
         CinemaBar.sell_product(client, client.food)
-
     cinema.movie_session(movie, clients, cleaner)
