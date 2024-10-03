@@ -11,7 +11,7 @@ class CinemaHall:
                       customers: list,
                       cleaning_staff: Cleaner) -> None:
 
-        print(f"\"{movie_name}\" started in hall number {self.number}.")
+        print(f'"{movie_name}" started in hall number {self.number}.')
 
         # move through the list of customers, which I take from main.py
         for client in customers:
@@ -19,5 +19,5 @@ class CinemaHall:
             # print every client in cinema watching film
             client.watch_movie(movie_name)
 
-        print(f"\"{movie_name}\" ended.")
+        print(f'"{movie_name}" ended.')
         cleaning_staff.clean_hall(self.number)
