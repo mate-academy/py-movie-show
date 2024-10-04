@@ -6,10 +6,10 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
-        movie_title: str,
         customers_list: list[dict[str, str]],
         hall_id: int,
-        cleaner_name: str
+        cleaner_name: str,
+        movie_title: str
 ) -> None:
     customer_instances = [
         Customer(customer["name"], customer["food"])
@@ -34,6 +34,6 @@ customers = [
 hall_number = 5
 cleaner_name_outer = "Anna"
 movie = "Madagascar"
-cinema_visit(movie, customers, hall_number, cleaner_name_outer)
+cinema_visit(customers, hall_number, cleaner_name_outer, movie)
 
 warnings.filterwarnings("ignore", category=DeprecationWarning, module="pytest")
