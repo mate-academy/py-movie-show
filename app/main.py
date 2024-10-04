@@ -1,18 +1,17 @@
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
-from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
+from app.people.customer import Customer
 
 
 def cinema_visit(
         customers: list,
         hall_number: int,
         cleaner: str,
-        movie: str) -> None:
+        movie: str
+) -> None:
 
-    customers_lst = []
-    for person in customers:
-        customers_lst.append(Customer(person["name"], person["food"]))
+    customers_lst = [Customer(person["name"], person["food"]) for person in customers]
 
     hall = CinemaHall(hall_number)
     cinema_bar = CinemaBar()

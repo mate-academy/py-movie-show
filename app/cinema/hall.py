@@ -13,12 +13,13 @@ class CinemaHall:
             self,
             movie_name: str,
             customers: List[Customer],
-            cleaning_staff: Cleaner) -> None:
+            cleaning_staff: Cleaner
+    ) -> None:
 
         print(f'"{movie_name}" started in hall number {self.number}.')
 
-        for person in range(len(customers)):
-            Customer.watch_movie(customers[person], movie_name)
+        for person in customers:
+            Customer.watch_movie(person, movie_name)
 
         print(f'"{movie_name}\" ended.')
         cleaning_staff.clean_hall(self.number)
