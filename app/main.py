@@ -1,4 +1,3 @@
-import warnings
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
@@ -25,15 +24,3 @@ def cinema_visit(
         customer_instances,
         cleaner_instance
     )
-
-
-customers = [
-    {"name": "Bob", "food": "Coca-cola"},
-    {"name": "Alex", "food": "popcorn"}
-]
-hall_number = 5
-cleaner_name_outer = "Anna"
-movie = "Madagascar"
-cinema_visit(customers, hall_number, cleaner_name_outer, movie)
-
-warnings.filterwarnings("ignore", category=DeprecationWarning, module="pytest")
