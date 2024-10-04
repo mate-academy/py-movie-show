@@ -13,14 +13,16 @@ def cinema_visit(customers: list,
     list_of_viewers = [Customer(person.get("name"), person.get("food"))
                        for person in customers]
 
+    # create instances for bar and hall
+    cinema_bar = CinemaBar()
+    cinema_hall = CinemaHall(hall_number)
+
     # buying food from each instance in Customer
     for viewer in list_of_viewers:
-        CinemaBar.sell_product(viewer.food, viewer)
+        cinema_bar.sell_product(viewer.food, viewer)
 
     # create instance of Cleaner in file cinema_staff.py
     cleaner_today = Cleaner(cleaner)
 
     # run the function which print start of movie, viewers and end of movie
-    CinemaHall(hall_number).movie_session(movie,
-                                          list_of_viewers,
-                                          cleaner_today)
+    cinema_hall.movie_session(movie, list_of_viewers, cleaner_today)
