@@ -11,8 +11,8 @@ def cinema_visit(
         movie: str
 ) -> None:
     result = []
-    for person in customers:
-        customer = Customer(person["name"], person["food"])
+    for visiter in customers:
+        customer = Customer(visiter["name"], visiter["food"])
         result.append(customer)
         CinemaBar.sell_product(customer=customer, product=customer.food)
     CinemaHall(hall_number).movie_session(movie, result, Cleaner(cleaner))
