@@ -18,4 +18,4 @@ class Customer:
         Parameters:
         movie (str): The name of the movie being watched.
         """
-        print(f"{self.name} is watching \"{movie}\".")
+        print(f'{self.name} is watching "{movie}".')
