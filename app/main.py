@@ -5,11 +5,21 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
-        customers: list,
+        customers: list[dict[str, str]],
         hall_number: int,
         cleaner: str,
         movie: str
 ) -> None:
+    """
+    Simulates a visit to the cinema.
+
+    Parameters:
+    customers (list): A list of dictionaries, where each dictionary
+    represents a customer and contains 'name' and 'food' keys.
+    hall_number (int): The number of the hall where the movie will be shown.
+    cleaner (str): The name of the cleaner.
+    movie (str): The name of the movie to be shown.
+    """
 
     name_and_food = [
         Customer(customer["name"], customer["food"])
