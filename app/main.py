@@ -4,7 +4,7 @@ from people.cinema_staff import Cleaner
 from people.customer import Customer
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
+def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> None:
     for customer in customers:
         customer_any = Customer(customer["name"], customer["food"])
         CinemaBar.sell_product(customer_any)
