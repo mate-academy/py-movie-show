@@ -6,21 +6,15 @@ from typing import Any
 
 
 def cinema_visit(
-    customers: list,
-    hall_number: int,
-    cleaner: str,
-    movie: str
+        movie: str,
+        customers: list,
+        hall_number: int,
+        cleaner: str
 ) -> Any:
-    hall = CinemaHall(hall_number)
-    cleaning_staff = Cleaner(cleaner)
-    customer_objects = [
-        Customer(customer["name"], customer["food"])
-        for customer in customers
-    ]
-    for customer in customer_objects:
-        CinemaBar.sell_product(customer.food, customer)
-    hall.movie_session(movie, customer_objects, cleaning_staff)
-
+    # Создаём экземпляр CinemaHall и Cleaner
+    cinema_hall = CinemaHall(number=hall_number)
+    cleaning_staff = Cleaner(name=cleaner)
+    # Создаём экземпляры Customer и продаём каждому еду в баре
     customer_instances = []
     for customer_data in customers:
         customer = Customer(
@@ -29,3 +23,9 @@ def cinema_visit(
         )
         CinemaBar.sell_product(product=customer.food, customer=customer)
         customer_instances.append(customer)
+    # Проводим киносеанс и вызываем уборку зала
+    cinema_hall.movie_session(
+        movie_name=movie,
+        customers=customer_instances,
+        cleaning_staff=cleaning_staff
+    )
