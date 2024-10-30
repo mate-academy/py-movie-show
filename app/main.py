@@ -6,7 +6,7 @@ from typing import List, Dict, Any
 
 
 def cinema_visit(
-        customers: List[Dict, Any],
+        customers: List[Dict[str, Any]],
         hall_number: int,
         cleaner_name: str,
         movie: str
