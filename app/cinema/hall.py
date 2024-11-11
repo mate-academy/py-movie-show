@@ -7,11 +7,11 @@ class CinemaHall:
                       customers: list,
                       cleaning_staff: str) -> str:
 
-        print(f"\"{movie_name}\" started in hall number {self.number}.")
+        print(f'\"{movie_name}\" started in hall number {self.number}.')
 
         for customer in customers:
             customer.watch_movie(movie_name)
 
-        print(f"\"{movie_name}\" ended.")
+        print(f'\"{movie_name}\" ended.')
 
         cleaning_staff.clean_hall(self.number)
