@@ -12,8 +12,8 @@ def cinema_visit(
 ) -> None:
 
     customer_objects = [
-        Customer(name=c['name'],
-                 food=c['food']) for c in customers
+        Customer(name=c["name"],
+                 food=c["food"]) for c in customers
     ]
 
     cleaner_instance = Cleaner(name=cleaner)
