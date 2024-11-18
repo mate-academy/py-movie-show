@@ -16,4 +16,4 @@ def cinema_visit(
     CinemaHall(number=hall_number).movie_session(
         movie_name=movie, customer=customers_objects, cleaning_staff=clean  # NOQA E501
     )  # NOQA E501
-    pass # NOQA E501
+    pass
