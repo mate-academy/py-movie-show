@@ -1,24 +1,3 @@
-class Customer:
-    def __init__(self, name: str, food: str) -> None:
-        self.name = name
-        self.food = food
-
-    def watch_movie(self, movie_name: str) -> None:
-        print(
-            f"{self.name} "
-            f"is watching {movie_name} "
-            f"while eating {self.food}."
-        )
-
-
-class Cleaner:
-    def __init__(self, name: str) -> None:
-        self.name = name
-
-    def clean_hall(self, hall_number: int) -> None:
-        print(f"{self.name} is cleaning hall {hall_number}.")
-
-
 class CinemaHall:
     def __init__(self, number: int) -> None:
         self.number = number
