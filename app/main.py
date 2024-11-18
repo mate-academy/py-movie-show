@@ -1,6 +1,6 @@
 from app.people.customer import Customer
-from app.cinima.bar import CinemaBar
-from app.cinima.hall import CinemaHall
+from app.cinema.bar import CinemaBar
+from app.cinema.hall import CinemaHall
 from app.people.cinema_staff import Cleaner
 
 
