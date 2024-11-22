@@ -12,11 +12,11 @@ class CinemaHall:
             cleaning_staff: Cleaner
     ) -> str:
         print(f'\"{movie_name}\" started in hall number {self.number}.')
-        if type(customers[0]) is dict:
+        if isinstance(customers[0], dict):
             for customer in customers:
                 custom = Customer(customer["name"], customer["food"])
                 custom.watch_movie(movie_name)
-        if type(customers[0]) is Customer:
+        if isinstance(customers[0], Customer):
             for customer in customers:
                 customer.watch_movie(movie_name)
         print(f'\"{movie_name}\" ended.')
