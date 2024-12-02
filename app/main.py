@@ -13,7 +13,8 @@ def cinema_visit(
     cinema_bar = CinemaBar()
 
     customer_objects = [
-        Customer(name=c["name"], food=c["food"]) for c in customers]
+        Customer(name=client["name"], food=client["food"]) for client in customers
+    ]
 
     for customer in customer_objects:
         cinema_bar.sell_product(customer=customer, product=customer.food)
