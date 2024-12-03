@@ -1,11 +1,12 @@
-from people.customer import Customer
-from people.cinema_staff import Cleaner
-from cinema.bar import CinemaBar
-from cinema.hall import CinemaHall
+from app.people.customer import Customer
+from app.people.cinema_staff import Cleaner
+from app.cinema.bar import CinemaBar
+from app.cinema.hall import CinemaHall
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
-    peoples = [Customer(customer["name"], customer["food"]) for customer in customers]
+def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> None:
+    peoples = [Customer(customer["name"], customer["food"])
+               for customer in customers]
 
     for people in peoples:
         CinemaBar.sell_product(people.name, people.food)
