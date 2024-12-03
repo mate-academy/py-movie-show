@@ -13,7 +13,9 @@ def cinema_visit(
     cinema_bar = CinemaBar()
 
     customer_objects = [
-        Customer(name=client["name"], food=client["food"]) for client in customers
+        Customer(name=client["name"],
+                 food=client["food"])
+        for client in customers
     ]
 
     for customer in customer_objects:
