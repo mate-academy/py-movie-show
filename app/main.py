@@ -15,7 +15,7 @@ from app.cinema.hall import CinemaHall
 def cinema_visit(
         customers: list,
         number: int,
-        cleaner: str,
+        cleaner: Cleaner,
         movie: str
 ) -> None:
     cleaner_instance = Cleaner(name=cleaner)
