@@ -1,4 +1,4 @@
-from app.cinema.bar import CinemaBar  # Make sure CinemaBar is imported correctly
+from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
