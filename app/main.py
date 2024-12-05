@@ -15,8 +15,6 @@ def cinema_visit(
         for customer in customers
     ]
 
-    cinema_bar = CinemaBar()
-
     for customer in customer_instances:
         cinema_bar.sell_product(product=customer.food, customer=customer)
 
