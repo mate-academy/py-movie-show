@@ -4,7 +4,9 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> None:
+def cinema_visit(
+    customers: list, hall_number: int, cleaner: str, movie: str
+) -> None:
 
     cleaner_instance = Cleaner(name=cleaner)
 
@@ -19,5 +21,6 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) ->
     cinema_hall = CinemaHall(number=hall_number)
 
     cinema_hall.movie_session(
-        movie_name=movie, customers=customer_instances, cleaning_staff=cleaner_instance
+        movie_name=movie, customers=customer_instances,
+        cleaning_staff=cleaner_instance
     )
