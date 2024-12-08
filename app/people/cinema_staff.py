@@ -7,4 +7,5 @@ class Cleaner:
 
     def clean_hall(self) -> None:
         print(
-            f"Cleaner {self.name} is cleaning hall number {CinemaHall.hall_number}")
+            f"Cleaner {self.name} is cleaning hall number 
+            {CinemaHall.hall_number}")
