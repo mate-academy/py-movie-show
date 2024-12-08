@@ -1,0 +1,6 @@
+class Cleaner:
+    def __init__(self, name):
+        self.name = name
+
+    def clean(self, hall_number):
+        return f"Cleaner {self.name} is cleaning hall number {hall_number}."
