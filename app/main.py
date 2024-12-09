@@ -4,12 +4,16 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list,
-                 number: int,
-                 cleaner: str,
-                 movie: str) -> None:
-    customer_objects = [Customer(name=cust["name"],
-                                 food=cust["food"]) for cust in customers]
+def cinema_visit(
+        customers: list,
+        number: int,
+        cleaner: str,
+        movie: str
+) -> None:
+    customer_objects = [
+        Customer(name=cust["name"], food=cust["food"])
+        for cust in customers
+    ]
 
     cleaning_staff = Cleaner(name=cleaner)
 
