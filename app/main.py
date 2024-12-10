@@ -5,13 +5,15 @@ from app.cinema.hall import CinemaHall
 
 
 def cinema_visit(customers: list, hall_num: int, clean: str, mov: str) -> None:
-    Customer.customers = []
+    visitors = []
+    for client in customers:
+        customer = Customer(name=client["name"], food=client["food"])
+        visitors.append(customer)
+
     staff = Cleaner(name=clean)
     hall = CinemaHall(hall_num)
 
-    for client in customers:
-
-        customer = Customer(name=client["name"], food=client["food"])
+    for customer in visitors:
         CinemaBar.sell_product(customer, customer.food)
 
-    hall.movie_session(mov, Customer.customers, staff)
+    hall.movie_session(mov, visitors, staff)
