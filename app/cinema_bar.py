@@ -3,8 +3,9 @@ class CinemaBar:
         self.name = name
         self.location = location
 
-    def sell_product(self, customer, product, menu):
+    @staticmethod
+    def sell_product(customer, product, menu):
         if product in menu:
-            print(f"{self.name} sold {product} to {customer['name']}.")
+            print(f"{customer['name']} bought {product}.")
         else:
-            print(f"Sorry, {product} is not available.")
+            print(f"{product} is not available.")

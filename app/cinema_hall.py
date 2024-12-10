@@ -7,4 +7,4 @@ class CinemaHall:
         print(f"{movie} started in hall number {self.hall_id}.")
 
     def end_session(self, movie):
-        print(f"{movie} ended.")
+        print(f"{movie} ended in hall number {self.hall_id}.")
