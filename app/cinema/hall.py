@@ -11,7 +11,7 @@ class CinemaHall:
             self,
             movie_name: str,
             customers: Customer,
-            cleaning_staff: Cleaner
+            cleaning_staff: list[Cleaner]
     ) -> None:
         if not all(isinstance(customer, Customer) for customer in customers):
             raise ValueError
