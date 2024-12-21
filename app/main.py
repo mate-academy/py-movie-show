@@ -1,6 +1,6 @@
-from cinema.bar import CinemaBar as cb # sell_product 
-from cinema.hall import CinemaHall as ch # movie_session
-#from cinema_staff import Cleaner # clean_hall
+from app.cinema.bar import CinemaBar as cb # sell_product 
+from app.cinema.hall import CinemaHall as ch # movie_session
+from app.cinema_staff import Cleaner # clean_hall
 
 
 
