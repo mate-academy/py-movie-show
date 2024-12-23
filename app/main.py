@@ -6,7 +6,8 @@ from typing import List, Dict
 
 
 def cinema_visit(customers: List[Dict[str, str]],
-                 hall_number: int, cleaner: str, movie: str) -> None:
+                 hall_number: int,
+                 cleaner: str, movie: str) -> None:
     customer_instances = []
     for customer_info in customers:
         customer = Customer(name=customer_info["name"],
@@ -14,7 +15,8 @@ def cinema_visit(customers: List[Dict[str, str]],
         customer_instances.append(customer)
 
     for customer in customer_instances:
-        CinemaBar.sell_product(product=customer.food, customer=customer)
+        CinemaBar.sell_product(product=customer.food,
+                               customer=customer)
 
     hall = CinemaHall(number=hall_number)
 
