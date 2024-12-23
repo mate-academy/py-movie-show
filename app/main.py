@@ -5,7 +5,8 @@ from app.people.cinema_staff import Cleaner
 from typing import List, Dict
 
 
-def cinema_visit(customers: List[Dict[str, str]], hall_number: int, cleaner: str, movie: str) -> None:
+def cinema_visit(customers: List[Dict[str, str]],
+                 hall_number: int, cleaner: str, movie: str) -> None:
     customer_instances = []
     for customer_info in customers:
         customer = Customer(name=customer_info["name"], food=customer_info["food"])
@@ -16,4 +17,5 @@ def cinema_visit(customers: List[Dict[str, str]], hall_number: int, cleaner: str
 
     hall = CinemaHall(number=hall_number)
 
-    hall.movie_session(movie_name=movie, customers=customer_instances, cleaning_staff=Cleaner(name=cleaner))
+    hall.movie_session(movie_name=movie,
+                       customers=customer_instances, cleaning_staff=Cleaner(name=cleaner))
