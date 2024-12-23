@@ -9,7 +9,8 @@ def cinema_visit(customers: List[Dict[str, str]],
                  hall_number: int, cleaner: str, movie: str) -> None:
     customer_instances = []
     for customer_info in customers:
-        customer = Customer(name=customer_info["name"], food=customer_info["food"])
+        customer = Customer(name=customer_info["name"],
+                            food=customer_info["food"])
         customer_instances.append(customer)
 
     for customer in customer_instances:
@@ -18,4 +19,4 @@ def cinema_visit(customers: List[Dict[str, str]],
     hall = CinemaHall(number=hall_number)
 
     hall.movie_session(movie_name=movie,
-                       customers=customer_instances, cleaning_staff=Cleaner(name=cleaner))
+        customers=customer_instances, cleaning_staff=Cleaner(name=cleaner))
