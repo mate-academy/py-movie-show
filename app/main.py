@@ -24,4 +24,4 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str):
         customers=customer_instances,
         cleaning_staff=cleaner_instance
     )
-
+# print("вітаю")
