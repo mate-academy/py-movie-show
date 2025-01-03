@@ -23,4 +23,5 @@ def cinema_visit(
     hall_instance.movie_session(
         movie,
         customer_instances,
-        cleaner_instance)
+        cleaner_instance
+        )
