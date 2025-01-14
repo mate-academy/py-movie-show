@@ -5,7 +5,9 @@ from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
 
 
-def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) -> None:
+def cinema_visit(
+        customers: list, hall_number: int, cleaner: str, movie: str
+) -> None:
     """
         making from dict Object of class customer.
         loop in list of objects . Gives to module bar instance of Customer,
@@ -21,7 +23,8 @@ def cinema_visit(customers: list, hall_number: int, cleaner: str, movie: str) ->
     :param movie: str name of movie
     :return: None
     """
-    customer_objects = [Customer(person["name"], person["food"]) for person in customers]
+    customer_objects = [Customer(person["name"], person["food"])
+                        for person in customers]
     for customer in customer_objects:
         CinemaBar.sell_product(customer, customer.food)
     cinema_hall = CinemaHall(hall_number)
