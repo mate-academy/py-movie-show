@@ -4,23 +4,20 @@ from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 
 
-def cinema_visit(customers: list[dict], hall_number: int, cleaner_name: str,
-                 movie: str) -> str:
-    result = []
+def cinema_visit(customers: list[dict], hall_number: int, cleaner: str,
+                 movie: str) -> None:
 
-    for customer in customers:
-        result.append(f'Cinema bar sold {customer["food"]} to '
-                      f'{customer["name"]}.\n')
+    cleaner_instance = Cleaner(cleaner)
 
-    result.append(f'"{movie}" started in hall number '
-                  f'{hall_number}.\n')
+    hall = CinemaHall(hall_number)
 
-    for customer in customers:
-        result.append(f'{customer["name"]} is watching "{movie}".\n')
+    for customer_date in customers:
+        customer = Customer(name=customer_date["name"], food=customer_date
+                            ["food"])
+        CinemaBar.sell_product(product=customer.food, customer=customer)
 
-    result.append(f'"{movie}" ended in hall number {hall_number}.\n')
-
-    result.append(f'Cleaner {cleaner_name} is cleaning hall number '
-                  f'{hall_number}.\n')
-
-    return ''.join(result)
+    hall.movie_session(movie_name=movie,
+                       customers=[Customer(name=customer["name"],
+                                           food=customer["food"]) for customer
+                                  in customers],
+                       cleaning_stuff=cleaner_instance)
