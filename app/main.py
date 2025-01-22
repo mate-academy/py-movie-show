@@ -20,4 +20,4 @@ def cinema_visit(customers: list[dict], hall_number: int, cleaner: str,
                        customers=[Customer(name=customer["name"],
                                            food=customer["food"]) for customer
                                   in customers],
-                       cleaning_stuff=cleaner_instance)
+                       cleaning_staff=cleaner_instance)
