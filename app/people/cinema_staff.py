@@ -1,8 +1,5 @@
 class Cleaner:
-    def __init__(
-            self,
-            name: str
-    ) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
 
     def clean_hall(
