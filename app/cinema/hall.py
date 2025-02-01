@@ -15,7 +15,6 @@ class CinemaHall:
 
         for customer in customers:
             customer.watch_movie(movie_name)
-            print(f'{customer.name} is watching "{movie_name}".')
 
         print(f'"{movie_name}" ended.')
 
