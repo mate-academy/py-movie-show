@@ -1,31 +1,34 @@
+from typing import List, Dict
 from app.cinema.bar import CinemaBar
 from app.cinema.hall import CinemaHall
 from app.people.customer import Customer
 from app.people.cinema_staff import Cleaner
-from typing import Any
 
 
 def cinema_visit(
-        movie: str,
-        customers: list,
-        hall_number: int,
-        cleaner: str
-) -> Any:
-    # Создаём экземпляр CinemaHall и Cleaner
-    cinema_hall = CinemaHall(number=hall_number)
-    cleaning_staff = Cleaner(name=cleaner)
-    # Создаём экземпляры Customer и продаём каждому еду в баре
-    customer_instances = []
-    for customer_data in customers:
-        customer = Customer(
-            name=customer_data["name"],
-            food=customer_data["food"]
-        )
+        customers: List[Dict[str, str]], hall_number: int, cleaner: str, movie: str
+) -> None:
+    
+    customer_instances = [
+        Customer(name=customer["name"], food=customer["food"]) for customer in customers
+    ]
+    
+    for customer in customer_instances:
         CinemaBar.sell_product(product=customer.food, customer=customer)
-        customer_instances.append(customer)
-    # Проводим киносеанс и вызываем уборку зала
-    cinema_hall.movie_session(
-        movie_name=movie,
-        customers=customer_instances,
-        cleaning_staff=cleaning_staff
-    )
+    
+    hall = CinemaHall(number=hall_number)
+    cleaner_instance = Cleaner(name=cleaner)
+    
+    hall.movie_session(movie_name=movie, customers=customer_instances, cleaning_staff=cleaner_instance)
+
+
+
+customers = [
+    {"name": "Bob", "food": "Coca-cola"},
+    {"name": "Alex", "food": "popcorn"}
+]
+
+hall_number = 5
+cleaner_name = "Anna"
+movie = "Madagascar"
+cinema_visit(customers=customers, hall_number=hall_number, cleaner=cleaner_name, movie=movie)
