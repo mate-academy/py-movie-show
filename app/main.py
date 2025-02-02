@@ -7,10 +7,11 @@ from app.people.customer import Customer
 def cinema_visit(customers: list,
                  number: int,
                  cleaner: str,
-                 movie: str):
+                 movie: str) -> None:
     cinema_hall = CinemaHall(number)
     cleaning_staff = Cleaner(cleaner)
-    customer_list = [Customer(customer["name"], customer["food"]) for customer in customers]
+    customer_list = [Customer(customer["name"], customer["food"])
+                     for customer in customers]
     customer_list.reverse()
     for customer in customer_list:
         CinemaBar.sell_product(customer)
