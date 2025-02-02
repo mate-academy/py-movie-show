@@ -19,4 +19,3 @@ def cinema_visit(customers: list,
         cb.sell_product(customer.food, customer)
 
     hall_instance.movie_session(movie, customer_instances, cleaner_instance)
-
