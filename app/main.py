@@ -6,21 +6,29 @@ from app.people.cinema_staff import Cleaner
 
 
 def cinema_visit(
-        customers: List[Dict[str, str]], hall_number: int, cleaner: str, movie: str
+        customers: List[Dict[str, str]],
+        hall_number: int,
+        cleaner: str,
+        movie: str
 ) -> None:
-    
+
     customer_instances = [
-        Customer(name=customer["name"], food=customer["food"]) for customer in customers
+        Customer(
+            name=customer["name"], food=customer["food"]
+        ) for customer in customers
     ]
-    
+
     for customer in customer_instances:
         CinemaBar.sell_product(product=customer.food, customer=customer)
-    
+
     hall = CinemaHall(number=hall_number)
     cleaner_instance = Cleaner(name=cleaner)
-    
-    hall.movie_session(movie_name=movie, customers=customer_instances, cleaning_staff=cleaner_instance)
 
+    hall.movie_session(
+        movie_name=movie,
+        customers=customer_instances,
+        cleaning_staff=cleaner_instance
+    )
 
 
 customers = [
@@ -31,4 +39,9 @@ customers = [
 hall_number = 5
 cleaner_name = "Anna"
 movie = "Madagascar"
-cinema_visit(customers=customers, hall_number=hall_number, cleaner=cleaner_name, movie=movie)
+cinema_visit(
+    customers=customers,
+    hall_number=hall_number,
+    cleaner=cleaner_name,
+    movie=movie
+)
