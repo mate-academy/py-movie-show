@@ -12,7 +12,6 @@ def cinema_visit(customers: list,
     cleaning_staff = Cleaner(cleaner_name)
     customer_list = [Customer(customer["name"], customer["food"])
                      for customer in customers]
-    customer_list.reverse()
     for customer in customer_list:
         CinemaBar.sell_product(customer, customer.food)
 
